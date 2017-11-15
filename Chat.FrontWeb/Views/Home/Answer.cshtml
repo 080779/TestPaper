@@ -1,0 +1,77 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>广西环保</title>
+    <link rel="stylesheet" type="text/css" href="~/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style-default.css" />
+</head>
+<body>
+    <div class="answer-bg">
+        <div class="answer-wrap">
+            <div class="answer-title">
+                <span class="font answer-tit-txt">123期有奖环保答题活动</span>
+            </div>
+            <div class="anser-list">
+                <div class="anserli jsQus">
+                    <div class="anserli-tit">
+                        <span class="anserli-num num1">1</span>
+                        <span class="anserli-qus">全国污染普查每_____年进行1次。</span>
+                    </div>
+                    <div class="anserli-con">
+                        <div class="anserli-as">A.每2年进行一次</div>
+                        <div class="anserli-as">B.每2年进行一次每2年进行一次每2年进行一次每2年进行一次</div>
+                        <div class="anserli-as right">C.每2年进行一次</div>
+                        <div class="anserli-as">D.每2年进行一次</div>
+                    </div>
+                    <a href="#" class="anserli-knowledge" style="display: none;">知识点提示</a>
+                </div>
+                <div class="anserli jsQus">
+                    <div class="anserli-tit">
+                        <span class="anserli-num num2">2</span>
+                        <span class="anserli-qus">全国污染普查每_____年进行1次。</span>
+                    </div>
+                    <div class="anserli-con">
+                        <div class="anserli-as">A.每2年进行一次</div>
+                        <div class="anserli-as">B.每2年进行一次每2年进行一次每2年进行一次每2年进行一次</div>
+                        <div class="anserli-as">C.每2年进行一次</div>
+                        <div class="anserli-as">D.每2年进行一次</div>
+                    </div>
+                    <a href="#" class="anserli-knowledge" style="display: none;">知识点提示</a>
+                </div>
+                <div class="anserli jsQus">
+                    <div class="anserli-tit">
+                        <span class="anserli-num num3">3</span>
+                        <span class="anserli-qus">全国污染普查每_____年进行1次。</span>
+                    </div>
+                    <div class="anserli-con">
+                        <div class="anserli-as">A.每2年进行一次</div>
+                        <div class="anserli-as">B.每2年进行一次每2年进行一次每2年进行一次每2年进行一次</div>
+                        <div class="anserli-as">C.每2年进行一次</div>
+                        <div class="anserli-as">D.每2年进行一次</div>
+                    </div>
+                    <a href="#" class="anserli-knowledge" style="display: none;">知识点提示</a>
+                </div>
+            </div>
+            <div class="anser-btn">
+                <a href="~/home/index" class="btn-home">返回首页</a>
+                <a href="~/home/result" class="btn-sub">提交答卷</a>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+			$(".anserli-as").click(function(){
+				var qus = $(this).parents('.jsQus');
+					qus.attr('data-ask','1');
+					//回答错误
+					$(this).addClass('wrong').siblings().removeClass('wrong right');
+					qus.find('.anserli-knowledge').css('display','block');
+					//回答正确
+//					$(this).addClass('right').siblings().removeClass('wrong right');
+			})
+    </script>
+</body>
+</html>

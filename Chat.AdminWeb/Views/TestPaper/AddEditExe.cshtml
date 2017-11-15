@@ -1,0 +1,304 @@
+﻿@model Chat.AdminWeb.Models.LoadAddExeModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>试题管理</title>
+    <link href="~/Css/style.default.css" rel="stylesheet">
+    <link href="~/Css/morris.css" rel="stylesheet">
+    <link href="~/Css/select2.css" rel="stylesheet" />
+    <link href="~/Css/style.css" rel="stylesheet">
+    <link href="~/Css/style.calendar.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="headerwrapper">
+            <div class="header-left">
+                <a href="index.html" class="logo"><img src="~/Picture/logo.png" /></a>
+                <div class="pull-right">
+                    <a href="#" class="menu-collapse">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div><!-- header-left -->
+            <div class="header-right">
+                <div class="pull-right">
+                    <div class="btn-group btn-group-option">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img class="img-circle avatar-img" alt="" src="~/Picture/profile.png">
+                            <span class="user-name">Salma</span>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
+                        </ul>
+                    </div><!-- btn-group -->
+
+                </div><!-- pull-right -->
+
+            </div><!-- header-right -->
+
+        </div><!-- headerwrapper -->
+    </header>
+
+    <section>
+        <div class="mainwrapper">
+            <div class="leftpanel">
+                <div class="media profile-left">
+                    <a class="pull-left profile-thumb" href="profile.html">
+                        <img class="img-circle" src="~/Picture/profile.png" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Salma Hayek</h4>
+                    </div>
+                </div><!-- media -->
+
+
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
+                    <li class="active"><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
+                    <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
+                </ul>
+
+            </div><!-- leftpanel -->
+
+            <div class="mainpanel">
+                <div class="contentpanel">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>添加试题</h4>
+                        </div>
+                        <div class="panel-body">
+                            <form action="" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">试卷标题</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="" value="@Model.TestPaper.TestTitle" disabled="disabled" class="form-control">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>考题设置</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-sm-2">
+                                <div id="subjectTit" style="margin-bottom: 20px;">
+                                    <!--<a href="javascript:;" class="btn btn-block btn-primary">第1题</a>-->
+                                    <!--<a href="javascript:;" class="btn btn-block btn-default">第2题</a>-->
+                                    @for (int i = 1; i <= Model.Exercises.Count(); i++)
+                                    {
+                                        <button id="" value="@Model.Exercises[i-1].Id" class="btn btn-block btn-default">第@(i)题</button>
+                                    }
+                                </div>
+                            </div>
+                            <form id="exForm">
+                                <input type="hidden" name="testPaperId" id="testPaperId" value="@Model.TestPaper.Id" />
+                                <input type="hidden" name="exeId" id="exeId" value="0" />
+                                <div class="col-sm-10">
+                                    <div class="col-sm-2">                                        
+                                        <a href="javascript:;" id="saveExe" class="btn btn-block btn-default">保存题目</a>
+                                        <a href="javascript:;" class="btn btn-block btn-default" data-toggle="modal" data-target="#myModal">删除考题和内容</a>
+                                        <a href="javascript:;" id="addsubject" class="btn btn-block btn-default"><i class="fa fa-plus"></i> 新增题目</a>
+                                    </div>
+                                    <div class="form-horizontal col-sm-10">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">考题题目</label>
+                                            <div class="col-sm-6">
+                                                <textarea name="title" id="title" rows="3" cols="" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">选项A</label>
+                                            <div class="col-sm-6">
+                                                <textarea name="optionA" id="optionA" rows="3" cols="" class="form-control"></textarea>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="radio" name="rightKeyId" id="" value="1" /><span>设为正确答案</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">选项B</label>
+                                            <div class="col-sm-6">
+                                                <textarea name="optionB" id="optionB" rows="3" cols="" class="form-control"></textarea>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="radio" name="rightKeyId" id="" value="2" /><span>设为正确答案</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">选项C</label>
+                                            <div class="col-sm-6">
+                                                <textarea name="optionC" id="optionC" rows="3" cols="" class="form-control"></textarea>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="radio" name="rightKeyId" id="" value="3" /><span>设为正确答案</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">选项D</label>
+                                            <div class="col-sm-6">
+                                                <textarea name="optionD" id="optionD" rows="3" cols="" class="form-control"></textarea>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="radio" name="rightKeyId" id="" value="4" /><span>设为正确答案</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--<div class="panel-footer">
+                            <button class="btn btn-primary mr5">确定</button>
+                            <button class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>
+                        </div>-->
+                    </div>
+                </div><!-- contentpanel -->
+            </div><!-- mainpanel -->
+        </div><!-- mainwrapper -->
+    </section>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>确定删除该考题吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="sureDel">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            function clear() {
+                $("#title").val("");
+                $("#optionA").val("");
+                $("#optionB").val("");
+                $("#optionC").val("");
+                $("#optionD").val("");
+                $("input[name=rightKeyId]").removeAttr("checked");
+                $("#exeId").val("0");
+            }
+            
+            //选择题目
+            $("#subjectTit .btn").live('click', function () {
+                $(this).addClass('btn-primary').removeClass('btn-default').siblings().addClass('btn-default').removeClass('btn-primary')
+
+                //显示选择考题的内容
+                $.ajax({
+                    url: "/testpaper/loadExe", type: "post", data: { exeId: $(this).val() },
+                    success: function (result) {
+                        if (result.status == "error")
+                        {
+                            clear();
+                        }
+                        else if (result.status == "success")
+                        {
+                            $("#exeId").val(result.data.id);
+                            $("#title").val(result.data.title);
+                            $("#optionA").val(result.data.optionA);
+                            $("#optionB").val(result.data.optionB);
+                            $("#optionC").val(result.data.optionC);
+                            $("#optionD").val(result.data.optionD);
+                            $("input[name=rightKeyId]:eq(" + result.data.rightKeyId + ")").attr("checked", 'checked');
+                        }
+                        else
+                        {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            })
+
+            //保存考题内容
+            $("#saveExe").click(function () {
+                var data = $("#exForm").serializeArray();
+                $.ajax({
+                    url: "/testpaper/addeditexe", type: "post", data: data,
+                    success: function (result) {
+                        if (result.status == "error") {
+                            alert(result.errorMsg);
+                        }
+                        else if (result.status == "success") {
+                            $("#subjectTit").empty();
+                            for (var i = 0; i < result.data.paperExeCount; i++) {
+                                $("#subjectTit").append('<button id="" value="' + result.data.exercises[i].id + '" class="btn btn-block btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
+                            }
+                            $("#addsubject").removeAttr("disabled");
+                            clear();
+                            alert("添加成功！");
+                        }
+                        else if (result.status == "clear") {
+                            alert(result.errorMsg);
+                            clear();
+                        }
+                        else {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
+
+            //添加考题
+            $("#addsubject").click(function () {                   
+                clear();
+                $("#subjectTit").append('<button id="" value="0" class="btn btn-block btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
+                $(this).attr("disabled", "disabled");
+            })
+
+            //删除考题
+            $("#sureDel").click(function () {
+                var that = $(this);
+                var paperId = $("#testPaperId").val();
+                var exeId = $("#exeId").val();
+                $.ajax({
+                    url: "/testpaper/delexe", type: "post", data: { paperId: paperId, exeId, exeId},
+                    success: function (result) {
+                        if (result.status == "error") {
+                            alert(result.errorMsg);
+                        }
+                        else if (result.status == "success") {
+                            $("#subjectTit").empty();
+                            for (var i = 0; i < result.data.paperExeCount; i++) {
+                                $("#subjectTit").append('<button id="" value="' + result.data.exercises[i].id + '" class="btn btn-block btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
+                            }
+                            $("#cancel").click();                            
+                            clear();
+                        }
+                        else if (result.status == "clear") {
+                            alert(result.errorMsg);
+                            clear();
+                        }
+                        else {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
+
+        })
+    </script>
+</body>
+</html>

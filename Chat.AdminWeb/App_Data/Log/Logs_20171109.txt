@@ -1,0 +1,167 @@
+2017-11-09 23:01:30,285 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,292 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.T_AdminLogs','dbo.T_AdminUsers','dbo.T_Cities','dbo.T_Roles','dbo.T_Permissions','dbo.T_IdNames','dbo.T_Settings','dbo.T_Users','dbo.T_RolePermissions','dbo.T_AdminUserRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2017-11-09 23:01:30,292 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,293 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,293 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: 10
+
+2017-11-09 23:01:30,293 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,293 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,341 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,389 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-09 23:01:30,389 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,389 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-09 23:01:30,389 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,390 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-09 23:01:30,390 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,392 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,394 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,398 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+2017-11-09 23:01:30,398 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,398 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-09 23:01:30,398 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,398 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-09 23:01:30,398 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,399 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,449 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,468 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Cities] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-09 23:01:30,468 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,468 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '南京' (Type = String, Size = 4000)
+
+2017-11-09 23:01:30,468 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,469 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-09 23:01:30,469 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,471 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,476 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,476 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Started transaction at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,479 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：INSERT [dbo].[T_Cities]([Name], [IsDeleted], [CreateDateTime])
+VALUES (@0, @1, @2)
+SELECT [Id]
+FROM [dbo].[T_Cities]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-11-09 23:01:30,479 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,479 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @0: '南京' (Type = String, Size = 50)
+
+2017-11-09 23:01:30,479 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @1: 'False' (Type = Boolean)
+
+2017-11-09 23:01:30,479 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @2: '2017/11/9 23:01:30' (Type = DateTime2)
+
+2017-11-09 23:01:30,479 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,480 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-09 23:01:30,480 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:01:30,481 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Committed transaction at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,481 [9] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/9 23:01:30 +08:00
+
+2017-11-09 23:01:30,883 [9] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.InvalidOperationException: 传入字典的模型项的类型为“System.Int64”，但此字典需要类型“System.Int32”的模型项。
+   在 System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   在 System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   在 System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-09 23:02:04,116 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/9 23:02:04 +08:00
+
+2017-11-09 23:02:04,117 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Cities] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-09 23:02:04,117 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:02:04,117 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '南京' (Type = String, Size = 4000)
+
+2017-11-09 23:02:04,117 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/9 23:02:04 +08:00
+
+2017-11-09 23:02:04,118 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-09 23:02:04,118 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-09 23:02:04,118 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/9 23:02:04 +08:00
+
+2017-11-09 23:02:04,118 [5] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.ArgumentException: 南京已经存在
+   在 Chat.Service.Service.CityService.AddNew(String cityName) 位置 F:\AspNet\201711\AdminChat\Chat.Service\Service\CityService.cs:行号 23
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\AspNet\201711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)

@@ -1,0 +1,144 @@
+﻿@model Chat.DTO.DTO.TestPaperDTO
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>试题管理</title>
+    <link href="~/Css/style.default.css" rel="stylesheet">
+    <link href="~/Css/morris.css" rel="stylesheet">
+    <link href="~/Css/select2.css" rel="stylesheet" />
+    <link href="~/Css/style.css" rel="stylesheet">
+    <link href="~/Css/style.calendar.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="headerwrapper">
+            <div class="header-left">
+                <a href="index.html" class="logo"><img src="~/Picture/logo.png" /></a>
+                <div class="pull-right">
+                    <a href="#" class="menu-collapse">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div><!-- header-left -->
+            <div class="header-right">
+                <div class="pull-right">
+                    <div class="btn-group btn-group-option">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img class="img-circle avatar-img" alt="" src="~/Picture/profile.png">
+                            <span class="user-name">Salma</span>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
+                        </ul>
+                    </div><!-- btn-group -->
+
+                </div><!-- pull-right -->
+
+            </div><!-- header-right -->
+
+        </div><!-- headerwrapper -->
+    </header>
+
+    <section>
+        <div class="mainwrapper">
+            <div class="leftpanel">
+                <div class="media profile-left">
+                    <a class="pull-left profile-thumb" href="profile.html">
+                        <img class="img-circle" src="~/Picture/profile.png" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Salma Hayek</h4>
+                    </div>
+                </div><!-- media -->
+
+
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
+                    <li class="active"><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
+                    <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
+                </ul>
+
+            </div><!-- leftpanel -->
+
+            <div class="mainpanel">
+                <div class="contentpanel">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>编辑试卷</h4>
+                        </div>
+                        <div class="panel-body">
+                            <form action="" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">试卷标题</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="txtPaper" value="@Model.TestTitle" placeholder="" class="form-control">
+                                        <input type="hidden" id="txtId" value="@Model.Id" />
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="button" id="btnSavePaper" placeholder="" class="form-control" value="保存试卷" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>                   
+                </div><!-- contentpanel -->
+            </div><!-- mainpanel -->
+        </div><!-- mainwrapper -->
+    </section>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>确定删除该活动？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="sureDel">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSavePaper").click(function () {
+                var txtPaper = $("#txtPaper").val();
+                var id = $("#txtId").val();
+                $.ajax({
+                    url: "/testpaper/editpaper", type: "post", data: {title:txtPaper,id:id},
+                    success: function (result) {
+                        if (result.status == "error")
+                        {
+                            alert(result.errorMsg);
+                        }
+                        else if (result.status == "success")
+                        {
+                            alert("编辑成功");
+                            window.location.href = "/testpaper/list";
+                        }
+                        else {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1884 @@
+2017-11-10 08:57:42,868 [5] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:00:17,801 [12] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:00:19,985 [8] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:00:22,325 [8] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:00:24,969 [5] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:10:11,556 [16] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:21:24,413 [12] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:23:56,539 [14] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:24:05,232 [11] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:24:07,917 [11] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:24:09,303 [12] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 17
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:32:46,678 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:32:52,308 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:32:54,353 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:32:56,929 [6] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:32:58,281 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:32:59,545 [6] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:33:00,616 [6] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:33:01,953 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:33:54,516 [12] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:33:57,788 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:33:59,011 [6] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:34:00,567 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:34:02,074 [12] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:07,294 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:10,254 [10] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:11,067 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:11,657 [10] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:12,009 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:12,293 [10] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:12,573 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:12,808 [10] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:13,014 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:13,199 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:13,364 [10] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:13,549 [7] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:37:13,724 [10] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:42:07,461 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:07 +08:00
+
+2017-11-10 09:42:07,472 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.T_AdminLogs','dbo.T_AdminUsers','dbo.T_Cities','dbo.T_Roles','dbo.T_Permissions','dbo.T_IdNames','dbo.T_Settings','dbo.T_Users','dbo.T_RolePermissions','dbo.T_AdminUserRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2017-11-10 09:42:07,472 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:07,472 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:07 +08:00
+
+2017-11-10 09:42:07,482 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 8 ms with result: 0
+
+2017-11-10 09:42:07,482 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:07,482 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:42:07 +08:00
+
+2017-11-10 09:42:07,630 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:07 +08:00
+
+2017-11-10 09:42:08,551 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-10 09:42:08,551 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,553 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:42:08,554 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,556 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 2 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2017-11-10 09:42:08,556 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,557 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,558 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,559 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2017-11-10 09:42:08,559 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,559 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,561 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 1 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2017-11-10 09:42:08,561 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,561 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,609 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,610 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-10 09:42:08,610 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,610 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:42:08,610 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,612 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 1 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2017-11-10 09:42:08,612 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,612 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,612 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,612 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2017-11-10 09:42:08,612 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,612 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:08,613 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 1 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2017-11-10 09:42:08,613 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:08,614 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:42:08 +08:00
+
+2017-11-10 09:42:09,155 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,158 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Started transaction at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,163 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_AdminLogs] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [AdminUserId] [bigint] NOT NULL,
+    [Message] [nvarchar](max) NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_AdminLogs] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,164 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,164 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,199 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 34 ms with result: -1
+
+2017-11-10 09:42:09,199 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,199 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_AdminUsers] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [Name] [nvarchar](50) NOT NULL,
+    [PhoneNum] [varchar](20) NOT NULL,
+    [PasswordSalt] [varchar](20) NOT NULL,
+    [PasswordHash] [varchar](100) NOT NULL,
+    [Email] [varchar](30) NOT NULL,
+    [CityId] [bigint],
+    [LoginErrorTimes] [int] NOT NULL,
+    [LastLoginErrorTime] [datetime],
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_AdminUsers] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,199 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,199 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,202 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: -1
+
+2017-11-10 09:42:09,202 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,202 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_Cities] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [Name] [nvarchar](50) NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_Cities] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,202 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,202 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,204 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,204 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,204 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_Roles] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [Name] [nvarchar](50) NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_Roles] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,204 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,204 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,206 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,206 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,206 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_Permissions] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [Description] [nvarchar](1024) NOT NULL,
+    [Name] [nvarchar](50) NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_Permissions] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,206 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,206 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,209 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: -1
+
+2017-11-10 09:42:09,209 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,209 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_IdNames] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [TypeName] [nvarchar](1024) NOT NULL,
+    [Name] [nvarchar](1024) NOT NULL,
+    [ImgUrl] [nvarchar](100),
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_IdNames] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,209 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,209 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,211 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,211 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,211 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_Settings] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [Name] [nvarchar](1024) NOT NULL,
+    [Value] [nvarchar](1024) NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_Settings] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,211 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,211 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,212 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,212 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,212 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_Users] (
+    [Id] [bigint] NOT NULL IDENTITY,
+    [Name] [nvarchar](50) NOT NULL,
+    [NickName] [nvarchar](100) NOT NULL,
+    [PhotoUrl] [nvarchar](1024) NOT NULL,
+    [Mobile] [nvarchar](100) NOT NULL,
+    [Gender] [bit] NOT NULL,
+    [Address] [nvarchar](1024) NOT NULL,
+    [PasswordSalt] [nvarchar](max),
+    [PasswordHash] [nvarchar](max),
+    [LoginErrorTimes] [int] NOT NULL,
+    [LastLoginErrorDateTime] [datetime],
+    [IsDeleted] [bit] NOT NULL,
+    [CreateDateTime] [datetime] NOT NULL,
+    CONSTRAINT [PK_dbo.T_Users] PRIMARY KEY ([Id])
+)
+2017-11-10 09:42:09,213 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,213 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,215 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: -1
+
+2017-11-10 09:42:09,215 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,215 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_RolePermissions] (
+    [RoleId] [bigint] NOT NULL,
+    [PermissionId] [bigint] NOT NULL,
+    CONSTRAINT [PK_dbo.T_RolePermissions] PRIMARY KEY ([RoleId], [PermissionId])
+)
+2017-11-10 09:42:09,215 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,215 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,216 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,216 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,216 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[T_AdminUserRoles] (
+    [AdminUserId] [bigint] NOT NULL,
+    [RoleId] [bigint] NOT NULL,
+    CONSTRAINT [PK_dbo.T_AdminUserRoles] PRIMARY KEY ([AdminUserId], [RoleId])
+)
+2017-11-10 09:42:09,216 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,216 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,218 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,218 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,218 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE INDEX [IX_AdminUserId] ON [dbo].[T_AdminLogs]([AdminUserId])
+2017-11-10 09:42:09,218 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,218 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,220 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,220 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,220 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE INDEX [IX_CityId] ON [dbo].[T_AdminUsers]([CityId])
+2017-11-10 09:42:09,220 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,220 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,221 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,221 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,221 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE INDEX [IX_RoleId] ON [dbo].[T_RolePermissions]([RoleId])
+2017-11-10 09:42:09,221 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,221 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,223 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,223 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,223 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE INDEX [IX_PermissionId] ON [dbo].[T_RolePermissions]([PermissionId])
+2017-11-10 09:42:09,223 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,223 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,224 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,224 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,224 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE INDEX [IX_AdminUserId] ON [dbo].[T_AdminUserRoles]([AdminUserId])
+2017-11-10 09:42:09,224 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,224 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,226 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,226 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,226 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE INDEX [IX_RoleId] ON [dbo].[T_AdminUserRoles]([RoleId])
+2017-11-10 09:42:09,226 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,226 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,227 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,227 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,227 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：ALTER TABLE [dbo].[T_AdminLogs] ADD CONSTRAINT [FK_dbo.T_AdminLogs_dbo.T_AdminUsers_AdminUserId] FOREIGN KEY ([AdminUserId]) REFERENCES [dbo].[T_AdminUsers] ([Id])
+2017-11-10 09:42:09,227 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,227 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,230 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: -1
+
+2017-11-10 09:42:09,230 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,230 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：ALTER TABLE [dbo].[T_AdminUsers] ADD CONSTRAINT [FK_dbo.T_AdminUsers_dbo.T_Cities_CityId] FOREIGN KEY ([CityId]) REFERENCES [dbo].[T_Cities] ([Id])
+2017-11-10 09:42:09,230 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,230 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,232 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,232 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,232 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：ALTER TABLE [dbo].[T_RolePermissions] ADD CONSTRAINT [FK_dbo.T_RolePermissions_dbo.T_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [dbo].[T_Roles] ([Id]) ON DELETE CASCADE
+2017-11-10 09:42:09,232 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,232 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,234 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,234 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,234 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：ALTER TABLE [dbo].[T_RolePermissions] ADD CONSTRAINT [FK_dbo.T_RolePermissions_dbo.T_Permissions_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [dbo].[T_Permissions] ([Id]) ON DELETE CASCADE
+2017-11-10 09:42:09,234 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,234 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,235 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,235 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,235 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：ALTER TABLE [dbo].[T_AdminUserRoles] ADD CONSTRAINT [FK_dbo.T_AdminUserRoles_dbo.T_AdminUsers_AdminUserId] FOREIGN KEY ([AdminUserId]) REFERENCES [dbo].[T_AdminUsers] ([Id]) ON DELETE CASCADE
+2017-11-10 09:42:09,235 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,235 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,237 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: -1
+
+2017-11-10 09:42:09,237 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,237 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：ALTER TABLE [dbo].[T_AdminUserRoles] ADD CONSTRAINT [FK_dbo.T_AdminUserRoles_dbo.T_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [dbo].[T_Roles] ([Id]) ON DELETE CASCADE
+2017-11-10 09:42:09,237 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,237 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,239 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: -1
+
+2017-11-10 09:42:09,239 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,239 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：CREATE TABLE [dbo].[__MigrationHistory] (
+    [MigrationId] [nvarchar](150) NOT NULL,
+    [ContextKey] [nvarchar](300) NOT NULL,
+    [Model] [varbinary](max) NOT NULL,
+    [ProductVersion] [nvarchar](32) NOT NULL,
+    CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY ([MigrationId], [ContextKey])
+)
+2017-11-10 09:42:09,239 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,239 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,244 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 4 ms with result: -1
+
+2017-11-10 09:42:09,244 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,244 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：INSERT [dbo].[__MigrationHistory]([MigrationId], [ContextKey], [Model], [ProductVersion])
+VALUES (N'201711100142089_InitialCreate', N'Chat.Service.MyDbContext',  0x1F8B0800000000000400ED5D596F23B9117E0F90FFD0E8A72498B564CF6EB031A45D78653B31323E30F22CF26650DDB4DCD83E946ECAB1B1C82FCB437E52FE4248F5C5FBE8D6392B2C660762935564F1AB22592CD6FCEF3FFF1DFDF896C4DE2BCC8B284BC7FEE9C9D0F7601A646194CEC7FE123D7FF3BDFFE30FBFFFDDE82A4CDEBC9FEB7A1F493DDC322DC6FE0B428BF3C1A0085E60028A93240AF2ACC89ED149902503106683B3E1F02F83D3D301C4247C4CCBF3469F97298A12B8FA817F4EB234800BB404F16D16C2B8A8CAF197E98AAA770712582C4000C7FEE405A09329CC5FA300FADE451C01DC87298C9F7D0FA4698600C23D3CFF52C029CAB3743E5DE002103FBE2F20AEF70CE202563D3F6FABDB0E6278460631681BD6A4826581B2C491E0E9C74A2A03BE7927D9FA8DD4B0DCAEB07CD13B19F54A7663FF224CA2F453362F3FF81ECFF27C12E7A43A2BE013B6D9078FFEF8A1C103860DF90F7F5EC66899C3710A972807F107EF61398BA3E0EFF0FD31FB05A6E37419C7743F714FF137A600173DE4D902E6E8FD337CAE7A7F13FADE806D37E01B36CDA836E5886E52F4E76F7DEF0E3307B3183630A0463F45590EFF0A53980304C3078010CC53420356F21A6879ADC48431979B99EA09DDC2A200735813C118C68AE87BB7E0ED134CE7E805D7006FBE771DBDC1B02EA9087F4923ACB7B811CA97D099F14D71096388C75EB3FE29CB6208526742931C62115EE23F8F58C36B6AED6F13B93BF01ACD5793A292B1EF7D86F1AA46F1122D4AE5E780FA4455BECEB3E473160B3AD0D6799A66CB9C5893C7CC50F111E47388D83E8F06ADB299559090E9A2836DBBA3122A7891FF6B14E7BBE126F4E6E1254BE1DD32D1303E3331AE7EBB720645F1AF2C0FA72046BBE3FE3750BC68B89F0E37C3FE2A0151ACE1FB71336C27188602A4F54DB01989D2AB3CCF7262FF0AAAEDC73367FE9F40815882A2813D743B3F59A9BACAC4B776F0A9ACC89977EEBBDCB4F39564665DD74542AAB0EA635553DDC95505632FCB5ABD561F3250C785A76D725C7314BC76B2E6EC870E5B238F80D711796D9323F28EC8EB744A58AB7DAE2DAFDE3ED756DCB6AF0F304FA282C059DED9560B9E98AA6D6FE53584E54451ADD77AD21272D46DBEE151C315BC2E6111E4D1A274086976D867DF6E42D58FF6C571EBD7595B79E36250EA4EDA7A1392BF1D35956E74D452052FC2C7A02B3B52D14DB1BD49E65F72DDE1DB7CE82FF91E822DB0D6B02944080BC251C59856471DDB2FA0FF0CE2E54E14ECB090DFC1A57DF466EFE7F9EE2E0A7E312ADBA6FCE828332D2B9B51B7DB6C16C53B1832C646482EA8FAE9F84518E6B028762037CB0B08DB0BCBB5DC37AC87D9067DF66A637CC86BC245516441B4B27BF2CBCED259CF76EC2A0D3D1BCF7D39D712EF0D9E79BC38440BBC1CE05F63FF4FC2D80D2C9A9357CB827693B3D4872727A70203BC9EC09C1874104FF0210DAF50518AC4C5274A836801628BBE706D2D972E32330D17FECB255C104B93220B69DBB0AF2FC1C42E349CB875D524A5D18002901E578A53B66ADA4D0EB276E2692FB53DAC4C47FA96BEE82FD372711089DCA769AB08DC05D446948D73A27610BAAB38649120DADE6AC34238A15061548E32D1C594D88B7E9D6648D3A36D99228DE86DBAC0C45E6DC126957DC56D106E01F37A13F97E392365F00D494E41B87BD541A8A876203C4C08CD29441C86F1D6A35D70151014102721555D88C869D1403310C3A63F823242F4B269A05179500512B42D309060FCAB0221D1D21AC8957E4E1929D66D6A2053F972647438E79081906AB6341345615532F54CC00455551758C12B92E56EAD190B8B3C412F2D776614B91A7BFCA19D1DBA8558548E7A5130369B0D97ED06359A4A0B3472316C2D285ACC287A8B4771456A868D64DFE1B0F3E80F1C769761927557C948634C15C231EE42DCF621BC88CA05C22421DD9EC34AE81A49D5E7C166356CBE8D0665E87E55301A2862FC47B760B12056B36D599578D32AE0FF9BA97B3C7C52D2180485242CBEE96DC30965399843EE2B668D7B7A1DE505C2C7633003E4343C0913A11ABDF62B2C7BCD895FDEC5B9AB6D7EDDA2BE5FD206E64B364A55FB6B3CB0846CB856EE48098254043CF2F802C42097F8402759BC4C52F50E50DD9AD9ACD164B4BB3835BD265E9EA6D514DAD3A1DC2BCCE0DA627B5ABC878526C87F13A98E06DCCC093B5A01239CB6F2A0B38764A9FEFD30496D523A8252476133A82C5DDE74FBB2C49E421B064E53694B1D28315E55861AF3C59D62E93A95512CBFD853ACA2AF695255918396545E24463B149E253515C1534B93133E3AD095045A33A425DF8FD6C6DADA547BF9CE96863A6EBA1B195DE37DB52FBF79C4A80E179680A19C0BEE80D1353E02664F01A33FB05BC2467025B983C74C62331062A2476932CC872324B708C9DACFD8198E8C3BD21D8AFAE69B81611B1E49D3684BB70AC02A7091194D557684B1358C1B3F77671CB3EE7077201BDAEFEB9A5CC513D224AAA223FAACD1D7D347D1CB3D71889E8936A48FA1D2943AF938AA103DCEC751953A78EDAA883BC6695795D953A9E3E7682A75998B47B28A9F63BD9155E1D7E5B7D98EB7446E5054758EA64FFCCCDEB7880761D9EDA5F1E0CB56579F714D071672BF247914A5BEF614C56765280951794807D581CE7D53C6B858F5ADA5E4D643FE2ACD79F61597B3760EF9BAB6C1EBAE767748C4ABBDD4ED285D43448FD3F46B2F89B7864CF3BC0B37A97C95C6E63437AADCCDE9A8BAC5B448A1C65F6B96557C0FF7FD350AC995E6F4BD40303921154EA6FF8C277184AD5C5BE116A4D1332C50F904C33F1B0EBFE772B1ED4F5EB4415184B1E416589D1C8D9DBA2DBC269945785D449562EA9E8C38BF0D10D292D5AC8410B51BBC717A1BFBBFAE9A9E7B37FF78A25A7FF0EE733CEDE7DED0FB77DF9C66E92BC8831790FF21016F7FECFF366A16A135C5C087F8375AE3BB28ED65E621C3AA3C38B0B3293C4EEA99474B46F6AC0359C91B953593A65FA4C848AF5E0FF5496F2523FAD19D269BBBCAC10E940D5526A0C77B9A5507D696014BA6BE9DDE19EFAF4551DD5C1E8DC9C14EA96AB37D9CD2839D52FD01FA9027569291463ABFE58BD3236A5C50A3BE9C3B64C4F0D951B608974E54D9DC260ABAC3AF788BA1B95A3B641C6E062D4C82903582F070E0723CDE764BAC6163593AE5CD581F0AD9B4186BEB309BF5A20BB2B98C17EB1BB1CC59A0F456754D5AD18BE0C60ED23676E22B5BE96C6FBCEC4C99F24E40ACAABB3C32DBBF9A91B31BA76CD8CB93CBF6DCB9077473877E7475B8F63B5AEB2FA16C01609ECFFDF0D16F0F551B4A21433F40EF9ECE45F9B8B45F668C4EE919B46F1C6CF6525E8FA430879A08467AF32C7D546D9987E454B803BF4FCB25CEBB08CA2BCD092802108A2A466E83CDFD10161F79BFC46A1B019DF69DC4DA41671F74E2B6E6EE107FB2C8026ADEB5B36D9AE3DF18163B6162B78834C5056D0197F60139EB59ED36044AF55E4ED337971C5EEBC8DCB68385D9D1406F3B39922D1E0D66725F96E9FD44E17617E97E00DCE91ADD2D155C573B68384C5029BB7A24943B28B3A5CB4FB27B5BC5055CD6871A21E70B3FAB55DCAC3C76D09CAFAD0CB61CFBE12CC34828CFC98F4FCA843EEA846E7A8E740D0D4B79C61F9E277D8C16D8D11FE59C14A9BB782EB4E114B8D01FE55CE4699E7826E2E65560255691337CD0E4DDE2D9B299E40496EC6739BB264D9D8115976C4EE0C57D97336B93D919B869916806A11DFE74670F0D526C2792B470994CCD826F5246338C9B06723C6F33D39FA8F67C020DD14E6B16538A8429F1E4BAB2FA35B9D36C93FB299E2E28F6A6D488D4E92BAD0FDB526A62B54D89AA4E0A672D2AF92B0AADB7831AA269607B27367DFE42CBFC88667CF5501BDBB38B9AA22609EBBA04A68699CB5B9DB529E49E8869C36925D7852761A32BCB25682F1287FC91E2EB26BCF55FA6E446B8FC75098B68DE9218619A290C984D7F53E7267DCEEA0308D7A3BA8AF0880581109F082E72143D8300E1CF01C4F685FCFB13AB302012B43F83E14D7ABF448B25C24386C92C668441CE303AFEAB24996C9F47F7AB68CB621D43C0DD8CC825FA7DFAD3328AC3A6DFD7924B3A05097238AA226DC85C221271337F6F28DD65A925A14A7CCD99EE11268B18132BEED32978855DFA8661FC09CE41F05E3F525313314F042BF6D16504E639488A8A46DB1EFFC4180E93B71FFE0F2AE7C45F4D850000 , N'6.1.3-40302')
+
+2017-11-10 09:42:09,244 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,248 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 4 ms with result: 1
+
+2017-11-10 09:42:09,248 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,251 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Committed transaction at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,263 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,368 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-10 09:42:09,368 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,368 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '17779896652' (Type = AnsiString, Size = 8000)
+
+2017-11-10 09:42:09,368 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,373 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 4 ms with result: SqlDataReader
+
+2017-11-10 09:42:09,373 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,378 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,427 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,429 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Started transaction at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：INSERT [dbo].[T_AdminUsers]([Name], [PhoneNum], [PasswordSalt], [PasswordHash], [Email], [CityId], [LoginErrorTimes], [LastLoginErrorTime], [IsDeleted], [CreateDateTime])
+VALUES (@0, @1, @2, @3, @4, @5, @6, NULL, @7, @8)
+SELECT [Id]
+FROM [dbo].[T_AdminUsers]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @0: '32' (Type = String, Size = 50)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @1: '17779896652' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @2: '1234243' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @3: '1234243' (Type = AnsiString, Size = 100)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @4: '123@qq.com' (Type = AnsiString, Size = 30)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @5: '3' (Type = Int64)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @6: '0' (Type = Int32)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @7: 'False' (Type = Boolean)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @8: '2017/11/10 9:42:06' (Type = DateTime2)
+
+2017-11-10 09:42:09,438 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,443 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 4 ms with error: INSERT 语句与 FOREIGN KEY 约束"FK_dbo.T_AdminUsers_dbo.T_Cities_CityId"冲突。该冲突发生于数据库"NN17102350"，表"dbo.T_Cities", column 'Id'。
+语句已终止。
+
+2017-11-10 09:42:09,443 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:42:09,447 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:42:09 +08:00
+
+2017-11-10 09:42:09,450 [19] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: INSERT 语句与 FOREIGN KEY 约束"FK_dbo.T_AdminUsers_dbo.T_Cities_CityId"冲突。该冲突发生于数据库"NN17102350"，表"dbo.T_Cities", column 'Id'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   在 System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 Chat.Service.AdminUserService.AddAdminUser(String name, String phoneNum, String password, String email, Nullable`1 cityId) 位置 F:\1711\AdminChat\Chat.Service\Service\AdminUserService.cs:行号 36
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:43:45,789 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:43:45 +08:00
+
+2017-11-10 09:43:45,799 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.T_AdminLogs','dbo.T_AdminUsers','dbo.T_Cities','dbo.T_Roles','dbo.T_Permissions','dbo.T_IdNames','dbo.T_Settings','dbo.T_Users','dbo.T_RolePermissions','dbo.T_AdminUserRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2017-11-10 09:43:45,799 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:45,799 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:43:45 +08:00
+
+2017-11-10 09:43:45,801 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: 10
+
+2017-11-10 09:43:45,801 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:45,802 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:43:45 +08:00
+
+2017-11-10 09:43:45,891 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:43:45 +08:00
+
+2017-11-10 09:43:46,717 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-10 09:43:46,717 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:46,718 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:43:46,718 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:46,723 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 4 ms with result: SqlDataReader
+
+2017-11-10 09:43:46,723 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:46,729 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:46,737 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:46,798 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+2017-11-10 09:43:46,798 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:46,798 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:43:46,798 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:46,803 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 4 ms with result: SqlDataReader
+
+2017-11-10 09:43:46,803 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:46,807 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:46,839 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:46,942 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-10 09:43:46,942 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:46,942 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '17779896652' (Type = AnsiString, Size = 8000)
+
+2017-11-10 09:43:46,942 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:46,944 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-10 09:43:46,945 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:46,948 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:43:46 +08:00
+
+2017-11-10 09:43:47,067 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:43:47 +08:00
+
+2017-11-10 09:43:47,070 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Started transaction at 2017/11/10 9:43:47 +08:00
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：INSERT [dbo].[T_AdminUsers]([Name], [PhoneNum], [PasswordSalt], [PasswordHash], [Email], [CityId], [LoginErrorTimes], [LastLoginErrorTime], [IsDeleted], [CreateDateTime])
+VALUES (@0, @1, @2, @3, @4, @5, @6, NULL, @7, @8)
+SELECT [Id]
+FROM [dbo].[T_AdminUsers]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @0: '32' (Type = String, Size = 50)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @1: '17779896652' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @2: '1234243' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @3: '1234243' (Type = AnsiString, Size = 100)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @4: '123@qq.com' (Type = AnsiString, Size = 30)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @5: '1' (Type = Int64)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @6: '0' (Type = Int32)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @7: 'False' (Type = Boolean)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @8: '2017/11/10 9:43:44' (Type = DateTime2)
+
+2017-11-10 09:43:47,176 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:43:47 +08:00
+
+2017-11-10 09:43:47,178 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 2 ms with error: INSERT 语句与 FOREIGN KEY 约束"FK_dbo.T_AdminUsers_dbo.T_Cities_CityId"冲突。该冲突发生于数据库"NN17102350"，表"dbo.T_Cities", column 'Id'。
+语句已终止。
+
+2017-11-10 09:43:47,178 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:47,183 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:43:47 +08:00
+
+2017-11-10 09:43:47,189 [19] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: INSERT 语句与 FOREIGN KEY 约束"FK_dbo.T_AdminUsers_dbo.T_Cities_CityId"冲突。该冲突发生于数据库"NN17102350"，表"dbo.T_Cities", column 'Id'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   在 System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 Chat.Service.AdminUserService.AddAdminUser(String name, String phoneNum, String password, String email, Nullable`1 cityId) 位置 F:\1711\AdminChat\Chat.Service\Service\AdminUserService.cs:行号 36
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:43:52,756 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:43:52 +08:00
+
+2017-11-10 09:43:52,757 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-10 09:43:52,757 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:52,757 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '17779896652' (Type = AnsiString, Size = 8000)
+
+2017-11-10 09:43:52,757 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:43:52 +08:00
+
+2017-11-10 09:43:52,758 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-10 09:43:52,758 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:52,758 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:43:52 +08:00
+
+2017-11-10 09:43:52,759 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:43:52 +08:00
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Started transaction at 2017/11/10 9:43:52 +08:00
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：INSERT [dbo].[T_AdminUsers]([Name], [PhoneNum], [PasswordSalt], [PasswordHash], [Email], [CityId], [LoginErrorTimes], [LastLoginErrorTime], [IsDeleted], [CreateDateTime])
+VALUES (@0, @1, @2, @3, @4, @5, @6, NULL, @7, @8)
+SELECT [Id]
+FROM [dbo].[T_AdminUsers]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @0: '32' (Type = String, Size = 50)
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @1: '17779896652' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @2: '1234243' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @3: '1234243' (Type = AnsiString, Size = 100)
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @4: '123@qq.com' (Type = AnsiString, Size = 30)
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @5: '1' (Type = Int64)
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @6: '0' (Type = Int32)
+
+2017-11-10 09:43:52,760 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @7: 'False' (Type = Boolean)
+
+2017-11-10 09:43:52,761 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @8: '2017/11/10 9:43:52' (Type = DateTime2)
+
+2017-11-10 09:43:52,761 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:43:52 +08:00
+
+2017-11-10 09:43:52,762 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 1 ms with error: INSERT 语句与 FOREIGN KEY 约束"FK_dbo.T_AdminUsers_dbo.T_Cities_CityId"冲突。该冲突发生于数据库"NN17102350"，表"dbo.T_Cities", column 'Id'。
+语句已终止。
+
+2017-11-10 09:43:52,762 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:43:52,763 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:43:52 +08:00
+
+2017-11-10 09:43:52,764 [19] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: INSERT 语句与 FOREIGN KEY 约束"FK_dbo.T_AdminUsers_dbo.T_Cities_CityId"冲突。该冲突发生于数据库"NN17102350"，表"dbo.T_Cities", column 'Id'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   在 System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 Chat.Service.AdminUserService.AddAdminUser(String name, String phoneNum, String password, String email, Nullable`1 cityId) 位置 F:\1711\AdminChat\Chat.Service\Service\AdminUserService.cs:行号 36
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:44:28,519 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,529 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.T_AdminLogs','dbo.T_AdminUsers','dbo.T_Cities','dbo.T_Roles','dbo.T_Permissions','dbo.T_IdNames','dbo.T_Settings','dbo.T_Users','dbo.T_RolePermissions','dbo.T_AdminUserRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2017-11-10 09:44:28,529 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,529 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,530 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: 10
+
+2017-11-10 09:44:28,530 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,530 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,558 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,640 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-10 09:44:28,640 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,640 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:44:28,640 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,641 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-10 09:44:28,641 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,646 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,648 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,654 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+2017-11-10 09:44:28,654 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,654 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:44:28,654 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,656 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-10 09:44:28,656 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,657 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,665 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,690 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Cities] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-10 09:44:28,690 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,690 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '南阳' (Type = String, Size = 4000)
+
+2017-11-10 09:44:28,690 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,695 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 3 ms with result: SqlDataReader
+
+2017-11-10 09:44:28,695 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,698 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,703 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,704 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Started transaction at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,708 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：INSERT [dbo].[T_Cities]([Name], [IsDeleted], [CreateDateTime])
+VALUES (@0, @1, @2)
+SELECT [Id]
+FROM [dbo].[T_Cities]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-11-10 09:44:28,708 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,708 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @0: '南阳' (Type = String, Size = 50)
+
+2017-11-10 09:44:28,708 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @1: 'False' (Type = Boolean)
+
+2017-11-10 09:44:28,709 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @2: '2017/11/10 9:44:28' (Type = DateTime2)
+
+2017-11-10 09:44:28,709 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,712 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 3 ms with result: SqlDataReader
+
+2017-11-10 09:44:28,712 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:44:28,714 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Committed transaction at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:44:28,714 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:44:28 +08:00
+
+2017-11-10 09:45:04,642 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:45:04 +08:00
+
+2017-11-10 09:45:04,654 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.T_AdminLogs','dbo.T_AdminUsers','dbo.T_Cities','dbo.T_Roles','dbo.T_Permissions','dbo.T_IdNames','dbo.T_Settings','dbo.T_Users','dbo.T_RolePermissions','dbo.T_AdminUserRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2017-11-10 09:45:04,654 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:04,654 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:45:04 +08:00
+
+2017-11-10 09:45:04,657 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: 10
+
+2017-11-10 09:45:04,657 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:04,657 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:45:04 +08:00
+
+2017-11-10 09:45:04,754 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:45:04 +08:00
+
+2017-11-10 09:45:05,607 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-10 09:45:05,607 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:05,608 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:45:05,608 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,610 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-10 09:45:05,610 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:05,616 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,624 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,684 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+2017-11-10 09:45:05,684 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:05,684 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:45:05,684 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,687 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-10 09:45:05,687 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:05,691 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,720 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,827 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-10 09:45:05,827 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:05,827 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '17779896652' (Type = AnsiString, Size = 8000)
+
+2017-11-10 09:45:05,827 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,828 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-10 09:45:05,828 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:05,832 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,941 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:05,944 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Started transaction at 2017/11/10 9:45:05 +08:00
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：INSERT [dbo].[T_AdminUsers]([Name], [PhoneNum], [PasswordSalt], [PasswordHash], [Email], [CityId], [LoginErrorTimes], [LastLoginErrorTime], [IsDeleted], [CreateDateTime])
+VALUES (@0, @1, @2, @3, @4, @5, @6, NULL, @7, @8)
+SELECT [Id]
+FROM [dbo].[T_AdminUsers]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @0: '32' (Type = String, Size = 50)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @1: '17779896652' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @2: '1234243' (Type = AnsiString, Size = 20)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @3: '1234243' (Type = AnsiString, Size = 100)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @4: '123@qq.com' (Type = AnsiString, Size = 30)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @5: '1' (Type = Int64)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @6: '0' (Type = Int32)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @7: 'False' (Type = Boolean)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- @8: '2017/11/10 9:45:03' (Type = DateTime2)
+
+2017-11-10 09:45:06,050 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:45:06 +08:00
+
+2017-11-10 09:45:06,052 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-10 09:45:06,052 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:45:06,065 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Committed transaction at 2017/11/10 9:45:06 +08:00
+
+2017-11-10 09:45:06,065 [17] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:45:06 +08:00
+
+2017-11-10 09:46:53,899 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:46:53 +08:00
+
+2017-11-10 09:46:53,900 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-10 09:46:53,900 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:46:53,900 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '17779896652' (Type = AnsiString, Size = 8000)
+
+2017-11-10 09:46:53,900 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:46:53 +08:00
+
+2017-11-10 09:46:53,906 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 5 ms with result: SqlDataReader
+
+2017-11-10 09:46:53,906 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:46:53,906 [20] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:46:53 +08:00
+
+2017-11-10 09:46:53,907 [20] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.ArgumentException: 手机号:17779896652已经存在
+   在 Chat.Service.AdminUserService.AddAdminUser(String name, String phoneNum, String password, String email, Nullable`1 cityId) 位置 F:\1711\AdminChat\Chat.Service\Service\AdminUserService.cs:行号 31
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:47:20,108 [20] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2017-11-10 09:56:35,000 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:56:34 +08:00
+
+2017-11-10 09:56:35,010 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.T_AdminLogs','dbo.T_AdminUsers','dbo.T_Cities','dbo.T_Roles','dbo.T_Permissions','dbo.T_IdNames','dbo.T_Settings','dbo.T_Users','dbo.T_RolePermissions','dbo.T_AdminUserRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2017-11-10 09:56:35,010 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:35,010 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:56:35 +08:00
+
+2017-11-10 09:56:35,013 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: 10
+
+2017-11-10 09:56:35,013 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:35,013 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:56:35 +08:00
+
+2017-11-10 09:56:35,104 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:56:35 +08:00
+
+2017-11-10 09:56:35,940 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-10 09:56:35,940 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:35,942 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:56:35,942 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:56:35 +08:00
+
+2017-11-10 09:56:35,944 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-10 09:56:35,944 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:35,949 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:56:35 +08:00
+
+2017-11-10 09:56:35,958 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:56:35 +08:00
+
+2017-11-10 09:56:36,018 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+2017-11-10 09:56:36,018 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:36,018 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-10 09:56:36,018 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:56:36 +08:00
+
+2017-11-10 09:56:36,021 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-10 09:56:36,021 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:36,025 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:56:36 +08:00
+
+2017-11-10 09:56:36,278 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/10 9:56:36 +08:00
+
+2017-11-10 09:56:36,381 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2017-11-10 09:56:36,381 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:36,381 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '17779896652' (Type = AnsiString, Size = 8000)
+
+2017-11-10 09:56:36,381 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/10 9:56:36 +08:00
+
+2017-11-10 09:56:36,383 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-10 09:56:36,383 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-10 09:56:36,386 [21] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/10 9:56:36 +08:00
+
+2017-11-10 09:56:36,388 [21] ERROR Chat.AdminWeb.App_Start.SYSExceptionFilter - 出现未处理异常：System.ArgumentException: 手机号:17779896652已经存在
+   在 Chat.Service.Service.AdminUserService.AddAdminUser(String name, String phoneNum, String password, String email, Nullable`1 cityId) 位置 F:\1711\AdminChat\Chat.Service\Service\AdminUserService.cs:行号 32
+   在 Chat.AdminWeb.Controllers.MainController.Index() 位置 F:\1711\AdminChat\Chat.AdminWeb\Controllers\MainController.cs:行号 19
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
