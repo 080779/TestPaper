@@ -17,7 +17,7 @@
     <header>
         <div class="headerwrapper">
             <div class="header-left">
-                <a href="index.html" class="logo"><img src="~/Picture/logo.png" /></a>
+                <a href="~/testpaper/list" class="logo"><img src="~/Picture/logo.png" /></a>
                 <div class="pull-right">
                     <a href="#" class="menu-collapse">
                         <i class="fa fa-bars"></i>
@@ -106,14 +106,14 @@
                                    @foreach (var paper in Model)
                                    {
                                     <tr>
-                                        <td data-attr="编号">@paper.Id</td>
+                                        <td data-attr="编号">@paper.CreateDateTime.ToString("yyyyMMdd")@paper.Id</td>
                                         <td data-attr="试卷标题">@paper.TestTitle</td>
                                         <td data-attr="考题数">@paper.ExercisesCount</td>
                                         <td data-attr="创建时间">@paper.CreateDateTime</td>
                                         <td data-attr="操作">
                                             <a href="~/testpaper/editpaper?id=@paper.Id" class="btn btn-primary btn-sm">编辑</a>
                                             <a href="~/testpaper/addeditexe?testPaperId=@paper.Id" class="btn btn-primary btn-sm">编辑考题</a>
-                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-sm">删除</a>
+                                            <button data-toggle="modal" data-target="#myModal" value="@paper.Id" class="btn btn-danger btn-sm Jsdel">删除</button>
                                         </td>
                                     </tr>
                                    }
@@ -134,11 +134,11 @@
                     <h4 class="modal-title">提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p>确定删除该试题？</p>
+                    <p>确定删除该试卷吗？</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="sureDel">确认</button>
+                    <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" value="" id="sureDel">确认</button>
                 </div>
             </div>
         </div>
@@ -151,7 +151,34 @@
     <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
     <script type="text/javascript">
         	$(function(){
-        		jQuery('.datepicker').datepicker({ altFormat: "yyyy-mm-dd" });
+        	    jQuery('.datepicker').datepicker({ altFormat: "yyyy-mm-dd" });
+        	    $('.Jsdel').click(function () {
+        	        $("#sureDel").val($(this).val());
+        	    })
+
+        	    $("#sureDel").click(function () {
+        	        var id=$(this).val();
+        	        $.ajax({
+        	            url: "/testpaper/delpaper", type: "post", data: {id:id},
+        	            success: function (result) {
+        	                if(result.status=="error")
+        	                {
+        	                    alert(result.errorMsg);
+        	                    $("#cancel").click();
+        	                }
+        	                else if(result.status=="success")
+        	                {
+        	                    $("#cancel").click();
+        	                    window.location.reload();
+        	                }
+        	                else
+        	                {
+        	                    alert("未知错误");
+        	                }
+        	            },
+        	            error: function () { alert("网络错误")}
+        	        });
+        	    });
         	})
     </script>
 </body>

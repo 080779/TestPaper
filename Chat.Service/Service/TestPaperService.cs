@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace Chat.Service.Service
 {
-    class TestPaperService : ITestPaperService
+    public class TestPaperService : ITestPaperService
     {
         public long AddNew(string testTitle, long exercisesCount)
         {
@@ -22,6 +22,21 @@ namespace Chat.Service.Service
                 dbc.TestPapers.Add(entity);
                 dbc.SaveChanges();
                 return entity.Id;
+            }
+        }
+
+        public bool Delete(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<TestPaperEntity> cs = new CommonService<TestPaperEntity>(dbc);
+                var exe = cs.GetAll().SingleOrDefault(e => e.Id == id);
+                if(exe==null)
+                {
+                    return false;
+                }
+                cs.MarkDeleted(id);
+                return true;
             }
         }
 

@@ -109,5 +109,26 @@ namespace Chat.Service.Service
                 return true;
             }
         }
+
+        public bool Update(long id, string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ExercisesEntity> cs = new CommonService<ExercisesEntity>(dbc);
+                var exe= cs.GetAll().Include(e => e.TestPaper).Include(e => e.RightKey).SingleOrDefault(e => e.Id == id);
+                if(exe==null)
+                {
+                    return false;
+                }
+                exe.OptionA = optionA;
+                exe.OptionB = optionB;
+                exe.OptionC = optionC;
+                exe.OptionD = optionD;
+                exe.RightKeyId = rightKeyId;
+                exe.Title = title;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
     }
 }

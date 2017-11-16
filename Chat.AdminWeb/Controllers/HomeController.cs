@@ -35,5 +35,11 @@ namespace Chat.AdminWeb.Controllers
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "用户名密码错误" });
             }
         }
+
+        public ActionResult Logout()
+        {
+            Session["AdminUserId"] = -1;
+            return Redirect("~/home/login");
+        }
     }
 }

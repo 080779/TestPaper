@@ -13,9 +13,14 @@ namespace Chat.Service.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string ImgUrl { get; set; }
         public long StatusId { get; set; }
         public string WeChatUrl { get; set; }
         public virtual IdNameEntity Status { get; set; }
+        public long PaperId { get; set; }
+        public virtual TestPaperEntity Papers { get; set; }
+        public string PrizeName { get; set; }
+        public string PrizeImgUrl { get; set; }
         public virtual ICollection<UserEntity> Users { get; set; } = new List<UserEntity>();
         /// <summary>
         /// 访问数

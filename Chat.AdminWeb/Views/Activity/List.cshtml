@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Chat.DTO.DTO.ActivityDTO[]
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -16,7 +17,7 @@
     <header>
         <div class="headerwrapper">
             <div class="header-left">
-                <a href="index.html" class="logo"><img src="~/Picture/logo.png" /></a>
+                <a href="~/testpaper/list" class="logo"><img src="~/Picture/logo.png" /></a>
                 <div class="pull-right">
                     <a href="#" class="menu-collapse">
                         <i class="fa fa-bars"></i>
@@ -32,7 +33,7 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
+                            <li><a href="logout()"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
                         </ul>
                     </div><!-- btn-group -->
 
@@ -117,42 +118,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td data-attr="期数">20171103 </td>
-                                        <td data-attr="活动名称">环保从我做起</td>
-                                        <td data-attr="状态">已结束</td>
-                                        <td data-attr="页面URL"><a>www.baidu.com</a></td>
-                                        <td data-attr="访问量">12345</td>
-                                        <td data-attr="转发次数">12345</td>
-                                        <td data-attr="答题次数">12345</td>
-                                        <td data-attr="获奖资格人数">12345</td>
-                                        <td data-attr="获奖人数">12345</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                        <td data-attr="操作">
-                                            <a href="~/activity/edit" class="btn btn-primary btn-sm">编辑</a>
-                                            <a href="~/activity/prize" class="btn btn-primary btn-sm">开奖处理</a>
-                                            <a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-default btn-sm">导出开奖结果</a>
-                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-sm">删除</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td data-attr="期数">20171103 </td>
-                                        <td data-attr="活动名称">环保从我做起</td>
-                                        <td data-attr="状态">已结束</td>
-                                        <td data-attr="页面URL"><a>www.baidu.com</a></td>
-                                        <td data-attr="访问量">12345</td>
-                                        <td data-attr="转发次数">12345</td>
-                                        <td data-attr="答题次数">12345</td>
-                                        <td data-attr="获奖资格人数">12345</td>
-                                        <td data-attr="获奖人数">12345</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                        <td data-attr="操作">
-                                            <a href="datiadd.html" class="btn btn-primary btn-sm">编辑</a>
-                                            <a href="prize.html" class="btn btn-primary btn-sm">开奖处理</a>
-                                            <a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-default btn-sm">导出开奖结果</a>
-                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-sm">删除</a>
-                                        </td>
-                                    </tr>
+                                    @foreach (var activity in Model)
+                                    {
+                                        <tr>
+                                            <td data-attr="期数">@activity.CreateDateTime.ToString("yyyyMMdd")@activity.Id</td>
+                                            <td data-attr="活动名称">@activity.Name</td>
+                                            <td data-attr="状态">@activity.StatusName</td>
+                                            <td data-attr="页面URL"><a>www.baidu.com</a></td>
+                                            <td data-attr="访问量">@activity.VisitCount</td>
+                                            <td data-attr="转发次数">@activity.ForwardCount</td>
+                                            <td data-attr="答题次数">@activity.AnswerCount</td>
+                                            <td data-attr="获奖资格人数">@activity.HavePrizeCount</td>
+                                            <td data-attr="获奖人数">@activity.PrizeCount</td>
+                                            <td data-attr="创建时间">@activity.CreateDateTime</td>
+                                            <td data-attr="操作">
+                                                <a href="~/activity/edit?id=@activity.Id" class="btn btn-primary btn-sm">编辑</a>
+                                                <a href="~/activity/prize?id=@activity.Id" class="btn btn-primary btn-sm">开奖处理</a>
+                                                <a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-default btn-sm">导出开奖结果</a>
+                                                <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-sm">删除</a>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -205,6 +191,7 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/custom.js"></script>
     <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
+    <script src="~/Scripts/logout.js"></script>
     <script type="text/javascript">
         	$(function(){
         		jQuery('.datepicker').datepicker();

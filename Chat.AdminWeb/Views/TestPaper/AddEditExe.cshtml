@@ -12,12 +12,20 @@
     <link href="~/Css/select2.css" rel="stylesheet" />
     <link href="~/Css/style.css" rel="stylesheet">
     <link href="~/Css/style.calendar.css" rel="stylesheet">
+    <style>
+        #subjectTit .btn {
+            margin-bottom:5px;
+            margin-right:5px;
+            width: 65px;
+            float:left;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="headerwrapper">
             <div class="header-left">
-                <a href="index.html" class="logo"><img src="~/Picture/logo.png" /></a>
+                <a href="~/testpaper/list" class="logo"><img src="~/Picture/logo.png" /></a>
                 <div class="pull-right">
                     <a href="#" class="menu-collapse">
                         <i class="fa fa-bars"></i>
@@ -66,10 +74,10 @@
             </div><!-- leftpanel -->
 
             <div class="mainpanel">
-                <div class="contentpanel">
+                <div class="contentpanel"  style="min-width:1350px;">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4>添加试题</h4>
+                            <h4>添加编辑考题</h4>
                         </div>
                         <div class="panel-body">
                             <form action="" class="form-horizontal">
@@ -87,20 +95,20 @@
                             <h4>考题设置</h4>
                         </div>
                         <div class="panel-body">
-                            <div class="col-sm-2">
+                            <div class="col-sm-2" style="min-width:230px;">
                                 <div id="subjectTit" style="margin-bottom: 20px;">
                                     <!--<a href="javascript:;" class="btn btn-block btn-primary">第1题</a>-->
                                     <!--<a href="javascript:;" class="btn btn-block btn-default">第2题</a>-->
                                     @for (int i = 1; i <= Model.Exercises.Count(); i++)
                                     {
-                                        <button id="" value="@Model.Exercises[i-1].Id" class="btn btn-block btn-default">第@(i)题</button>
+                                        <button id="" value="@Model.Exercises[i-1].Id" class="btn btn-default">第@(i)题</button>
                                     }
                                 </div>
                             </div>
                             <form id="exForm">
                                 <input type="hidden" name="testPaperId" id="testPaperId" value="@Model.TestPaper.Id" />
                                 <input type="hidden" name="exeId" id="exeId" value="0" />
-                                <div class="col-sm-10">
+                                <div class="col-sm-9">
                                     <div class="col-sm-2">                                        
                                         <a href="javascript:;" id="saveExe" class="btn btn-block btn-default">保存题目</a>
                                         <a href="javascript:;" class="btn btn-block btn-default" data-toggle="modal" data-target="#myModal">删除考题和内容</a>
@@ -242,15 +250,14 @@
                         else if (result.status == "success") {
                             $("#subjectTit").empty();
                             for (var i = 0; i < result.data.paperExeCount; i++) {
-                                $("#subjectTit").append('<button id="" value="' + result.data.exercises[i].id + '" class="btn btn-block btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
+                                $("#subjectTit").append('<button id="" value="' + result.data.exercises[i].id + '" class="btn btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
                             }
                             $("#addsubject").removeAttr("disabled");
                             clear();
-                            alert("添加成功！");
+                            alert("考题添加成功！");
                         }
-                        else if (result.status == "clear") {
-                            alert(result.errorMsg);
-                            clear();
+                        else if (result.status == "ok") {                            
+                            alert("考题编辑成功！");
                         }
                         else {
                             alert("未知错误");
@@ -263,7 +270,7 @@
             //添加考题
             $("#addsubject").click(function () {                   
                 clear();
-                $("#subjectTit").append('<button id="" value="0" class="btn btn-block btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
+                $("#subjectTit").append('<button id="" value="0" class="btn btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
                 $(this).attr("disabled", "disabled");
             })
 
@@ -277,21 +284,19 @@
                     success: function (result) {
                         if (result.status == "error") {
                             alert(result.errorMsg);
+                            $("#cancel").click();
                         }
                         else if (result.status == "success") {
                             $("#subjectTit").empty();
                             for (var i = 0; i < result.data.paperExeCount; i++) {
-                                $("#subjectTit").append('<button id="" value="' + result.data.exercises[i].id + '" class="btn btn-block btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
+                                $("#subjectTit").append('<button id="" value="' + result.data.exercises[i].id + '" class="btn btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
                             }
                             $("#cancel").click();                            
                             clear();
                         }
-                        else if (result.status == "clear") {
-                            alert(result.errorMsg);
-                            clear();
-                        }
                         else {
                             alert("未知错误");
+                            $("#cancel").click();
                         }
                     },
                     error: function () { alert("网络错误"); }

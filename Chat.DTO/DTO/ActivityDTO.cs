@@ -10,8 +10,13 @@ namespace Chat.DTO.DTO
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string ImgUrl { get; set; }
         public long StatusId { get; set; }
         public string StatusName { get; set; }
+        public long PaperId { get; set; }
+        public string PaperTitle { get; set; }
+        public string PrizeName { get; set; }
+        public string PrizeImgUrl { get; set; }
         public string WeChatUrl { get; set; }
         public long VisitCount { get; set; }
         public long ForwardCount { get; set; }
