@@ -21,5 +21,6 @@ namespace Chat.Service.Entities
         public long RightKeyId { get; set; }
         public virtual IdNameEntity RightKey { get; set; }
         public int Point { get; set; }
+        public string Tip { get; set; }
     }
 }

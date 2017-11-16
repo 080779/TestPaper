@@ -12,7 +12,7 @@ namespace Chat.Service.Service
 {
     public class ExercisesService : IExercisesService
     {
-        public long AddNew(string title, long testPaperId, string optionA, string optionB, string optionC, string optionD, long rightKeyId, int point = 0)
+        public long AddNew(string title, long testPaperId, string optionA, string optionB, string optionC, string optionD, long rightKeyId, string tip)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -29,7 +29,8 @@ namespace Chat.Service.Service
                 exercises.OptionC = optionC;
                 exercises.OptionD = optionD;
                 exercises.RightKeyId = rightKeyId;
-                exercises.Point = point;
+                exercises.Point = 0;
+                exercises.Tip = tip;
                 dbc.Exercises.Add(exercises);
                 dbc.SaveChanges();
                 string sql = "update T_TestPapers set ExercisesCount=c.b from T_TestPapers, (select t.Id, COUNT(e.TestPaperId) as b from T_TestPapers t inner join (select TestPaperId from T_Exercises where IsDeleted=0) as e on t.Id=e.TestPaperId group by t.id) as c where T_TestPapers.Id=c.Id";
@@ -51,7 +52,8 @@ namespace Chat.Service.Service
             dto.RightKeyName = entity.RightKey.Name;
             dto.TestPaperId = entity.TestPaperId;
             dto.TestPaperTitle = entity.TestPaper.TestTitle;
-            dto.Title = entity.Title;            
+            dto.Title = entity.Title;
+            dto.Tip = entity.Tip;     
             return dto;
         }
 
@@ -110,7 +112,7 @@ namespace Chat.Service.Service
             }
         }
 
-        public bool Update(long id, string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId)
+        public bool Update(long id, string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId, string tip)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -126,6 +128,7 @@ namespace Chat.Service.Service
                 exe.OptionD = optionD;
                 exe.RightKeyId = rightKeyId;
                 exe.Title = title;
+                exe.Tip = tip;
                 dbc.SaveChanges();
                 return true;
             }

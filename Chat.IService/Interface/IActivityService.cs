@@ -11,5 +11,6 @@ namespace Chat.IService.Interface
     {
         long AddNew(string name,string description, long statusId, string imgUrl,DateTime startTime,DateTime examEndTime,DateTime rewardTime,long paperId,string prizeName,string prizeImgUrl);
         ActivityDTO[] GetAll();
+        ActivityDTO GetNew();
     }
 }

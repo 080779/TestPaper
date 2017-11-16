@@ -72,5 +72,15 @@ namespace Chat.Service.Service
                 return cs.GetAll().Include(a => a.Status).Include(a=>a.Papers).OrderByDescending(a => a.CreateDateTime).ToList().Select(a => ToDTO(a)).ToArray();
             }
         }
+
+        public ActivityDTO GetNew()
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                ActivityEntity entity = cs.GetAll().OrderByDescending(a => a.CreateDateTime).First();
+                return ToDTO(entity);
+            }
+        }
     }
 }

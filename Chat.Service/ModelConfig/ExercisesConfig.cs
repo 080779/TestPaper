@@ -20,6 +20,7 @@ namespace Chat.Service.ModelConfig
             Property(e => e.OptionB).HasMaxLength(1024).IsRequired();
             Property(e => e.OptionC).HasMaxLength(1024).IsRequired();
             Property(e => e.OptionD).HasMaxLength(1024).IsRequired();
+            Property(e => e.Tip).HasMaxLength(1024).IsRequired();
             HasRequired(e => e.RightKey).WithMany().HasForeignKey(e => e.RightKeyId).WillCascadeOnDelete(false);
         }
     }

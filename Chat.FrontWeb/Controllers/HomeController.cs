@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chat.IService.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,18 +9,23 @@ namespace Chat.FrontWeb.Controllers
 {
     public class HomeController : Controller
     {
+        public IActivityService activityService { get; set; }
+        public IExercisesService exeService { get; set; }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Answer()
+        public ActionResult Answer(long paperId)
         {
-            return View();
+            var dto= exeService.GetExercisesByPaperId(paperId);
+            return View(dto);
         }
 
-        public ActionResult Topic()
+        public ActionResult Topic(long paperId)
         {
+            var dto = exeService.GetExercisesByPaperId(paperId);
             return View();
         }
 

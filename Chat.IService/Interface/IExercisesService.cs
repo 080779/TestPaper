@@ -9,11 +9,11 @@ namespace Chat.IService.Interface
 {
     public interface IExercisesService:IServiceSupport
     {
-        long AddNew(string title,long testPaperId,string optionA,string optionB,string optionC,string optionD,long rightKeyId,int point=0);
+        long AddNew(string title,long testPaperId,string optionA,string optionB,string optionC,string optionD,long rightKeyId, string tip);
         long GetPaperExercisesCount(long testPaperId);
         ExercisesDTO GetById(long id);
         ExercisesDTO[] GetExercisesByPaperId(long testPaperId);
         bool DelExercisesById(long id);
-        bool Update(long id,string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId);
+        bool Update(long id,string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId, string tip);
     }
 }

@@ -19,5 +19,8 @@ namespace Chat.Service.Entities
         public string PasswordHash { get; set; }
         public int LoginErrorTimes { get; set; }
         public DateTime? LastLoginErrorDateTime { get; set; }
+        public long PassCount { get; set; }
+        public long WinCount { get; set; }
+        public bool IsWon { get; set; }
     }
 }

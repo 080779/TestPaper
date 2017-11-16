@@ -18,5 +18,6 @@ namespace Chat.DTO.DTO
         public long RightKeyId { get; set; }
         public string RightKeyName { get; set; }
         public int Point { get; set; }
+        public string Tip { get; set; }
     }
 }
