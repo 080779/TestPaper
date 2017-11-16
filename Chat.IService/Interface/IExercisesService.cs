@@ -14,5 +14,6 @@ namespace Chat.IService.Interface
         ExercisesDTO GetById(long id);
         ExercisesDTO[] GetExercisesByPaperId(long testPaperId);
         bool DelExercisesById(long id);
+        bool Update(long id,string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId);
     }
 }

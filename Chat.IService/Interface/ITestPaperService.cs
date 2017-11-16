@@ -13,5 +13,6 @@ namespace Chat.IService.Interface
         TestPaperDTO GetById(long paperId);
         TestPaperDTO[] GetAll();
         bool Update(long id,string title);
+        bool Delete(long id);
     }
 }

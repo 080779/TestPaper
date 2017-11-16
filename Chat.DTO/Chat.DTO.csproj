@@ -48,6 +48,7 @@
     <Compile Include="DTO\CityDTO.cs" />
     <Compile Include="DTO\ExercisesDTO.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
+    <Compile Include="DTO\PrizeDTO.cs" />
     <Compile Include="DTO\RoleDTO.cs" />
     <Compile Include="DTO\SettingDTO.cs" />
     <Compile Include="DTO\TestPaperDTO.cs" />

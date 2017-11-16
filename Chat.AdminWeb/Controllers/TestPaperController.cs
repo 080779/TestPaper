@@ -56,10 +56,18 @@ namespace Chat.AdminWeb.Controllers
             }
             if(model.ExeId>=1)
             {
-                return Json(new AjaxResult { Status = "clear", ErrorMsg = "考题已经添加过，请点击清空内容添加" });
+                if(!exercisesService.Update(model.ExeId, model.Title, model.OptionA, model.OptionB, model.OptionC, model.OptionD, model.RightKeyId))
+                {
+                    return Json(new AjaxResult { Status = "error", ErrorMsg = "考题编辑失败" });
+                }
+                return Json(new AjaxResult { Status = "ok"});
             }
             LoadAddExeModel loadmodel = new LoadAddExeModel();
             long exId= exercisesService.AddNew(model.Title, model.TestPaperId, model.OptionA, model.OptionB, model.OptionC, model.OptionD, model.RightKeyId);
+            if(exId<=0)
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "考题添加失败" });
+            }
             loadmodel.Exercises = exercisesService.GetExercisesByPaperId(model.TestPaperId);
             loadmodel.PaperExeCount = exercisesService.GetPaperExercisesCount(model.TestPaperId);
             loadmodel.TestPaper = testPaperService.GetById(model.TestPaperId);
@@ -113,36 +121,65 @@ namespace Chat.AdminWeb.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 添加试卷
+        /// </summary>
+        /// <param name="testTitle"></param>
+        /// <returns></returns>
         [Permission("manager")]
         [HttpPost]
         public ActionResult AddPaper(string testTitle)
         {
             if(string.IsNullOrEmpty(testTitle))
             {
-                return Json(new AjaxResult { Status = "error", ErrorMsg="标题不能为空" });
+                return Json(new AjaxResult { Status = "error", ErrorMsg="试卷标题不能为空" });
             }
             long id = testPaperService.AddNew(testTitle,0);
             return Json(new AjaxResult { Status="success"});
         }
+
         [Permission("manager")]
         public ActionResult EditPaper(long id)
         {
             TestPaperDTO dto = testPaperService.GetById(id);
             return View(dto);
         }
+
+        /// <summary>
+        /// 编辑试卷
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <returns></returns>
         [HttpPost]
         [Permission("manager")]
         public ActionResult EditPaper(long id,string title)
         {
             if (string.IsNullOrEmpty(title))
             {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "标题不能为空" });
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "试卷标题不能为空" });
             }
             if(!testPaperService.Update(id, title))
             {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "编辑失败" });
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "试卷编辑失败" });
             }
             return Json(new AjaxResult { Status = "success"});
+        }
+        /// <summary>
+        /// 删除试卷
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Permission("manager")]
+        public ActionResult DelPaper(long id)
+        {
+            if(!testPaperService.Delete(id))
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "试卷删除失败" });
+            }
+            return Json(new AjaxResult { Status="success"});
         }
     }
 }
