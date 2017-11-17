@@ -11,6 +11,7 @@ namespace Chat.Service.Entities
     /// </summary>
     public class ActivityEntity:BaseEntity
     {
+        public string Num { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImgUrl { get; set; }

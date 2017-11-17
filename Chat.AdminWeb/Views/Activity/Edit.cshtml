@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@model Chat.AdminWeb.Models.ActivityEditLoadModel
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>试题管理</title>
+    <title>答题活动管理</title>
     <link href="~/Css/style.default.css" rel="stylesheet">
     <link href="~/Css/morris.css" rel="stylesheet">
     <link href="~/Css/select2.css" rel="stylesheet" />
@@ -32,7 +33,7 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
+                            <li><a href="~/home/logout"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
                         </ul>
                     </div><!-- btn-group -->
 
@@ -56,150 +57,145 @@
                 </div><!-- media -->
 
 
-                <ul class="nav nav-pills nav-stacked">
+                <ul class="nav nav-pills nav-stacked" id="navMenu">
                     <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
-                    <li class="active"><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
+                    <li><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
                     <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
                 </ul>
 
             </div><!-- leftpanel -->
 
             <div class="mainpanel">
-                <div class="contentpanel">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>基本信息</h4>
-                        </div>
-                        <div class="panel-body">
-                            <form action="" class="form-horizontal">
+                <form class="form-horizontal" method="post" id="formAdd" enctype="multipart/form-data" action="~/activity/edit">
+                    <div class="contentpanel">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>基本信息</h4>
+                            </div>
+                            <div class="panel-body">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动名称:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="" class="form-control">
+                                        <input type="text" name="name" value="@Model.Activity.Name" placeholder="" class="form-control">
+                                        <input type="hidden" name="activityId" id="activityId" value="@Model.Activity.Id" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动简介:</label>
                                     <div class="col-sm-6">
-                                        <textarea name="" rows="5" cols="" class="form-control"></textarea>
+                                        <textarea name="description" value="@Model.Activity.Description" rows="5" cols="" class="form-control">@Model.Activity.Description</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">活动状态:</label>
+                                    <div class="col-sm-6">
+                                        <select name="statusId" class="col-sm-3" style="height:30px">
+                                            <option value="0">
+                                                活动状态
+                                            </option>
+                                            @foreach (var status in Model.Status)
+                                            {
+                                                <option value="@status.Id" selected="@(Model.Activity.StatusId==status.Id)">
+                                                    @status.Name
+                                                </option>
+                                            }
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动背景图:</label>
                                     <div class="col-sm-6">
-                                        <input type="file" id="file1" />
-                                        <img src="" id="img1" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
-                                        <input type="hidden" id="val1" value="" />
+                                        <input type="file" id="file_back" name="imgUrl" />
+                                        <img src="@Model.Activity.ImgUrl" id="img_back" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
+                                        <!--<input type="hidden" id="val_prize" value="imgUrl" />-->
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动开始时间:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="" id="" value="" class="form-control datepicker" />
+                                        <input type="text" name="startTime" id="startTime" value="@Model.Activity.StartTime" class="form-control datepicker" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">答题截止时间:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="" id="" value="" class="form-control datepicker" />
+                                        <input type="text" name="examEndTime" id="examEndTime" value="@Model.Activity.ExamEndTime" class="form-control datepicker" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">开奖时间:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="" id="" value="" class="form-control datepicker" />
+                                        <input type="text" name="rewardTime" id="rewardTime" value="@Model.Activity.RewardTime" class="form-control datepicker" />
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="form-inline">
-                                <div class="form-group mt10">
-                                    <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                                    <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
-                                </div>
-                                <div class="form-group mt10">
-                                    <input name="" type="text" placeholder="请输入试卷题目" class="form-control">
-                                </div>
-                                <div class="form-group mt10">
-                                    <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body">
-                            <table class="table table-bordered table-primary mb30">
-                                <thead>
-                                    <tr>
-                                        <th style="min-width: 20px;">选择</th>
-                                        <th style="min-width: 80px;">编号</th>
-                                        <th style="min-width: 80px;">试卷标题</th>
-                                        <th style="min-width: 80px;">考题数</th>
-                                        <th style="min-width: 40px;">创建时间</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td data-attr="选择"><input type="radio" name="chioce" id="" value="" class="checkTm" /></td>
-                                        <td data-attr="编号">20171103</td>
-                                        <td data-attr="试卷标题">环保从我做起</td>
-                                        <td data-attr="考题数">20</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                    </tr>
-                                    <tr class="check">
-                                        <td data-attr="选择"><input type="radio" name="chioce" id="" value="" class="checkTm" checked="checked" /></td>
-                                        <td data-attr="编号">20171103</td>
-                                        <td data-attr="试卷标题">环保从我做起</td>
-                                        <td data-attr="考题数">20</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-attr="选择"><input type="radio" name="chioce" id="" value="" class="checkTm" /></td>
-                                        <td data-attr="编号">20171103</td>
-                                        <td data-attr="试卷标题">环保从我做起</td>
-                                        <td data-attr="考题数">20</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                    </tr>
-                                    <tr>
-                                        <td data-attr="选择"><input type="radio" name="chioce" id="" value="" class="checkTm" /></td>
-                                        <td data-attr="编号">20171103</td>
-                                        <td data-attr="试卷标题">环保从我做起</td>
-                                        <td data-attr="考题数">20</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="form-inline">
+                                    <div class="form-group mt10">
+                                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
+                                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                                    </div>
+                                    <div class="form-group mt10">
+                                        <input id="keyWord" type="text" placeholder="请输入试卷标题" class="form-control">
+                                        <input type="hidden" id="paperId" value="@Model.Paper.Id" />
+                                    </div>
+                                    <div class="form-group mt10">
+                                        <a class="btn btn-primary mr5" id="search" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered table-primary mb30">
+                                    <thead>
+                                        <tr>
+                                            <th style="min-width: 20px;">选择</th>
+                                            <th style="min-width: 80px;">编号</th>
+                                            <th style="min-width: 80px;">试卷标题</th>
+                                            <th style="min-width: 80px;">考题数</th>
+                                            <th style="min-width: 40px;">创建时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="paperList">
+                                        <tr>
+                                            <td data-attr="选择"><input type="radio" name="paperId" id="" value="@Model.Paper.Id" class="checkTm" checked="checked" /></td>
+                                            <td data-attr="编号">@Model.Paper.Num@Model.Paper.Id</td>
+                                            <td data-attr="试卷标题">@Model.Paper.TestTitle</td>
+                                            <td data-attr="考题数">@Model.Paper.ExercisesCount</td>
+                                            <td data-attr="创建时间">@Model.Paper.CreateDateTime</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>奖品设置</h4>
-                        </div>
-                        <div class="panel-body">
-                            <form action="" class="form-horizontal">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>奖品设置</h4>
+                            </div>
+                            <div class="panel-body">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">奖品名称:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="" class="form-control">
+                                        <input type="text" name="prizeName" value="@Model.Activity.PrizeName" id="prizeName" placeholder="" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">奖品图片:</label>
                                     <div class="col-sm-6">
-                                        <input type="file" id="file2" />
-                                        <img src="" id="img2" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
-                                        <input type="hidden" id="val2" value="" />
+                                        <input type="file" name="prizeImgUrl" id="file_prize" />
+                                        <img src="@Model.Activity.PrizeImgUrl" id="img_prize" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
+                                        <!--<input type="hidden" id="val_prize" value="prizeImgUrl" />-->
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" id="btnAdd" class="btn btn-primary mr5">确定</button>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>
+                            </div>
                         </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary mr5">确定</button>
-                            <button class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>
-                        </div>
-                    </div>
-                </div><!-- contentpanel -->
+                    </div><!-- contentpanel -->
+                </form>
             </div><!-- mainpanel -->
         </div><!-- mainwrapper -->
     </section>
@@ -229,31 +225,73 @@
     <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
     <script src="~/Scripts/jquery.uploadimg.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-        	$(function(){
-        		//日期选择器
-        		jQuery('.datepicker').datepicker();
-        		//选择试卷
-        		$(".checkTm").click(function () {
-        			$(this).parents('tr').addClass('check').siblings().removeClass('check');
-        		})
-        		//确认删除
-        		$("#sureDel").click(function(){
+        $(function(){
+            //日期选择器
+            jQuery('.datepicker').datepicker();
+            //选择试卷
+            $(".checkTm").click(function () {
+                $(this).parents('tr').addClass('check').siblings().removeClass('check');
+            })
+            //确认删除
+            $("#sureDel").click(function(){
 
-        		})
-        		//上传图片
-				uploadpic("#file1","#img1","#val1");
-				uploadpic("#file2","#img2","#val2");
-				function uploadpic(fileid,img,val){
-					var oUpload = new UploadPic();
-					oUpload.init({
-						input: $(fileid)[0],
-						callback: function (base64) {
-							$(img).attr('src',base64);
-							$(val).val(base64);
-						}
-					});
-				}
-        	})
+            })
+            //上传图片
+            uploadpic("#file_back", "#img_back");
+            uploadpic("#file_prize", "#img_prize");
+            function uploadpic(fileid, img) {
+                var oUpload = new UploadPic();
+                oUpload.init({
+                    input: $(fileid)[0],
+                    callback: function (base64) {
+                        $(img).attr('src', base64);
+                    }
+                });
+            }
+
+            $("#search").click(function () {
+                var startTime = $("#txtStar").val();
+                var endTime = $("#txtEnd").val();
+                var keyWord = $("#keyWord").val();
+                var paperId = $("#paperId").val();
+                $.ajax({
+                    url: "/testpaper/search", type: "post", data: { startTime: startTime, endTime: endTime, keyWord: keyWord },
+                    success: function (result) {
+                        if (result.status == "error") {
+                            alert(result.errorMsg);
+                        }
+                        else if (result.status == "success") {
+                            $("#paperList").empty();
+                            for (var i = 0; i < result.data.length; i++) {
+                                if (parseInt(paperId) == parseInt(result.data[i].id))
+                                {
+                                    $("#paperList").append('<tr><td data-attr="选择"><input type="radio" name="paperId" id="" value="' + result.data[i].id + '" class="checkTm" checked="checked" /></td><td data-attr="编号">' + result.data[i].num + result.data[i].id + '</td><td data-attr="试卷标题">' + result.data[i].testTitle + '</td><td data-attr="考题数">' + result.data[i].exercisesCount + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td></tr>');
+                                }
+                                else
+                                {
+                                    $("#paperList").append('<tr><td data-attr="选择"><input type="radio" name="paperId" id="" value="' + result.data[i].id + '" class="checkTm" /></td><td data-attr="编号">' + result.data[i].num + result.data[i].id + '</td><td data-attr="试卷标题">' + result.data[i].testTitle + '</td><td data-attr="考题数">' + result.data[i].exercisesCount + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td></tr>');
+                                }
+                            }
+                        }
+                        else {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
+
+            //$("#btnAdd").click(function () {
+            //    var data = $("#formAdd").serializeArray();
+            //    $.ajax({
+            //        url: "/activity/add", type: "post", data: data,
+            //        success: function (result) {
+            //            alert("ok");
+            //        },
+            //        error: function () { alert("网络错误"); }
+            //    });
+            //});
+        })
     </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿
+﻿@model Chat.FrontWeb.Models.PrizeViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +12,15 @@
     <div class="prize-bg">
         <div class="prize-t">
             <div class="prize-active-tit font">
-                <p>第123期环保答题</p>
+                <p>@Model.ActivityName</p>
                 <p>活动奖项</p>
             </div>
             <div class="prize-top-box">
                 <div class="prize-top-tit">活动奖品</div>
-                <div class="prize-top-name">小米Note 3 吴亦凡限量版</div>
+                <div class="prize-top-name">@Model.PrizeName</div>
                 <div class="prize-top-dec">获奖人数：100</div>
                 <div class="prize-top-ck">图片仅供产考请以实物为准</div>
-                <div class="prize-top-img"><img src="~/pic/pro1.jpg" /></div>
+                <div class="prize-top-img"><img src="/192.168.1.110:8060@(Model.PrizeImgUrl)" /></div>
             </div>
         </div>
         <div class="prize-result">恭喜您已中奖！工作人员将在5个工作日内与您取得联系！</div>

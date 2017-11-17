@@ -41,7 +41,7 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
+                            <li><a href="~/home/logout"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
                         </ul>
                     </div><!-- btn-group -->
 
@@ -65,9 +65,9 @@
                 </div><!-- media -->
 
 
-                <ul class="nav nav-pills nav-stacked">
+                <ul class="nav nav-pills nav-stacked" id="navMenu">
                     <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
-                    <li class="active"><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
+                    <li><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
                     <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
                 </ul>
 
@@ -84,8 +84,9 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">试卷标题</label>
                                     <div class="col-sm-6">
-                                        <input type="text" placeholder="" value="@Model.TestPaper.TestTitle" disabled="disabled" class="form-control">
+                                        <input type="text" id="paperTitle" placeholder="" value="@Model.TestPaper.TestTitle" class="form-control">
                                     </div>
+                                    <div class="col-sm-2"><input type="button" id="editPaper" value="编辑试卷" class="form-control"/></div>
                                 </div>
                             </form>
                         </div>
@@ -127,7 +128,7 @@
                                                 <textarea name="optionA" id="optionA" rows="3" cols="" class="form-control"></textarea>
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="radio" name="rightKeyId" id="" value="1" /><span>设为正确答案</span>
+                                                <input type="radio" name="rightKeyId" id="A" value="1" /><span>设为正确答案</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -136,7 +137,7 @@
                                                 <textarea name="optionB" id="optionB" rows="3" cols="" class="form-control"></textarea>
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="radio" name="rightKeyId" id="" value="2" /><span>设为正确答案</span>
+                                                <input type="radio" name="rightKeyId" id="B" value="2" /><span>设为正确答案</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -145,7 +146,7 @@
                                                 <textarea name="optionC" id="optionC" rows="3" cols="" class="form-control"></textarea>
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="radio" name="rightKeyId" id="" value="3" /><span>设为正确答案</span>
+                                                <input type="radio" name="rightKeyId" id="C" value="3" /><span>设为正确答案</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -154,7 +155,7 @@
                                                 <textarea name="optionD" id="optionD" rows="3" cols="" class="form-control"></textarea>
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="radio" name="rightKeyId" id="" value="4" /><span>设为正确答案</span>
+                                                <input type="radio" name="rightKeyId" id="D" value="4" /><span>设为正确答案</span>
                                             </div>
                                         </div>
                                     </div>
@@ -207,6 +208,29 @@
                 $("#exeId").val("0");
             }
             
+            $("#editPaper").click(function () {
+                var paperId = $("#testPaperId").val();
+                var title = $("#paperTitle").val();
+                $.ajax({
+                    url: "/testpaper/editpaper", type: "post", data: { id: paperId ,title:title},
+                    success: function (result) {
+                        if(result.status=="error")
+                        {
+                            alert(result.errorMsg);
+                        }
+                        else if(result.status=="success")
+                        {
+                            alert("试卷编辑成功");
+                        }
+                        else
+                        {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误");}
+                });
+            });
+
             //选择题目
             $("#subjectTit .btn").live('click', function () {
                 $(this).addClass('btn-primary').removeClass('btn-default').siblings().addClass('btn-default').removeClass('btn-primary')
@@ -227,7 +251,14 @@
                             $("#optionB").val(result.data.optionB);
                             $("#optionC").val(result.data.optionC);
                             $("#optionD").val(result.data.optionD);
-                            $("input[name=rightKeyId]:eq(" + result.data.rightKeyId + ")").attr("checked", 'checked');
+                            if (result.data.rightKeyId == 1)
+                                $("#A").attr("checked", 'checked');
+                            if (result.data.rightKeyId == 2)
+                                $("#B").attr("checked", 'checked');
+                            if (result.data.rightKeyId == 3)
+                                $("#C").attr("checked", 'checked');
+                            if (result.data.rightKeyId == 4)
+                                $("#D").attr("checked", 'checked');                            
                         }
                         else
                         {
@@ -272,6 +303,7 @@
                 clear();
                 $("#subjectTit").append('<button id="" value="0" class="btn btn-default">第' + ($("#subjectTit .btn").length + 1) + '题</button>');
                 $(this).attr("disabled", "disabled");
+                $("#subjectTit .btn").eq($("#subjectTit .btn").length - 1).trigger('click');
             })
 
             //删除考题

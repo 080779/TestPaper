@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Chat.DTO.DTO;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace Chat.Service.Service
 {
@@ -21,6 +22,7 @@ namespace Chat.Service.Service
                 entity.ExercisesCount = 0;
                 dbc.TestPapers.Add(entity);
                 dbc.SaveChanges();
+                dbc.Database.ExecuteSqlCommand("update T_TestPapers set Num=(select CONVERT(varchar(12) , (select createdatetime from T_TestPapers where id=@id), 112)) where id=@id", new SqlParameter("@id", entity.Id));
                 return entity.Id;
             }
         }
@@ -46,7 +48,27 @@ namespace Chat.Service.Service
             {
                 CommonService<TestPaperEntity> cs = new CommonService<TestPaperEntity>(dbc);
                 
-                return cs.GetAll().OrderByDescending(t=>t.CreateDateTime).Select(r => new TestPaperDTO { Id = r.Id, TestTitle = r.TestTitle, ExercisesCount = r.ExercisesCount, CreateDateTime = r.CreateDateTime }).ToArray();
+                return cs.GetAll().OrderByDescending(t=>t.CreateDateTime).Select(r => new TestPaperDTO { Id = r.Id, TestTitle = r.TestTitle, ExercisesCount = r.ExercisesCount, CreateDateTime = r.CreateDateTime, Num = r.Num }).ToArray();
+            }
+        }
+
+        public TestPaperDTO GetByActivityId(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<TestPaperEntity> cs = new CommonService<TestPaperEntity>(dbc);
+                CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
+                var activity= acs.GetAll().SingleOrDefault(a => a.Id == id);
+                if(activity==null)
+                {
+                    return null;
+                }
+                var paper = cs.GetAll().SingleOrDefault(p => p.Id == activity.PaperId);
+                if(paper==null)
+                {
+                    return null;
+                }                
+                return new TestPaperDTO { Id = paper.Id, TestTitle = paper.TestTitle, ExercisesCount = paper.ExercisesCount, CreateDateTime = paper.CreateDateTime, Num = paper.Num };
             }
         }
 
@@ -60,7 +82,30 @@ namespace Chat.Service.Service
                 {
                     return null;
                 }
-                return new TestPaperDTO { Id = paper.Id, TestTitle = paper.TestTitle, ExercisesCount = paper.ExercisesCount, CreateDateTime = paper.CreateDateTime };
+                return new TestPaperDTO { Id = paper.Id, TestTitle = paper.TestTitle, ExercisesCount = paper.ExercisesCount, CreateDateTime = paper.CreateDateTime, Num = paper.Num };
+            }
+        }
+
+        public TestPaperDTO[] Search(DateTime? startTime, DateTime? endTime, string keyWord)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<TestPaperEntity> cs = new CommonService<Entities.TestPaperEntity>(dbc);
+                var items = cs.GetAll();
+                if(startTime!= null)
+                {
+                    items= items.Where(p => p.CreateDateTime >= startTime);
+                }
+                if(endTime!= null)
+                {
+                    items = items.Where(p => p.CreateDateTime <= endTime);
+                }
+                if(!string.IsNullOrEmpty(keyWord))
+                {
+                    items = items.Where(p => p.TestTitle.Contains(keyWord));
+                }
+                items = items.OrderByDescending(p => p.CreateDateTime).Take(10);
+                return items.ToList().Select(p => new TestPaperDTO { Id = p.Id, TestTitle = p.TestTitle, ExercisesCount = p.ExercisesCount, CreateDateTime = p.CreateDateTime ,Num=p.Num}).ToArray();
             }
         }
 

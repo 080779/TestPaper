@@ -15,6 +15,7 @@ namespace Chat.Service.ModelConfig
             ToTable("T_TestPapers");
 
             Property(t => t.TestTitle).HasMaxLength(1204).IsRequired();
+            Property(t => t.Num).HasMaxLength(10).IsUnicode(false);
         }
     }
 }

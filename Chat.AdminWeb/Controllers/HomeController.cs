@@ -38,8 +38,8 @@ namespace Chat.AdminWeb.Controllers
 
         public ActionResult Logout()
         {
-            Session["AdminUserId"] = -1;
-            return Redirect("~/home/login");
+            Session["AdminUserId"] = null;
+            return Redirect("/home/login");
         }
     }
 }

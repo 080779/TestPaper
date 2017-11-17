@@ -33,7 +33,7 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
+                            <li><a href="~/home/logout"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
                         </ul>
                     </div><!-- btn-group -->
 
@@ -57,9 +57,9 @@
                 </div><!-- media -->
 
 
-                <ul class="nav nav-pills nav-stacked">
+                <ul class="nav nav-pills nav-stacked" id="navMenu">
                     <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
-                    <li class="active"><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
+                    <li><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
                     <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
                 </ul>
 
@@ -80,14 +80,15 @@
                         <div class="panel-heading">
                             <div class="form-inline">
                                 <div class="form-group mt10">
-                                    <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                                    <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                                    <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
+                                    <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
                                 </div>
                                 <div class="form-group mt10">
-                                    <input name="" type="text" placeholder="请输入试卷标题" class="form-control">
+                                    <input id="keyWord" type="text" placeholder="请输入试卷标题" class="form-control">
                                 </div>
                                 <div class="form-group mt10">
-                                    <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
+
+                                    <button id="search" class="btn btn-primary mr5" iconcls="icon-search"><i class="fa fa-search"></i>搜 索</button>
                                 </div>
                             </div>
                         </div>
@@ -102,21 +103,20 @@
                                         <th style="min-width: 60px;">操作</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                   @foreach (var paper in Model)
-                                   {
-                                    <tr>
-                                        <td data-attr="编号">@paper.CreateDateTime.ToString("yyyyMMdd")@paper.Id</td>
-                                        <td data-attr="试卷标题">@paper.TestTitle</td>
-                                        <td data-attr="考题数">@paper.ExercisesCount</td>
-                                        <td data-attr="创建时间">@paper.CreateDateTime</td>
-                                        <td data-attr="操作">
-                                            <a href="~/testpaper/editpaper?id=@paper.Id" class="btn btn-primary btn-sm">编辑</a>
-                                            <a href="~/testpaper/addeditexe?testPaperId=@paper.Id" class="btn btn-primary btn-sm">编辑考题</a>
-                                            <button data-toggle="modal" data-target="#myModal" value="@paper.Id" class="btn btn-danger btn-sm Jsdel">删除</button>
-                                        </td>
-                                    </tr>
-                                   }
+                                <tbody  id="paperList">
+                                    @foreach (var paper in Model)
+                                    {
+                                        <tr>
+                                            <td data-attr="编号">@paper.CreateDateTime.ToString("yyyyMMdd")@paper.Id</td>
+                                            <td data-attr="试卷标题">@paper.TestTitle</td>
+                                            <td data-attr="考题数">@paper.ExercisesCount</td>
+                                            <td data-attr="创建时间">@paper.CreateDateTime</td>
+                                            <td data-attr="操作">
+                                                <a href="~/testpaper/addeditexe?testPaperId=@paper.Id" class="btn btn-primary btn-sm">编辑</a>
+                                                <button data-toggle="modal" data-target="#myModal" value="@paper.Id" class="btn btn-danger btn-sm Jsdel">删除</button>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -150,36 +150,63 @@
     <script src="~/Scripts/custom.js"></script>
     <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
     <script type="text/javascript">
-        	$(function(){
-        	    jQuery('.datepicker').datepicker({ altFormat: "yyyy-mm-dd" });
-        	    $('.Jsdel').click(function () {
-        	        $("#sureDel").val($(this).val());
-        	    })
+        $(function () {
+            jQuery('.datepicker').datepicker({ altFormat: "yyyy-mm-dd" });
+            $('.Jsdel').click(function () {
+                $("#sureDel").val($(this).val());
+            })
 
-        	    $("#sureDel").click(function () {
-        	        var id=$(this).val();
-        	        $.ajax({
-        	            url: "/testpaper/delpaper", type: "post", data: {id:id},
-        	            success: function (result) {
-        	                if(result.status=="error")
-        	                {
-        	                    alert(result.errorMsg);
-        	                    $("#cancel").click();
-        	                }
-        	                else if(result.status=="success")
-        	                {
-        	                    $("#cancel").click();
-        	                    window.location.reload();
-        	                }
-        	                else
-        	                {
-        	                    alert("未知错误");
-        	                }
-        	            },
-        	            error: function () { alert("网络错误")}
-        	        });
-        	    });
-        	})
+            //删除
+            $("#sureDel").click(function () {
+                var id = $(this).val();
+                $.ajax({
+                    url: "/testpaper/delpaper", type: "post", data: { id: id },
+                    success: function (result) {
+                        if (result.status == "error") {
+                            alert(result.errorMsg);
+                            $("#cancel").click();
+                        }
+                        else if (result.status == "success") {
+                            $("#cancel").click();
+                            window.location.reload();
+                        }
+                        else {
+                            alert("未知错误");
+                            $("#cancel").click();
+                        }
+                    },
+                    error: function () { alert("网络错误"); $("#cancel").click(); }
+                });
+            });
+            //搜索
+            $("#search").click(function () {
+                var startTime = $("#txtStar").val();
+                var endTime = $("#txtEnd").val();
+                var keyWord = $("#keyWord").val();
+                $.ajax({
+                    url: "/testpaper/search", type: "post", data: { startTime: startTime, endTime: endTime, keyWord: keyWord },
+                    success: function (result) {
+                        if(result.status=="error")
+                        {
+                            alert(result.errorMsg);
+                        }
+                        else if(result.status=="success")
+                        {
+                            $("#paperList").empty();
+                            for (var i = 0; i < result.data.length;i++)
+                            {                                
+                                $("#paperList").append("<tr><td data-attr='编号'>" + result.data[i].num + result.data[i].id + "</td><td data-attr='试卷标题'>" + result.data[i].testTitle + "</td><td data-attr='考题数'>" + result.data[i].exercisesCount + "</td><td data-attr='创建时间'>" + result.data[i].createDateTime + "</td><td data-attr='操作'><a href="+"/testpaper/addeditexe?testPaperId=" + result.data[i].id + "  class='btn btn-primary btn-sm'>编辑</a><button data-toggle='modal' data-target='#myModal' value="+ result.data[i].id+" class='btn btn-danger btn-sm Jsdel'>删除</button></td></tr>");
+                            }    
+                        }
+                        else
+                        {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误");}
+                });
+            });
+        })
     </script>
 </body>
 </html>

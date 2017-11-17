@@ -131,4 +131,13 @@ jQuery(document).ready(function() {
 			wheelStep: 35
 		});
 	}
+    //²Ëµ¥
+	var url = window.location;
+	var i = 0;
+	$('#navMenu>li>a').filter(function () {
+	    if (this.href == url || url.href.indexOf(this.href) == 0) {
+	        $('#navMenu>li').eq(i).addClass('active');
+	    }
+	    i++;
+	});
 });

@@ -14,6 +14,7 @@ namespace Chat.Service.ModelConfig
         {
             ToTable("T_Activities");
 
+            Property(t => t.Num).HasMaxLength(10).IsUnicode(false);
             Property(a => a.Name).HasMaxLength(30).IsRequired();
             Property(a => a.Description).IsRequired();
             Property(a => a.WeChatUrl).HasMaxLength(256).IsUnicode(false);

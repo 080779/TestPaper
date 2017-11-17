@@ -1,4 +1,4 @@
-﻿
+﻿@model Chat.FrontWeb.Models.AnswerViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,48 +12,25 @@
     <div class="answer-bg">
         <div class="answer-wrap">
             <div class="answer-title">
-                <span class="font answer-tit-txt">123期有奖环保答题活动</span>
+                <span class="font answer-tit-txt">@Model.ActivityName</span>
             </div>
             <div class="anser-list">
-                <div class="anserli jsQus">
-                    <div class="anserli-tit">
-                        <span class="anserli-num num1">1</span>
-                        <span class="anserli-qus">全国污染普查每_____年进行1次。</span>
+                @for(int i=1; i<=Model.Exercises.Count();i++)
+                {
+                    <div class="anserli jsQus">
+                        <div class="anserli-tit">
+                            <span class="anserli-num num@(i)">@i</span>
+                            <span class="anserli-qus">@Model.Exercises[i-1].Title</span>
+                        </div>
+                        <div class="anserli-con">
+                            <div class="anserli-as">A.@Model.Exercises[i - 1].OptionA</div>
+                            <div class="anserli-as">B.@Model.Exercises[i - 1].OptionB</div>
+                            <div class="anserli-as">C.@Model.Exercises[i - 1].OptionC</div>
+                            <div class="anserli-as">D.@Model.Exercises[i - 1].OptionD</div>
+                        </div>
+                        <a href="~/home/topic" class="anserli-knowledge" style="display: none;">知识点提示</a>
                     </div>
-                    <div class="anserli-con">
-                        <div class="anserli-as">A.每2年进行一次</div>
-                        <div class="anserli-as">B.每2年进行一次每2年进行一次每2年进行一次每2年进行一次</div>
-                        <div class="anserli-as right">C.每2年进行一次</div>
-                        <div class="anserli-as">D.每2年进行一次</div>
-                    </div>
-                    <a href="#" class="anserli-knowledge" style="display: none;">知识点提示</a>
-                </div>
-                <div class="anserli jsQus">
-                    <div class="anserli-tit">
-                        <span class="anserli-num num2">2</span>
-                        <span class="anserli-qus">全国污染普查每_____年进行1次。</span>
-                    </div>
-                    <div class="anserli-con">
-                        <div class="anserli-as">A.每2年进行一次</div>
-                        <div class="anserli-as">B.每2年进行一次每2年进行一次每2年进行一次每2年进行一次</div>
-                        <div class="anserli-as">C.每2年进行一次</div>
-                        <div class="anserli-as">D.每2年进行一次</div>
-                    </div>
-                    <a href="#" class="anserli-knowledge" style="display: none;">知识点提示</a>
-                </div>
-                <div class="anserli jsQus">
-                    <div class="anserli-tit">
-                        <span class="anserli-num num3">3</span>
-                        <span class="anserli-qus">全国污染普查每_____年进行1次。</span>
-                    </div>
-                    <div class="anserli-con">
-                        <div class="anserli-as">A.每2年进行一次</div>
-                        <div class="anserli-as">B.每2年进行一次每2年进行一次每2年进行一次每2年进行一次</div>
-                        <div class="anserli-as">C.每2年进行一次</div>
-                        <div class="anserli-as">D.每2年进行一次</div>
-                    </div>
-                    <a href="#" class="anserli-knowledge" style="display: none;">知识点提示</a>
-                </div>
+                }
             </div>
             <div class="anser-btn">
                 <a href="~/home/index" class="btn-home">返回首页</a>

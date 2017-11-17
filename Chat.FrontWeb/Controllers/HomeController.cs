@@ -1,4 +1,6 @@
-﻿using Chat.IService.Interface;
+﻿using Chat.DTO.DTO;
+using Chat.FrontWeb.Models;
+using Chat.IService.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,24 +16,33 @@ namespace Chat.FrontWeb.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            ActivityViewModel model = new ActivityViewModel();
+            model.Activity= activityService.GetByStatus("答题进行中");
+            return View(model);
         }
 
-        public ActionResult Answer(long paperId)
+        public ActionResult Answer()
         {
-            var dto= exeService.GetExercisesByPaperId(paperId);
-            return View(dto);
+            AnswerViewModel model = new AnswerViewModel();
+            ActivityDTO activity = activityService.GetByStatus("答题进行中");
+            model.ActivityName = activity.Name;
+            model.Exercises= exeService.GetExercisesByPaperId(activity.PaperId);
+            return View(model);
         }
 
-        public ActionResult Topic(long paperId)
+        public ActionResult Topic()
         {
-            var dto = exeService.GetExercisesByPaperId(paperId);
             return View();
         }
 
         public ActionResult Prize()
         {
-            return View();
+            PrizeViewModel model = new PrizeViewModel();
+            ActivityDTO activity= activityService.GetByStatus("答题进行中");
+            model.ActivityName = activity.Name;
+            model.PrizeName = activity.PrizeName;
+            model.PrizeImgUrl = activity.PrizeImgUrl;
+            return View(model);
         }
 
         public ActionResult Result()

@@ -10,5 +10,6 @@ namespace Chat.DTO.DTO
     {
         public string TestTitle { get; set; }
         public long ExercisesCount { get; set; }
+        public string Num { get; set; }
     }
 }

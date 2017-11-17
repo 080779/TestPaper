@@ -34,6 +34,11 @@ namespace Chat.AdminWeb.Controllers
             model.Status = idNameService.GetAll("活动状态");
             return View(model);
         }
+        /// <summary>
+        /// 添加活动
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [Permission("manager")]
         public ActionResult Add(AtivityAddModel model)
@@ -86,10 +91,75 @@ namespace Chat.AdminWeb.Controllers
             return Redirect("~/activity/list");
         }
         [Permission("manager")]
-        public ActionResult Edit()
+        public ActionResult Edit(long id)
         {
-            return View();
+            ActivityDTO activity = activityService.GetById(id);
+            if (activity==null)
+            {
+                return Content("数据不存在！");
+            }
+            ActivityEditLoadModel model = new ActivityEditLoadModel();
+            model.Activity = activity;
+            model.Paper = paperService.GetByActivityId(id);
+            model.Status = idNameService.GetAll("活动状态");
+            return View(model);
         }
+        [HttpPost]
+        [Permission("manager")]
+        public ActionResult Edit(AtivityEditModel model)
+        {
+            if(model.activityId<=0)
+            {
+                return Content("该活动数据不存在");
+            }
+            if (string.IsNullOrEmpty(model.Name))
+            {
+                return Content("活动名不能为空");
+            }
+            if (string.IsNullOrEmpty(model.Description))
+            {
+                return Content("活动简介不能为空");
+            }
+            if (model.StatusId <= 0)
+            {
+                return Content("活动状态必须选择");
+            }
+            if (model.imgUrl == null)
+            {
+                return Content("活动背景图不能为空");
+            }
+            if (model.StartTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            {
+                return Content("活动开始时间不能为空");
+            }
+            if (model.ExamEndTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            {
+                return Content("答题截止时间不能为空");
+            }
+            if (model.RewardTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            {
+                return Content("开奖时间不能为空");
+            }
+            if (model.PaperId <= 0)
+            {
+                return Content("试卷必须选择");
+            }
+            if (string.IsNullOrEmpty(model.PrizeName))
+            {
+                return Content("奖品名称不能为空");
+            }
+            if (model.PrizeImgUrl == null)
+            {
+                return Content("奖品图片不能为空");
+            }
+            bool b = activityService.Update( model.activityId,model.Name, model.Description, model.StatusId, PicSave(model.imgUrl), model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName, PicSave(model.PrizeImgUrl));
+            if (!b)
+            {
+                return Content("编辑失败");
+            }
+            return Redirect("~/activity/list");
+        }
+
         [Permission("manager")]
         public ActionResult Prize()
         {
@@ -103,7 +173,7 @@ namespace Chat.AdminWeb.Controllers
             string ext = Path.GetExtension(file.FileName);
             string path = "/upload/" + DateTime.Now.ToString("yyyy/MM/dd") + "/" + md5 + ext;
             //string thumbPath = "/upload/" + DateTime.Now.ToString("yyyy/MM/dd") + "/" + md5 + "_thumb" + ext;
-            string fullPath = HttpContext.Server.MapPath("~" + path);
+            string fullPath = HttpContext.Server.MapPath("" + path);
             //string thumbFullPath = HttpContext.Server.MapPath("~" + thumbPath);
             new FileInfo(fullPath).Directory.Create();
             //file.SaveAs(fullPath);

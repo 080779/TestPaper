@@ -1,4 +1,4 @@
-﻿
+﻿@model Chat.FrontWeb.Models.ActivityViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,31 +11,31 @@
 <body>
     <div class="index-bg">
         <div class="index-wrap">
-            <div class="index-title">第68期有奖环保答题活动</div>
-            <div class="index-dec">为了进一步宣传环保知识、共建美丽环境，我们特此开展这项污染普查知识竞赛微信有奖答题</div>
+            <div class="index-title">@Model.Activity.Name</div>
+            <div class="index-dec">@Model.Activity.Description</div>
         </div>
         <div class="index-wrap">
             <dl class="index-dl">
                 <dt>活动开始时间</dt>
-                <dd>2017-12-22</dd>
+                <dd>@Model.Activity.StartTime.ToString("yyyy-MM-dd")</dd>
             </dl>
             <dl class="index-dl">
                 <dt>答题截止时间</dt>
-                <dd>2017-01-24</dd>
+                <dd>@Model.Activity.ExamEndTime.ToString("yyyy-MM-dd")</dd>
             </dl>
             <dl class="index-dl">
                 <dt>开奖时间</dt>
-                <dd>2017-09-26</dd>
+                <dd>@Model.Activity.RewardTime.ToString("yyyy-MM-dd")</dd>
             </dl>
         </div>
         <div class="index-wrap">
             <dl class="index-dl">
                 <dt>当前参与人数</dt>
-                <dd>12545人</dd>
+                <dd>@(Model.Activity.AnswerCount)人</dd>
             </dl>
             <dl class="index-dl">
                 <dt>活动状态</dt>
-                <dd class="txt-foces">待开始</dd>
+                <dd class="txt-foces">@Model.Activity.StatusName</dd>
             </dl>
             <dl class="index-dl">
                 <dt>我的参与情况</dt>

@@ -181,5 +181,11 @@ namespace Chat.AdminWeb.Controllers
             }
             return Json(new AjaxResult { Status="success"});
         }
+        [HttpPost]
+        [Permission("manager")]
+        public ActionResult Search(DateTime? startTime,DateTime? endTime,string keyWord)
+        {
+            return Json(new AjaxResult { Status="success",Data=testPaperService.Search(startTime,endTime,keyWord)});
+        }
     }
 }

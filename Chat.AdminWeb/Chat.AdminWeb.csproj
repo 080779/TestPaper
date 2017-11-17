@@ -164,7 +164,6 @@
     <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
     <Content Include="Scripts\jquery.cookies.js" />
     <Content Include="Scripts\jquery.uploadimg.js" />
-    <Content Include="Scripts\logout.js" />
     <Content Include="Scripts\modernizr.min.js" />
     <Content Include="Scripts\pace.min.js" />
     <Content Include="Scripts\retina.min.js" />
@@ -185,9 +184,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ActivityAddLoadModel.cs" />
+    <Compile Include="Models\ActivityEditLoadModel.cs" />
     <Compile Include="Models\AddExercisesModel.cs" />
     <Compile Include="Models\AdminUserLoginModel.cs" />
     <Compile Include="Models\AtivityAddModel.cs" />
+    <Compile Include="Models\AtivityEditModel.cs" />
     <Compile Include="Models\LoadAddExeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -206,7 +207,7 @@
     <Content Include="Views\Activity\Edit.cshtml" />
     <Content Include="Views\Activity\Prize.cshtml" />
     <Content Include="Views\TestPaper\AddEditExe.cshtml" />
-    <Content Include="Views\TestPaper\EditPaper.cshtml" />
+    <None Include="Properties\PublishProfiles\AnswerAdmin.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
