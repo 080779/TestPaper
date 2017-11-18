@@ -80,7 +80,16 @@ namespace Chat.Service.Service
                
         public AdminUserDTO GetById(long id)
         {
-            throw new NotImplementedException();
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<AdminUserEntity> cs = new CommonService<AdminUserEntity>(dbc);
+                var user = cs.GetAll().SingleOrDefault(a => a.Id == id);
+                if(user==null)
+                {
+                    return null;
+                }
+                return ToDTO(user);
+            }
         }
         
         public AdminUserDTO GetByName(string name)

@@ -43,7 +43,11 @@ namespace Chat.AdminWeb.Controllers
         [Permission("manager")]
         public ActionResult Add(AtivityAddModel model)
         {
-            if(string.IsNullOrEmpty(model.Name))
+            //if (!ModelState.IsValid)
+            //{
+            //    return Content(MVCHelper.GetValidMsg(ModelState));
+            //}
+            if (string.IsNullOrEmpty(model.Name))
             {
                 return Content("活动名不能为空");
             }
@@ -51,27 +55,33 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("活动简介不能为空");
             }
-            if(model.StatusId<=0)
+            if (model.StatusId <= 0)
             {
                 return Content("活动状态必须选择");
             }
-            if (model.imgUrl==null)
+            if (model.imgUrl == null)
             {
                 return Content("活动背景图不能为空");
             }
-            if (model.StartTime== Convert.ToDateTime("0001-1-1 0:00:00"))
+            string ext = Path.GetExtension(model.imgUrl.FileName);
+            string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp" };
+            if (!imgs.Contains(ext))
+            {
+                return Content("请上传背景图片文件，支持格式“png、jpg、jpeg、bmp”");
+            }
+            if (model.StartTime == Convert.ToDateTime("0001-1-1 0:00:00"))
             {
                 return Content("活动开始时间不能为空");
             }
-            if (model.ExamEndTime== Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.ExamEndTime == Convert.ToDateTime("0001-1-1 0:00:00"))
             {
                 return Content("答题截止时间不能为空");
             }
-            if (model.RewardTime== Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.RewardTime == Convert.ToDateTime("0001-1-1 0:00:00"))
             {
                 return Content("开奖时间不能为空");
             }
-            if (model.PaperId<=0)
+            if (model.PaperId <= 0)
             {
                 return Content("试卷必须选择");
             }
@@ -79,10 +89,15 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("奖品名称不能为空");
             }
-            if(model.PrizeImgUrl==null)
+            if (model.PrizeImgUrl == null)
             {
                 return Content("奖品图片不能为空");
             }
+            ext = Path.GetExtension(model.PrizeImgUrl.FileName);
+            if (!imgs.Contains(ext))
+            {
+                return Content("请上传奖品图片文件，支持格式“png、jpg、jpeg、bmp”");
+            }            
             long id= activityService.AddNew(model.Name, model.Description,model.StatusId, PicSave(model.imgUrl), model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName, PicSave(model.PrizeImgUrl));
             if(id<=0)
             {
@@ -206,6 +221,11 @@ namespace Chat.AdminWeb.Controllers
             jobNormal.Filters.Add(new FixedResizeConstraint(600, 600));//限制图片的大小，避免生成
             jobNormal.SaveProcessedImageToFileSystem(file.InputStream, fullPath);
             return path;
+        }
+
+        public ActionResult Search(long? statusId,DateTime? startTime,DateTime? endTime,string keyWord)
+        {
+            return Json(new AjaxResult { Status = "success", Data = activityService.Search(statusId,startTime, endTime, keyWord) });
         }
     }
 }

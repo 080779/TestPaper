@@ -1,196 +1,128 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>试题管理</title>
-    <link href="~/Css/style.default.css" rel="stylesheet">
-    <link href="~/Css/morris.css" rel="stylesheet">
-    <link href="~/Css/select2.css" rel="stylesheet" />
-    <link href="~/Css/style.css" rel="stylesheet">
-    <link href="~/Css/style.calendar.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="headerwrapper">
-            <div class="header-left">
-                <a href="~/testpaper/list" class="logo"><img src="~/Picture/logo.png" /></a>
-                <div class="pull-right">
-                    <a href="#" class="menu-collapse">
-                        <i class="fa fa-bars"></i>
-                    </a>
+﻿@{
+    ViewBag.Title = "开奖处理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="mainpanel">
+    <div class="contentpanel">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>时间设置</h4>
+            </div>
+            <div class="panel-body">
+                <form action="" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">开奖时间:</label>
+                        <div class="col-sm-6">
+                            <input name="" type="text" id="" placeholder="请输入起始时间" class="form-control datepicker">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>从具备抽奖资格的人员中选取获奖者</h4>
+            </div>
+            <div class="panel-heading">
+                <div class="form-inline">
+                    <div class="form-group mt10">
+                        <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
+                        <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                    </div>
+                    <div class="form-group mt10">
+                        <input name="" type="text" placeholder="按昵称/姓名/电话搜索" class="form-control">
+                    </div>
+                    <div class="form-group mt10">
+                        <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
+                    </div>
                 </div>
-            </div><!-- header-left -->
-            <div class="header-right">
-                <div class="pull-right">
-                    <div class="btn-group btn-group-option">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <img class="img-circle avatar-img" alt="" src="~/Picture/profile.png">
-                            <span class="user-name">Salma</span>
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="~/home/logout"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
-                        </ul>
-                    </div><!-- btn-group -->
-
-                </div><!-- pull-right -->
-
-            </div><!-- header-right -->
-
-        </div><!-- headerwrapper -->
-    </header>
-
-    <section>
-        <div class="mainwrapper">
-            <div class="leftpanel">
-                <div class="media profile-left">
-                    <a class="pull-left profile-thumb" href="profile.html">
-                        <img class="img-circle" src="~/Picture/profile.png" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Salma Hayek</h4>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-primary mb30">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 20px;">选择</th>
+                            <th style="min-width: 80px;">昵称</th>
+                            <th style="min-width: 80px;">姓名</th>
+                            <th style="min-width: 80px;">性别</th>
+                            <th style="min-width: 80px;">联系方式</th>
+                            <th style="min-width: 80px;">详细地址</th>
+                            <th style="min-width: 80px;">曾通关次数</th>
+                            <th style="min-width: 80px;">曾获奖次数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="check">
+                            <td data-attr="选择"><input type="checkbox" name="chioce" id="" value="" checked="checked" class="checkTm" /></td>
+                            <td data-attr="昵称">小欣欣</td>
+                            <td data-attr="姓名">李白</td>
+                            <td data-attr="性别">男</td>
+                            <td data-attr="联系方式">13655555555</td>
+                            <td data-attr="详细地址">南宁市绿都商厦</td>
+                            <td data-attr="曾通关次数">3</td>
+                            <td data-attr="曾获奖次数">3</td>
+                        </tr>
+                        <tr class="check">
+                            <td data-attr="选择"><input type="checkbox" name="chioce" id="" value="" checked="checked" class="checkTm" /></td>
+                            <td data-attr="昵称">小欣欣</td>
+                            <td data-attr="姓名">李白</td>
+                            <td data-attr="性别">男</td>
+                            <td data-attr="联系方式">13655555555</td>
+                            <td data-attr="详细地址">南宁市绿都商厦</td>
+                            <td data-attr="曾通关次数">3</td>
+                            <td data-attr="曾获奖次数">3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary mr5">确定</button>
+                <button class="btn btn-default">取消</button>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>随机选择获奖者</h4>
+            </div>
+            <div class="panel-heading">
+                <div class="form-inline">
+                    <div class="form-group mt10">
+                        <input name="" type="text" placeholder="请输入随机获奖人数" class="form-control">
                     </div>
-                </div><!-- media -->
-
-
-                <ul class="nav nav-pills nav-stacked" id="navMenu">
-                    <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
-                    <li><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
-                    <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
-                </ul>
-
-            </div><!-- leftpanel -->
-
-            <div class="mainpanel">
-                <div class="contentpanel">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>时间设置</h4>
-                        </div>
-                        <div class="panel-body">
-                            <form action="" class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label">开奖时间:</label>
-                                    <div class="col-sm-6">
-                                        <input name="" type="text" id="" placeholder="请输入起始时间" class="form-control datepicker">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="form-group mt10">
+                        <a class="btn btn-primary mr5" href="javascript:;" data-toggle="modal" data-target="#myModal">确定 </a>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>从具备抽奖资格的人员中选取获奖者</h4>
-                        </div>
-                        <div class="panel-heading">
-                            <div class="form-inline">
-                                <div class="form-group mt10">
-                                    <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                                    <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
-                                </div>
-                                <div class="form-group mt10">
-                                    <input name="" type="text" placeholder="按昵称/姓名/电话搜索" class="form-control">
-                                </div>
-                                <div class="form-group mt10">
-                                    <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <table class="table table-bordered table-primary mb30">
-                                <thead>
-                                    <tr>
-                                        <th style="min-width: 20px;">选择</th>
-                                        <th style="min-width: 80px;">昵称</th>
-                                        <th style="min-width: 80px;">姓名</th>
-                                        <th style="min-width: 80px;">性别</th>
-                                        <th style="min-width: 80px;">联系方式</th>
-                                        <th style="min-width: 80px;">详细地址</th>
-                                        <th style="min-width: 80px;">曾通关次数</th>
-                                        <th style="min-width: 80px;">曾获奖次数</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="check">
-                                        <td data-attr="选择"><input type="checkbox" name="chioce" id="" value="" checked="checked" class="checkTm" /></td>
-                                        <td data-attr="昵称">小欣欣</td>
-                                        <td data-attr="姓名">李白</td>
-                                        <td data-attr="性别">男</td>
-                                        <td data-attr="联系方式">13655555555</td>
-                                        <td data-attr="详细地址">南宁市绿都商厦</td>
-                                        <td data-attr="曾通关次数">3</td>
-                                        <td data-attr="曾获奖次数">3</td>
-                                    </tr>
-                                    <tr class="check">
-                                        <td data-attr="选择"><input type="checkbox" name="chioce" id="" value="" checked="checked" class="checkTm" /></td>
-                                        <td data-attr="昵称">小欣欣</td>
-                                        <td data-attr="姓名">李白</td>
-                                        <td data-attr="性别">男</td>
-                                        <td data-attr="联系方式">13655555555</td>
-                                        <td data-attr="详细地址">南宁市绿都商厦</td>
-                                        <td data-attr="曾通关次数">3</td>
-                                        <td data-attr="曾获奖次数">3</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary mr5">确定</button>
-                            <button class="btn btn-default">取消</button>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>随机选择获奖者</h4>
-                        </div>
-                        <div class="panel-heading">
-                            <div class="form-inline">
-                                <div class="form-group mt10">
-                                    <input name="" type="text" placeholder="请输入随机获奖人数" class="form-control">
-                                </div>
-                                <div class="form-group mt10">
-                                    <a class="btn btn-primary mr5" href="javascript:;" data-toggle="modal" data-target="#myModal">确定 </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- contentpanel -->
-            </div><!-- mainpanel -->
-        </div><!-- mainwrapper -->
-    </section>
-
-    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">提示</h4>
-                </div>
-                <div class="modal-body">
-                    <p>正在导出为excel表格，请选择保存地址</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" id="sureDel">确认</button>
                 </div>
             </div>
         </div>
-    </div>
+    </div><!-- contentpanel -->
+</div><!-- mainpanel -->
+        </div><!-- mainwrapper -->
+    </section>
 
-    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
-    <script src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/custom.js"></script>
-    <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
-    <script src="~/Scripts/jquery.uploadimg.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>正在导出为excel表格，请选择保存地址</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="sureDel">确认</button>
+            </div>
+        </div>
+    </div>
+</div>            
+@section FooterScript
+{
+<script type="text/javascript">
         	$(function(){
         		//日期选择器
         		jQuery('.datepicker').datepicker();
         	})
-    </script>
-</body>
-</html>
+</script>   
+}

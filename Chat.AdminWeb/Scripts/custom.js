@@ -139,5 +139,5 @@ jQuery(document).ready(function() {
 	        $('#navMenu>li').eq(i).addClass('active');
 	    }
 	    i++;
-	});
+	});    
 });

@@ -1,149 +1,82 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>用户管理</title>
-    <link href="~/Css/style.default.css" rel="stylesheet">
-    <link href="~/Css/morris.css" rel="stylesheet">
-    <link href="~/Css/select2.css" rel="stylesheet" />
-    <link href="~/Css/style.css" rel="stylesheet">
-    <link href="~/Css/style.calendar.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="headerwrapper">
-            <div class="header-left">
-                <a href="~/testpaper/list" class="logo"><img src="~/Picture/logo.png" /></a>
-                <div class="pull-right">
-                    <a href="#" class="menu-collapse">
-                        <i class="fa fa-bars"></i>
-                    </a>
+﻿@{
+    ViewBag.Title = "用户管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="mainpanel">
+    <div class="contentpanel">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="form-inline">
+                    <div class="form-group mt10">
+                        <select name="" class="form-control">
+                            <option value="">性别</option>
+                            <option value="">男</option>
+                            <option value="">女</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt10">
+                        <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
+                        <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                    </div>
+                    <div class="form-group mt10">
+                        <input name="" type="text" id="" placeholder="请输入用户昵称" class="form-control datepicker">
+                    </div>
+                    <div class="form-group mt10">
+                        <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
+                    </div>
                 </div>
-            </div><!-- header-left -->
-            <div class="header-right">
-                <div class="pull-right">
-                    <div class="btn-group btn-group-option">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <img class="img-circle avatar-img" alt="" src="~/Picture/profile.png">
-                            <span class="user-name">Salma</span>
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="~/home/logout"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
-                        </ul>
-                    </div><!-- btn-group -->
-
-                </div><!-- pull-right -->
-
-            </div><!-- header-right -->
-
-        </div><!-- headerwrapper -->
-    </header>
-
-    <section>
-        <div class="mainwrapper">
-            <div class="leftpanel">
-                <div class="media profile-left">
-                    <a class="pull-left profile-thumb" href="profile.html">
-                        <img class="img-circle" src="~/Picture/profile.png" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Salma Hayek</h4>
-                    </div>
-                </div><!-- media -->
-
-
-                <ul class="nav nav-pills nav-stacked" id="navMenu">
-                    <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
-                    <li><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
-                    <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
-                </ul>
-
-            </div><!-- leftpanel -->
-
-            <div class="mainpanel">
-                <div class="contentpanel">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="form-inline">
-                                <div class="form-group mt10">
-                                    <select name="" class="form-control">
-                                        <option value="">性别</option>
-                                        <option value="">男</option>
-                                        <option value="">女</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mt10">
-                                    <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                                    <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
-                                </div>
-                                <div class="form-group mt10">
-                                    <input name="" type="text" id="" placeholder="请输入用户昵称" class="form-control datepicker">
-                                </div>
-                                <div class="form-group mt10">
-                                    <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <table class="table table-bordered table-primary mb30">
-                                <thead>
-                                    <tr>
-                                        <th style="min-width: 80px;">编号</th>
-                                        <th style="min-width: 80px;">昵称</th>
-                                        <th style="min-width: 80px;">头像</th>
-                                        <th style="min-width: 80px;">姓名</th>
-                                        <th style="min-width: 80px;">性别</th>
-                                        <th style="min-width: 80px;">联系方式</th>
-                                        <th style="min-width: 80px;">详细地址</th>
-                                        <th style="min-width: 80px;">创建时间</th>
-                                        <th style="min-width: 80px;">操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td data-attr="编号">20171103 </td>
-                                        <td data-attr="昵称">环保从我做起</td>
-                                        <td data-attr="头像"><img src="Picture/profile.png" width="30" /></td>
-                                        <td data-attr="姓名">毛妮妮</td>
-                                        <td data-attr="性别">男</td>
-                                        <td data-attr="联系方式">18766567789</td>
-                                        <td data-attr="详细地址">广西南宁市青秀区100号</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                        <td data-attr="操作"><a>操作</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-attr="编号">20171103 </td>
-                                        <td data-attr="昵称">环保从我做起</td>
-                                        <td data-attr="头像"><img src="Picture/profile.png" width="30" /></td>
-                                        <td data-attr="姓名">毛妮妮</td>
-                                        <td data-attr="性别">男</td>
-                                        <td data-attr="联系方式">18766567789</td>
-                                        <td data-attr="详细地址">广西南宁市青秀区100号</td>
-                                        <td data-attr="创建时间">2017/04/30 16:10</td>
-                                        <td data-attr="操作"><a>操作</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div><!-- contentpanel -->
-            </div><!-- mainpanel -->
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-primary mb30">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 80px;">编号</th>
+                            <th style="min-width: 80px;">昵称</th>
+                            <th style="min-width: 80px;">头像</th>
+                            <th style="min-width: 80px;">姓名</th>
+                            <th style="min-width: 80px;">性别</th>
+                            <th style="min-width: 80px;">联系方式</th>
+                            <th style="min-width: 80px;">详细地址</th>
+                            <th style="min-width: 80px;">创建时间</th>
+                            <th style="min-width: 80px;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-attr="编号">20171103 </td>
+                            <td data-attr="昵称">环保从我做起</td>
+                            <td data-attr="头像"><img src="Picture/profile.png" width="30" /></td>
+                            <td data-attr="姓名">毛妮妮</td>
+                            <td data-attr="性别">男</td>
+                            <td data-attr="联系方式">18766567789</td>
+                            <td data-attr="详细地址">广西南宁市青秀区100号</td>
+                            <td data-attr="创建时间">2017/04/30 16:10</td>
+                            <td data-attr="操作"><a>操作</a></td>
+                        </tr>
+                        <tr>
+                            <td data-attr="编号">20171103 </td>
+                            <td data-attr="昵称">环保从我做起</td>
+                            <td data-attr="头像"><img src="Picture/profile.png" width="30" /></td>
+                            <td data-attr="姓名">毛妮妮</td>
+                            <td data-attr="性别">男</td>
+                            <td data-attr="联系方式">18766567789</td>
+                            <td data-attr="详细地址">广西南宁市青秀区100号</td>
+                            <td data-attr="创建时间">2017/04/30 16:10</td>
+                            <td data-attr="操作"><a>操作</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div><!-- contentpanel -->
+</div><!-- mainpanel -->
         </div><!-- mainwrapper -->
-    </section>
-
-    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
-    <script src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/custom.js"></script>
-    <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
-    <script type="text/javascript">
+    </section>            
+@section FooterScript
+{
+<script type="text/javascript">
         	$(function(){
         		jQuery('.datepicker').datepicker();
         	})
-    </script>
-</body>
-</html>
+</script>
+}

@@ -151,8 +151,7 @@
     <Content Include="Css\toggles.css" />
     <Content Include="Css\weather-icons.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Images\calendar-arrow.png" />
-    <Content Include="Images\search-icon.png" />
+    <Content Include="Picture\admin.png" />
     <Content Include="Picture\logo-primary.png" />
     <Content Include="Picture\logo.png" />
     <Content Include="Picture\profile.png" />
@@ -208,6 +207,7 @@
     <Content Include="Views\Activity\Prize.cshtml" />
     <Content Include="Views\TestPaper\AddEditExe.cshtml" />
     <None Include="Properties\PublishProfiles\AnswerAdmin.pubxml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

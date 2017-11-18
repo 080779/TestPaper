@@ -21,10 +21,10 @@ namespace Chat.WebCommon
                 {
                     continue;
                 }
-                builer.Append("属性错误：").Append(propName).Append("：");
+                builer.Append("数据验证失败：");
                 foreach (ModelError modelError in modelSatae[propName].Errors)
                 {
-                    builer.Append(modelError.ErrorMessage);
+                    builer.Append(modelError.ErrorMessage+"......");
                 }
             }
             return builer.ToString();

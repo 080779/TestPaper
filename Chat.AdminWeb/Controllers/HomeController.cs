@@ -1,4 +1,5 @@
 ﻿using Chat.AdminWeb.Models;
+using Chat.DTO.DTO;
 using Chat.IService.Interface;
 using Chat.WebCommon;
 using System;
@@ -40,6 +41,17 @@ namespace Chat.AdminWeb.Controllers
         {
             Session["AdminUserId"] = null;
             return Redirect("/home/login");
+        }
+
+        public ActionResult LoadManager()
+        {
+            long? id = (long?)Session["AdminUserId"];
+            if(id==null)
+            {
+                id = 0;
+            }
+            AdminUserDTO dto= adminService.GetById((long)id);
+            return Json(new AjaxResult { Status="success",Data=dto.Name});
         }
     }
 }

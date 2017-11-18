@@ -19,7 +19,7 @@ namespace Test
             IIdNameService idNameSevice = new IdNameService();
 
             //long[] ids = { 1, 2 };
-            //long[] roleids = { 1 };
+            long[] roleids = { 1 };
             //long[] addIds = { 2 };
 
             //permissionService.AddNew("manager", "管理员权限");
@@ -31,20 +31,20 @@ namespace Test
             //permissionService.AddPermissionIds(roleId, ids);
             //permissionService.AddPermissionIds(roleId1, addIds);
 
-            //long id = adminService.AddAdminUser("system", "18318318383", true, "edfe@qq.com", "123456");
+            long id = adminService.AddAdminUser("1", "15615615656", true, "edfe@qq.com", "1");
 
-            //roleService.AddRoleIds(id, roleids);
+            roleService.AddRoleIds(id, roleids);
 
             //Console.WriteLine(id);
 
-            idNameSevice.AddNew("正确答案", "A",null);
-            idNameSevice.AddNew("正确答案", "B", null);
-            idNameSevice.AddNew("正确答案", "C", null);
-            idNameSevice.AddNew("正确答案", "D", null);
-            idNameSevice.AddNew("活动状态", "待开始", null);
-            idNameSevice.AddNew("活动状态", "答题进行中", null);
-            idNameSevice.AddNew("活动状态", "待开奖", null);
-            long id= idNameSevice.AddNew("活动状态", "已结束", null);
+            //idNameSevice.AddNew("正确答案", "A",null);
+            //idNameSevice.AddNew("正确答案", "B", null);
+            //idNameSevice.AddNew("正确答案", "C", null);
+            //idNameSevice.AddNew("正确答案", "D", null);
+            //idNameSevice.AddNew("活动状态", "待开始", null);
+            //idNameSevice.AddNew("活动状态", "答题进行中", null);
+            //idNameSevice.AddNew("活动状态", "待开奖", null);
+            //long id= idNameSevice.AddNew("活动状态", "已结束", null);
             Console.WriteLine(id);
 
             //Console.WriteLine(paperService.Delete(3));

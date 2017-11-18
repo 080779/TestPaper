@@ -1,155 +1,89 @@
 ﻿@model Chat.DTO.DTO.TestPaperDTO[]
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>试题管理</title>
-    <link href="~/Css/style.default.css" rel="stylesheet">
-    <link href="~/Css/morris.css" rel="stylesheet">
-    <link href="~/Css/select2.css" rel="stylesheet" />
-    <link href="~/Css/style.css" rel="stylesheet">
-    <link href="~/Css/style.calendar.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="headerwrapper">
-            <div class="header-left">
-                <a href="~/testpaper/list" class="logo"><img src="~/Picture/logo.png" /></a>
-                <div class="pull-right">
-                    <a href="#" class="menu-collapse">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                </div>
-            </div><!-- header-left -->
-            <div class="header-right">
-                <div class="pull-right">
-                    <div class="btn-group btn-group-option">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <img class="img-circle avatar-img" alt="" src="~/Picture/profile.png">
-                            <span class="user-name">Salma</span>
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="~/home/logout"><i class="glyphicon glyphicon-log-out"></i>退出</a></li>
-                        </ul>
-                    </div><!-- btn-group -->
-
-                </div><!-- pull-right -->
-
-            </div><!-- header-right -->
-
-        </div><!-- headerwrapper -->
-    </header>
-
-    <section>
-        <div class="mainwrapper">
-            <div class="leftpanel">
-                <div class="media profile-left">
-                    <a class="pull-left profile-thumb" href="profile.html">
-                        <img class="img-circle" src="~/Picture/profile.png" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Salma Hayek</h4>
+@{
+    ViewBag.Title = "试题管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="mainpanel">
+    <div class="contentpanel">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-inline">
+                    <div class="form-group mt10">
+                        <a class="btn btn-primary mr5" iconcls="icon-search" href="~/testpaper/addpaper"><i class="fa fa-plus"></i> 创建新试题</a>
                     </div>
-                </div><!-- media -->
-
-
-                <ul class="nav nav-pills nav-stacked" id="navMenu">
-                    <li><a href="~/testpaper/list"><i class="fa fa-edit"></i> <span>试题管理</span></a></li>
-                    <li><a href="~/activity/list"><i class="fa fa-joomla"></i> <span>答题活动管理</span></a></li>
-                    <li><a href="~/user/list"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
-                </ul>
-
-            </div><!-- leftpanel -->
-
-            <div class="mainpanel">
-                <div class="contentpanel">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="form-inline">
-                                <div class="form-group mt10">
-                                    <a class="btn btn-primary mr5" iconcls="icon-search" href="~/testpaper/addpaper"><i class="fa fa-plus"></i> 创建新试题</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="form-inline">
-                                <div class="form-group mt10">
-                                    <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                                    <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
-                                </div>
-                                <div class="form-group mt10">
-                                    <input id="keyWord" type="text" placeholder="请输入试卷标题" class="form-control">
-                                </div>
-                                <div class="form-group mt10">
-
-                                    <button id="search" class="btn btn-primary mr5" iconcls="icon-search"><i class="fa fa-search"></i>搜 索</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <table class="table table-bordered table-primary mb30">
-                                <thead>
-                                    <tr>
-                                        <th style="min-width: 80px;">编号</th>
-                                        <th style="min-width: 80px;">试卷标题</th>
-                                        <th style="min-width: 80px;">考题数</th>
-                                        <th style="min-width: 80px;">创建时间</th>
-                                        <th style="min-width: 60px;">操作</th>
-                                    </tr>
-                                </thead>
-                                <tbody  id="paperList">
-                                    @foreach (var paper in Model)
-                                    {
-                                        <tr>
-                                            <td data-attr="编号">@paper.CreateDateTime.ToString("yyyyMMdd")@paper.Id</td>
-                                            <td data-attr="试卷标题">@paper.TestTitle</td>
-                                            <td data-attr="考题数">@paper.ExercisesCount</td>
-                                            <td data-attr="创建时间">@paper.CreateDateTime</td>
-                                            <td data-attr="操作">
-                                                <a href="~/testpaper/addeditexe?testPaperId=@paper.Id" class="btn btn-primary btn-sm">编辑</a>
-                                                <button data-toggle="modal" data-target="#myModal" value="@paper.Id" class="btn btn-danger btn-sm Jsdel">删除</button>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div><!-- contentpanel -->
-            </div><!-- mainpanel -->
-        </div><!-- mainwrapper -->
-    </section>
-
-    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">提示</h4>
-                </div>
-                <div class="modal-body">
-                    <p>确定删除该试卷吗？</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" value="" id="sureDel">确认</button>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="form-inline">
+                    <div class="form-group mt10">
+                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
+                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                    </div>
+                    <div class="form-group mt10">
+                        <input id="keyWord" type="text" placeholder="请输入试卷标题" class="form-control">
+                    </div>
+                    <div class="form-group mt10">
 
-    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
-    <script src="~/Scripts/jquery-migrate-1.2.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/custom.js"></script>
-    <script src="~/Scripts/jquery-ui-1.10.3.min.js"></script>
-    <script type="text/javascript">
+                        <button id="search" class="btn btn-primary mr5" iconcls="icon-search"><i class="fa fa-search"></i>搜 索</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-primary mb30">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 80px;">编号</th>
+                            <th style="min-width: 80px;">试卷标题</th>
+                            <th style="min-width: 80px;">考题数</th>
+                            <th style="min-width: 80px;">创建时间</th>
+                            <th style="min-width: 60px;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paperList">
+                        @foreach (var paper in Model)
+                        {
+                            <tr>
+                                <td data-attr="编号">@paper.Num@paper.Id</td>
+                                <td data-attr="试卷标题">@paper.TestTitle</td>
+                                <td data-attr="考题数">@paper.ExercisesCount</td>
+                                <td data-attr="创建时间">@paper.CreateDateTime</td>
+                                <td data-attr="操作">
+                                    <a href="~/testpaper/addeditexe?testPaperId=@paper.Id" class="btn btn-primary btn-sm">编辑</a>
+                                    <button data-toggle="modal" data-target="#myModal" value="@paper.Id" class="btn btn-danger btn-sm Jsdel">删除</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div><!-- contentpanel -->
+</div><!-- mainpanel -->
+        </div><!-- mainwrapper -->
+    </section>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>确定删除该试卷吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" value="" id="sureDel">确认</button>
+            </div>
+        </div>
+    </div>
+</div>            
+@section FooterScript
+{
+<script type="text/javascript">
         $(function () {
             jQuery('.datepicker').datepicker({ altFormat: "yyyy-mm-dd" });
             $('.Jsdel').click(function () {
@@ -194,9 +128,9 @@
                         {
                             $("#paperList").empty();
                             for (var i = 0; i < result.data.length;i++)
-                            {                                
+                            {
                                 $("#paperList").append("<tr><td data-attr='编号'>" + result.data[i].num + result.data[i].id + "</td><td data-attr='试卷标题'>" + result.data[i].testTitle + "</td><td data-attr='考题数'>" + result.data[i].exercisesCount + "</td><td data-attr='创建时间'>" + result.data[i].createDateTime + "</td><td data-attr='操作'><a href="+"/testpaper/addeditexe?testPaperId=" + result.data[i].id + "  class='btn btn-primary btn-sm'>编辑</a><button data-toggle='modal' data-target='#myModal' value="+ result.data[i].id+" class='btn btn-danger btn-sm Jsdel'>删除</button></td></tr>");
-                            }    
+                            }
                         }
                         else
                         {
@@ -207,6 +141,5 @@
                 });
             });
         })
-    </script>
-</body>
-</html>
+</script>  
+}
