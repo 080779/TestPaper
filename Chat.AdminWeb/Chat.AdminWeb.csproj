@@ -204,6 +204,7 @@
     </Compile>
     <Compile Include="Models\ActivityAddLoadModel.cs" />
     <Compile Include="Models\ActivityEditLoadModel.cs" />
+    <Compile Include="Models\ActivityListModel.cs" />
     <Compile Include="Models\AddExercisesModel.cs" />
     <Compile Include="Models\AdminUserLoginModel.cs" />
     <Compile Include="Models\AtivityAddModel.cs" />

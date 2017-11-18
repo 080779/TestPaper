@@ -24,10 +24,13 @@ namespace Chat.AdminWeb.Controllers
         public IUserService userService { get; set; }
 
         [Permission("list")]
-        public ActionResult List()
+        public ActionResult List(int pageIndex=1)
         {
-            ActivityDTO[] dtos = activityService.GetAll();
-            return View(dtos);
+            ActivityListModel model = new ActivityListModel();
+            model.Activities = activityService.GetPageData(10, (pageIndex - 1) * 2);
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.TotalCount =(int)activityService.GetTotalCount();
+            return View(model);
         }
 
         [Permission("list")]
@@ -288,7 +291,10 @@ namespace Chat.AdminWeb.Controllers
 
         public ActionResult Search(long? statusId,DateTime? startTime,DateTime? endTime,string keyWord)
         {
-            return Json(new AjaxResult { Status = "success", Data = activityService.Search(statusId,startTime, endTime, keyWord) });
+            ViewBag.PageIndex = 1;            
+            ActivityDTO[] dtos = activityService.Search(statusId, startTime, endTime, keyWord);
+            ViewBag.TotalCount = dtos.Count();
+            return Json(new AjaxResult { Status = "success", Data = dtos });
         }
     }
 }

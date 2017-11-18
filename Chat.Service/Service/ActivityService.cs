@@ -228,5 +228,23 @@ namespace Chat.Service.Service
                 return dbc.Database.SqlQuery<ActivityDTO>("select top(10) a.ID,a.Num,a.Name,a.Description,a.ImgUrl,a.StatusId,i.Name as StatusName,a.PaperId,t.TestTitle as PaperTitle,a.PrizeName,a.PrizeImgUrl,a.WeChatUrl,a.VisitCount,a.ForwardCount,a.AnswerCount,a.HavePrizeCount,a.PrizeCount,a.StartTime,a.ExamEndTime,a.RewardTime from T_Activities as a left join t_idnames i on i.id=a.statusid left join T_TestPapers t on t.Id=a.PaperId, (select ActivityId from T_UserActivities where UserId=@id) as u where a.Id=u.ActivityId", new SqlParameter("@id",id)).ToArray();
             }
         }
+
+        public ActivityDTO[] GetPageData(int pageSize, int currentIndex)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                return cs.GetAll().Include(a => a.Status).Include(a => a.Papers).OrderByDescending(a => a.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(a => ToDTO(a)).ToArray();
+            }
+        }
+
+        public long GetTotalCount()
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                return cs.GetTotalCount();
+            }
+        }
     }
 }

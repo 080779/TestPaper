@@ -1,8 +1,20 @@
-﻿@model Chat.DTO.DTO.ActivityDTO[]
+﻿@model Chat.AdminWeb.Models.ActivityListModel
 @{
     ViewBag.Title = "答题活动管理";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style type="text/css">
+    #pager ul li {
+            float:left;margin-left:10px;color:lightskyblue;
+            list-style-type:none;  
+            width:30px;
+            font-size:8px;
+            margin:0px; 
+    }
+    .curPager { 
+        color:brown;
+    }
+</style>
 <div class="mainpanel">
     <div class="contentpanel">
         <div class="panel panel-default">
@@ -56,7 +68,7 @@
                         </tr>
                     </thead>
                     <tbody id="paperList">
-                        @foreach (var activity in Model)
+                        @foreach (var activity in Model.Activities)
                         {
                             <tr>
                                 <td data-attr="期数">@activity.Num@activity.Id</td>
@@ -79,7 +91,18 @@
                         }
                     </tbody>
                 </table>
-            </div>
+                @{
+                    var pager = new Chat.WebCommon.DataPaging();
+                    pager.CurrentLinkClassName = "curPager";
+                    pager.MaxPagerCount = 10;
+                    pager.PageIndex = ViewBag.PageIndex;//这些数据，cshtml不知道，就必须让Action传递给我们
+                                                        //对于所有cshtml要用到，但是又获取不到的数据，都由Action来获取，然后放到ViewBag或者Model中传递给cshtml
+                    pager.PageSize = 10;
+                    pager.TotalCount = ViewBag.TotalCount;
+                    pager.UrlPattern = "/activity/list?&pageIndex={pn}";
+                }
+                <div id="pager">@Html.Raw(pager.GetPager())</div>
+            </div>            
         </div>
     </div><!-- contentpanel -->
 </div><!-- mainpanel -->
