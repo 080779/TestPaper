@@ -21,5 +21,6 @@ namespace Chat.DTO.DTO
         public long PassCount { get; set; }
         public long WinCount { get; set; }
         public bool IsWon { get; set; }
+        public DateTime? ChangeTime { get; set; }
     }
 }

@@ -17,6 +17,8 @@ namespace Test
             IPermissionService permissionService = new PermissionService();
             ITestPaperService paperService = new TestPaperService();
             IIdNameService idNameSevice = new IdNameService();
+            IUserService userService = new UserService();
+            IActivityService actService = new ActivityService();
 
             //long[] ids = { 1, 2 };
             long[] roleids = { 1 };
@@ -31,9 +33,9 @@ namespace Test
             //permissionService.AddPermissionIds(roleId, ids);
             //permissionService.AddPermissionIds(roleId1, addIds);
 
-            long id = adminService.AddAdminUser("1", "15615615656", true, "edfe@qq.com", "1");
+            //long id = adminService.AddAdminUser("1", "15615615656", true, "edfe@qq.com", "1");
 
-            roleService.AddRoleIds(id, roleids);
+            //roleService.AddRoleIds(id, roleids);
 
             //Console.WriteLine(id);
 
@@ -45,7 +47,9 @@ namespace Test
             //idNameSevice.AddNew("活动状态", "答题进行中", null);
             //idNameSevice.AddNew("活动状态", "待开奖", null);
             //long id= idNameSevice.AddNew("活动状态", "已结束", null);
-            Console.WriteLine(id);
+            //long id = userService.AddNew("xh313", "", "", "154186147455", false, "rqqewqeq");
+            actService.AddUserId(11, 2);
+            Console.WriteLine(actService.AddUserId(11,1));
 
             //Console.WriteLine(paperService.Delete(3));
             Console.ReadKey();

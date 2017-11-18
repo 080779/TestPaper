@@ -1,6 +1,6 @@
 ﻿@model Chat.DTO.DTO.ActivityDTO[]
 @{
-    ViewBag.Title = "答题活动管理";
+    ViewBag.Title = "用户参与答题活动管理";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="mainpanel">
@@ -121,10 +121,10 @@
             </div>
         </div>
     </div>
-</div>            
+</div>
 @section FooterScript
 {
-<script type="text/javascript">
+    <script type="text/javascript">
         $(function () {
             jQuery('.datepicker').datepicker();
 
@@ -182,5 +182,5 @@
             });
 
         })
-</script>    
+    </script>
 }

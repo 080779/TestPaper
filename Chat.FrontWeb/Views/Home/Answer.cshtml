@@ -40,15 +40,15 @@
     </div>
     <script src="~/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-			$(".anserli-as").click(function(){
-				var qus = $(this).parents('.jsQus');
-					qus.attr('data-ask','1');
-					//回答错误
-					$(this).addClass('wrong').siblings().removeClass('wrong right');
-					qus.find('.anserli-knowledge').css('display','block');
-					//回答正确
-//					$(this).addClass('right').siblings().removeClass('wrong right');
-			})
+        $(".anserli-as").click(function () {
+            var qus = $(this).parents('.jsQus');
+            qus.attr('data-ask', '1');
+            //回答错误
+            $(this).addClass('wrong').siblings().removeClass('wrong right');
+            qus.find('.anserli-knowledge').css('display', 'block');
+            //回答正确
+            //$(this).addClass('right').siblings().removeClass('wrong right');
+        })
     </script>
 </body>
 </html>

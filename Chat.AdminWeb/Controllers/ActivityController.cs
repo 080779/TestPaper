@@ -5,6 +5,8 @@ using Chat.IService.Interface;
 using Chat.WebCommon;
 using CodeCarvings.Piczard;
 using CodeCarvings.Piczard.Filters.Watermarks;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,6 +21,7 @@ namespace Chat.AdminWeb.Controllers
         public IActivityService activityService { get; set; }
         public ITestPaperService paperService { get; set; }
         public IIdNameService idNameService { get; set; }
+        public IUserService userService { get; set; }
 
         [Permission("list")]
         public ActionResult List()
@@ -26,6 +29,14 @@ namespace Chat.AdminWeb.Controllers
             ActivityDTO[] dtos = activityService.GetAll();
             return View(dtos);
         }
+
+        [Permission("list")]
+        public ActionResult UserActList(long id)
+        {
+            ActivityDTO[] dtos = activityService.GetByUserId(id);
+            return View(dtos);
+        }
+
         [Permission("manager")]
         public ActionResult Add()
         {
@@ -143,6 +154,12 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("活动背景图不能为空");
             }
+            string ext = Path.GetExtension(model.imgUrl.FileName);
+            string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp" };
+            if (!imgs.Contains(ext))
+            {
+                return Content("请上传背景图片文件，支持格式“png、jpg、jpeg、bmp”");
+            }
             if (model.StartTime == Convert.ToDateTime("0001-1-1 0:00:00"))
             {
                 return Content("活动开始时间不能为空");
@@ -167,6 +184,11 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("奖品图片不能为空");
             }
+            ext = Path.GetExtension(model.PrizeImgUrl.FileName);
+            if (!imgs.Contains(ext))
+            {
+                return Content("请上传奖品图片文件，支持格式“png、jpg、jpeg、bmp”");
+            }
             bool b = activityService.Update( model.activityId,model.Name, model.Description, model.StatusId, PicSave(model.imgUrl), model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName, PicSave(model.PrizeImgUrl));
             if (!b)
             {
@@ -176,10 +198,51 @@ namespace Chat.AdminWeb.Controllers
         }
 
         [Permission("manager")]
-        public ActionResult Prize()
+        public ActionResult DelActivity(long id)
         {
-            return View();
+            if (!activityService.Delete(id))
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "答题活动删除失败" });
+            }
+            return Json(new AjaxResult { Status = "success" });
         }
+
+        [Permission("manager")]
+        public ActionResult Prize(long id)
+        {
+            PrizeSetModel model = new PrizeSetModel();
+            model.Users = userService.GetByActivityId(id);
+            model.ActivityId = id;
+            return View(model);
+        }
+        [HttpPost]
+        [Permission("manager")]
+        public ActionResult PrizeSearch(long id, DateTime? startTime, DateTime? endTime, string keyWord)
+        {
+            if(id<=0)
+            {
+                return Json(new AjaxResult { Status="error",ErrorMsg="不存在这个答题活动"});
+            }
+            return Json(new AjaxResult { Status = "success", Data = userService.PrizeSearch(id,startTime, endTime, keyWord) });
+        }
+
+        [HttpPost]
+        [Permission("manager")]
+        public ActionResult PrizeWon(long[] isWonIds)
+        {
+            for(int i=0;i<isWonIds.Length;i++)
+            {
+                userService.SetWon(isWonIds[i]);
+            }
+            return Json("success");
+        }
+
+        [Permission("manager")]
+        public ActionResult CreateExcel(long id)
+        {
+            return Json("");
+        }
+
         [Permission("manager")]
         [HttpPost]
         public ActionResult PicUpload(long urlId, HttpPostedFileBase file)

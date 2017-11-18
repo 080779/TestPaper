@@ -72,7 +72,7 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
-                return cs.GetAll().Include(a => a.Status).Include(a=>a.Papers).OrderByDescending(a => a.CreateDateTime).ToList().Select(a => ToDTO(a)).ToArray();
+                return cs.GetAll().Include(a => a.Status).Include(a=>a.Papers).OrderByDescending(a => a.CreateDateTime).Take(10).ToList().Select(a => ToDTO(a)).ToArray();
             }
         }
 
@@ -168,6 +168,64 @@ namespace Chat.Service.Service
                 }
                 items = items.OrderByDescending(p => p.CreateDateTime).Take(10);
                 return items.ToList().Select(p => ToDTO(p)).ToArray();
+            }
+        }
+
+        public bool Delete(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var activity= cs.GetAll().SingleOrDefault(a=>a.Id==id);
+                if(activity==null)
+                {
+                    return false;
+                }
+                cs.MarkDeleted(id);
+                return true;
+            }
+        }
+
+        public bool AddUserId(long activityId, long userId)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
+                CommonService<UserEntity> ucs = new CommonService<UserEntity>(dbc);
+                var act = acs.GetAll().Include(a=>a.Users).SingleOrDefault(a => a.Id == activityId);
+                var user = ucs.GetAll().SingleOrDefault(u => u.Id == userId);
+                if(act==null)
+                {
+                    return false;
+                }
+                if(user==null)
+                {
+                    return false;
+                }
+                var count = dbc.Database.SqlQuery<long>("select UserId from t_useractivities where ActivityId=4 and UserId=1");
+                if (count.Count()>=1)
+                {
+                    return false;
+                }      
+                act.Users.Add(user);
+                dbc.SaveChanges();
+                user.PassCount++;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public ActivityDTO[] GetByUserId(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> ucs = new CommonService<UserEntity>(dbc);
+                var user = ucs.GetAll().SingleOrDefault(u=>u.Id==id);
+                if(user==null)
+                {
+                    return null;
+                }
+                return dbc.Database.SqlQuery<ActivityDTO>("select top(10) a.ID,a.Num,a.Name,a.Description,a.ImgUrl,a.StatusId,i.Name as StatusName,a.PaperId,t.TestTitle as PaperTitle,a.PrizeName,a.PrizeImgUrl,a.WeChatUrl,a.VisitCount,a.ForwardCount,a.AnswerCount,a.HavePrizeCount,a.PrizeCount,a.StartTime,a.ExamEndTime,a.RewardTime from T_Activities as a left join t_idnames i on i.id=a.statusid left join T_TestPapers t on t.Id=a.PaperId, (select ActivityId from T_UserActivities where UserId=@id) as u where a.Id=u.ActivityId", new SqlParameter("@id",id)).ToArray();
             }
         }
     }

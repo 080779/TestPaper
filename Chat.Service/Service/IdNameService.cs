@@ -37,10 +37,6 @@ namespace Chat.Service.Service
             {
                 CommonService<IdNameEntity> cs = new CommonService<IdNameEntity>(dbc);
                 var types= cs.GetAll().Where(i => i.TypeName == typeName);
-                if(types==null)
-                {
-                    return null;
-                }
                 return types.ToList().Select(i => new IdNameDTO { Id = i.Id, CreateDateTime = i.CreateDateTime, ImgUrl = i.ImgUrl, Name = i.Name, TypeName = i.TypeName }).ToArray();
             }
         }

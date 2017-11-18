@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Chat.DTO.DTO.UserDTO[]
+@{
     ViewBag.Title = "用户管理";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -8,21 +9,28 @@
             <div class="panel-heading">
                 <div class="form-inline">
                     <div class="form-group mt10">
-                        <select name="" class="form-control">
+                        <select id="gender" class="form-control">
                             <option value="">性别</option>
-                            <option value="">男</option>
-                            <option value="">女</option>
+                            <option value="true">男</option>
+                            <option value="false">女</option>
                         </select>
                     </div>
                     <div class="form-group mt10">
-                        <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                        <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                        <select id="isWon" class="form-control">
+                            <option value="">是否获奖</option>
+                            <option value="true">是</option>
+                            <option value="false">否</option>
+                        </select>
                     </div>
                     <div class="form-group mt10">
-                        <input name="" type="text" id="" placeholder="请输入用户昵称" class="form-control datepicker">
+                        <input type="text" id="txtStar" placeholder="请输入起始答题时间" class="form-control datepicker">
+                        <input type="text" id="txtEnd" placeholder="请输入结束答题时间" class="form-control datepicker">
                     </div>
                     <div class="form-group mt10">
-                        <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
+                        <input id="keyWord" type="text" placeholder="请输入用户名或手机号码" class="form-control">
+                    </div>
+                    <div class="form-group mt10">
+                        <a class="btn btn-primary mr5" iconcls="icon-search" id="search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
                     </div>
                 </div>
             </div>
@@ -32,7 +40,6 @@
                         <tr>
                             <th style="min-width: 80px;">编号</th>
                             <th style="min-width: 80px;">昵称</th>
-                            <th style="min-width: 80px;">头像</th>
                             <th style="min-width: 80px;">姓名</th>
                             <th style="min-width: 80px;">性别</th>
                             <th style="min-width: 80px;">联系方式</th>
@@ -41,29 +48,20 @@
                             <th style="min-width: 80px;">操作</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="paperList">
+                    @foreach (var user in Model)
+                    {
                         <tr>
-                            <td data-attr="编号">20171103 </td>
-                            <td data-attr="昵称">环保从我做起</td>
-                            <td data-attr="头像"><img src="Picture/profile.png" width="30" /></td>
-                            <td data-attr="姓名">毛妮妮</td>
-                            <td data-attr="性别">男</td>
-                            <td data-attr="联系方式">18766567789</td>
-                            <td data-attr="详细地址">广西南宁市青秀区100号</td>
-                            <td data-attr="创建时间">2017/04/30 16:10</td>
-                            <td data-attr="操作"><a>操作</a></td>
+                            <td data-attr="编号">@user.Id</td>
+                            <td data-attr="昵称">@user.NickName</td>
+                            <td data-attr="姓名">@user.Name</td>
+                            <td data-attr="性别">@(user.Gender?"男":"女")</td>
+                            <td data-attr="联系方式">@user.Mobile</td>
+                            <td data-attr="详细地址">@user.Address</td>
+                            <td data-attr="创建时间">@user.CreateDateTime</td>
+                            <td data-attr="操作"><a href="~/activity/useractlist?id=@user.Id" class="btn btn-primary btn-sm">参与的活动</a></td>
                         </tr>
-                        <tr>
-                            <td data-attr="编号">20171103 </td>
-                            <td data-attr="昵称">环保从我做起</td>
-                            <td data-attr="头像"><img src="Picture/profile.png" width="30" /></td>
-                            <td data-attr="姓名">毛妮妮</td>
-                            <td data-attr="性别">男</td>
-                            <td data-attr="联系方式">18766567789</td>
-                            <td data-attr="详细地址">广西南宁市青秀区100号</td>
-                            <td data-attr="创建时间">2017/04/30 16:10</td>
-                            <td data-attr="操作"><a>操作</a></td>
-                        </tr>
+                    }
                     </tbody>
                 </table>
             </div>
@@ -75,8 +73,59 @@
 @section FooterScript
 {
 <script type="text/javascript">
-        	$(function(){
-        		jQuery('.datepicker').datepicker();
-        	})
+    $(function () {
+        jQuery('.datepicker').datepicker();
+
+        //搜索
+        $("#search").click(function () {
+            var gender = $("#gender").val();
+            var isWon = $("#isWon").val();
+            var startTime = $("#txtStar").val();
+            var endTime = $("#txtEnd").val();
+            var keyWord = $("#keyWord").val();
+            $.ajax({
+                url: "/user/search", type: "post", data: { gender: gender,isWon:isWon, startTime: startTime, endTime: endTime, keyWord: keyWord },
+                success: function (result) {
+                    if (result.status == "error") {
+                        alert(result.errorMsg);
+                    }
+                    else if (result.status == "success") {
+                        $("#paperList").empty();
+                        for (var i = 0; i < result.data.length; i++) {
+                            var gendern = result.data[i].gender ? "男" : "女";
+                            $("#paperList").append('<tr><td data-attr="编号">' + result.data[i].id + '</td><td data-attr="昵称">' + result.data[i].nickName + '</td><td data-attr="姓名">' + result.data[i].name + '</td><td data-attr="性别">' + gendern + '</td><td data-attr="联系方式">' + result.data[i].mobile + '</td><td data-attr="详细地址">' + result.data[i].address + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td><td data-attr="操作"><a href="~/activity/useractlist?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">参与的活动</a></td></tr>');
+                        }
+                    }
+                    else {
+                        alert("未知错误");
+                    }
+                },
+                error: function () { alert("网络错误"); }
+            });
+        });
+
+        //删除
+        $("#sureDel").click(function () {
+            var id = $(this).val();
+            $.ajax({
+                url: "/user/deluser?id=", type: "post", data: { id: id },
+                success: function (result) {
+                    if (result.status == "error") {
+                        alert(result.errorMsg);
+                        $("#cancel").click();
+                    }
+                    else if (result.status == "success") {
+                        $("#cancel").click();
+                        window.location.reload();
+                    }
+                    else {
+                        alert("未知错误");
+                        $("#cancel").click();
+                    }
+                },
+                error: function () { alert("网络错误"); $("#cancel").click(); }
+            });
+        });
+    })
 </script>
 }

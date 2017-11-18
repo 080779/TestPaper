@@ -1,10 +1,11 @@
-﻿@{
+﻿@model Chat.AdminWeb.Models.PrizeSetModel
+@{
     ViewBag.Title = "开奖处理";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="mainpanel">
     <div class="contentpanel">
-        <div class="panel panel-default">
+        <!--<div class="panel panel-default">
             <div class="panel-heading">
                 <h4>时间设置</h4>
             </div>
@@ -18,7 +19,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div>-->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>从具备抽奖资格的人员中选取获奖者</h4>
@@ -26,57 +27,53 @@
             <div class="panel-heading">
                 <div class="form-inline">
                     <div class="form-group mt10">
-                        <input name="txtStar" type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                        <input name="txtEnd" type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                        <input type="hidden" id="actId" value="@Model.ActivityId" />
+                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
+                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
                     </div>
                     <div class="form-group mt10">
-                        <input name="" type="text" placeholder="按昵称/姓名/电话搜索" class="form-control">
+                        <input id="keyWord" type="text" placeholder="按昵称/姓名/电话搜索" class="form-control">
                     </div>
                     <div class="form-group mt10">
-                        <a class="btn btn-primary mr5" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
+                        <a class="btn btn-primary mr5" iconcls="icon-search" id="search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
                     </div>
                 </div>
             </div>
             <div class="panel-body">
-                <table class="table table-bordered table-primary mb30">
-                    <thead>
-                        <tr>
-                            <th style="min-width: 20px;">选择</th>
-                            <th style="min-width: 80px;">昵称</th>
-                            <th style="min-width: 80px;">姓名</th>
-                            <th style="min-width: 80px;">性别</th>
-                            <th style="min-width: 80px;">联系方式</th>
-                            <th style="min-width: 80px;">详细地址</th>
-                            <th style="min-width: 80px;">曾通关次数</th>
-                            <th style="min-width: 80px;">曾获奖次数</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="check">
-                            <td data-attr="选择"><input type="checkbox" name="chioce" id="" value="" checked="checked" class="checkTm" /></td>
-                            <td data-attr="昵称">小欣欣</td>
-                            <td data-attr="姓名">李白</td>
-                            <td data-attr="性别">男</td>
-                            <td data-attr="联系方式">13655555555</td>
-                            <td data-attr="详细地址">南宁市绿都商厦</td>
-                            <td data-attr="曾通关次数">3</td>
-                            <td data-attr="曾获奖次数">3</td>
-                        </tr>
-                        <tr class="check">
-                            <td data-attr="选择"><input type="checkbox" name="chioce" id="" value="" checked="checked" class="checkTm" /></td>
-                            <td data-attr="昵称">小欣欣</td>
-                            <td data-attr="姓名">李白</td>
-                            <td data-attr="性别">男</td>
-                            <td data-attr="联系方式">13655555555</td>
-                            <td data-attr="详细地址">南宁市绿都商厦</td>
-                            <td data-attr="曾通关次数">3</td>
-                            <td data-attr="曾获奖次数">3</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <form id="formCheck">
+                    <table class="table table-bordered table-primary mb30">
+                        <thead>
+                            <tr>
+                                <th style="min-width: 20px;">选择</th>
+                                <th style="min-width: 80px;">昵称</th>
+                                <th style="min-width: 80px;">姓名</th>
+                                <th style="min-width: 80px;">性别</th>
+                                <th style="min-width: 80px;">联系方式</th>
+                                <th style="min-width: 80px;">详细地址</th>
+                                <th style="min-width: 80px;">曾通关次数</th>
+                                <th style="min-width: 80px;">曾获奖次数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paperList">
+                            @foreach (var user in Model.Users)
+                            {
+                                <tr class="check">
+                                    <td data-attr="选择"><input type="checkbox" name="isWonIds" id="" value="@user.Id" class="checkTm" /></td>
+                                    <td data-attr="昵称">@user.NickName</td>
+                                    <td data-attr="姓名">@user.Name</td>
+                                    <td data-attr="性别">@(user.Gender ? "男" : "女")</td>
+                                    <td data-attr="联系方式">@user.Mobile</td>
+                                    <td data-attr="详细地址">@user.Address</td>
+                                    <td data-attr="曾通关次数">@user.PassCount</td>
+                                    <td data-attr="曾获奖次数">@user.WinCount</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </form>                
             </div>
             <div class="panel-footer">
-                <button class="btn btn-primary mr5">确定</button>
+                <button id="btnSaveWon" class="btn btn-primary mr5">确定</button>
                 <button class="btn btn-default">取消</button>
             </div>
         </div>
@@ -99,30 +96,51 @@
 </div><!-- mainpanel -->
         </div><!-- mainwrapper -->
     </section>
-
-<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">提示</h4>
-            </div>
-            <div class="modal-body">
-                <p>正在导出为excel表格，请选择保存地址</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="sureDel">确认</button>
-            </div>
-        </div>
-    </div>
-</div>            
+   
 @section FooterScript
 {
 <script type="text/javascript">
         	$(function(){
         		//日期选择器
-        		jQuery('.datepicker').datepicker();
+        	    jQuery('.datepicker').datepicker();
+
+        	    //搜索
+        	    $("#search").click(function () {
+        	        var id = $("#actId").val();
+        	        var startTime = $("#txtStar").val();
+        	        var endTime = $("#txtEnd").val();
+        	        var keyWord = $("#keyWord").val();
+        	        $.ajax({
+        	            url: "/activity/prizesearch", type: "post", data: { id: id, startTime: startTime, endTime: endTime, keyWord: keyWord },
+        	            success: function (result) {
+        	                if (result.status == "error") {
+        	                    alert(result.errorMsg);
+        	                }
+        	                else if (result.status == "success") {
+        	                    $("#paperList").empty();
+        	                    for (var i = 0; i < result.data.length; i++) {
+        	                        var gerdern = result.data[i].gender ? "男" : "女";
+        	                        $("#paperList").append('<tr class="check"><td data-attr="选择"><input type="checkbox" name="isWon" id="" value="' + result.data[i].Id + '" class="checkTm" /></td><td data-attr="昵称">' + result.data[i].nickName + '</td><td data-attr="姓名">' + result.data[i].name + '</td><td data-attr="性别">' + gerdern + '</td><td data-attr="联系方式">' + result.data[i].mobile + '</td><td data-attr="详细地址">' + result.data[i].address + '</td><td data-attr="曾通关次数">' + result.data[i].passCount + '</td><td data-attr="曾获奖次数">' + result.data[i].winCount + '</td></tr>');
+        	                    }
+        	                }
+        	                else {
+        	                    alert("未知错误");
+        	                }
+        	            },
+        	            error: function () { alert("网络错误"); }
+        	        });
+        	    });
+
+        	    $("#btnSaveWon").click(function () {
+        	        var formData = $("#formCheck").serializeArray();
+        	        $.ajax({
+        	            url: "/activity/prizewon", type: "post", data: formData,
+        	            success: function (result) {
+        	                alert("设置成功");
+        	            },
+        	            error: function () { alert("网络错误");}
+        	        });
+        	    });
         	})
 </script>   
 }

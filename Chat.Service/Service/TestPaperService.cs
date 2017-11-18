@@ -48,7 +48,7 @@ namespace Chat.Service.Service
             {
                 CommonService<TestPaperEntity> cs = new CommonService<TestPaperEntity>(dbc);
                 
-                return cs.GetAll().OrderByDescending(t=>t.CreateDateTime).Select(r => new TestPaperDTO { Id = r.Id, TestTitle = r.TestTitle, ExercisesCount = r.ExercisesCount, CreateDateTime = r.CreateDateTime, Num = r.Num }).ToArray();
+                return cs.GetAll().OrderByDescending(t=>t.CreateDateTime).Take(10).Select(r => new TestPaperDTO { Id = r.Id, TestTitle = r.TestTitle, ExercisesCount = r.ExercisesCount, CreateDateTime = r.CreateDateTime, Num = r.Num }).ToArray();
             }
         }
 
