@@ -7,6 +7,7 @@ using CodeCarvings.Piczard;
 using CodeCarvings.Piczard.Filters.Watermarks;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -214,7 +215,7 @@ namespace Chat.AdminWeb.Controllers
         public ActionResult Prize(long id)
         {
             PrizeSetModel model = new PrizeSetModel();
-            model.Users = userService.GetByActivityId(id);
+            model.Users = userService.GetByActivityIdHavePrize(id);
             model.ActivityId = id;
             return View(model);
         }
@@ -243,7 +244,94 @@ namespace Chat.AdminWeb.Controllers
         [Permission("manager")]
         public ActionResult CreateExcel(long id)
         {
-            return Json("");
+            if(id<=0)
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "不存在这个答题活动" });
+            }
+            UserDTO[] dtos = userService.GetByActivityIdIsWon(id);
+            IWorkbook wb1 = new XSSFWorkbook();
+            ISheet sheet1 = wb1.CreateSheet();
+            sheet1.AutoSizeColumn(1);
+            //sheet1.SetColumnWidth(0, 30 * 256);
+            IRow Row1 = sheet1.CreateRow(0);
+            ICellStyle style = wb1.CreateCellStyle();
+            style.Alignment = HorizontalAlignment.Center;
+            //新建一个字体样式对象
+            IFont font = wb1.CreateFont();
+            //设置字体加粗样式
+            font.Boldweight = short.MaxValue;
+            //使用SetFont方法将字体样式添加到单元格样式中 
+            style.SetFont(font);
+
+            ICell cell0 = Row1.CreateCell(0);
+            cell0.CellStyle = style;      
+            cell0.SetCellValue("编号");
+
+            ICell cell1 = Row1.CreateCell(1);
+            cell1.CellStyle = style;
+            cell1.SetCellValue("昵称");
+
+            ICell cell2 = Row1.CreateCell(2);
+            cell2.CellStyle = style;
+            cell2.SetCellValue("姓名");
+
+            ICell cell3 = Row1.CreateCell(3);
+            cell3.CellStyle = style;
+            cell3.SetCellValue("手机号");
+
+            ICell cell4 = Row1.CreateCell(4);
+            cell4.CellStyle = style;
+            cell4.SetCellValue("联系地址");
+
+            ICell cell5 = Row1.CreateCell(5);
+            cell5.CellStyle = style;
+            cell5.SetCellValue("参与活动次数");
+
+            ICell cell6 = Row1.CreateCell(6);
+            cell6.CellStyle = style;
+            cell6.SetCellValue("中奖次数");
+
+            int i = 1;
+            foreach (var dto in dtos)
+            {
+                Row1 = sheet1.CreateRow(i++);
+                cell0 = Row1.CreateCell(0);
+                cell0.CellStyle = style;
+                cell0.SetCellValue(dto.Id);
+                cell1=Row1.CreateCell(1);
+                cell1.CellStyle = style;
+                cell1.SetCellValue(dto.NickName);
+                cell2=Row1.CreateCell(2);
+                cell2.CellStyle = style;
+                cell2.SetCellValue(dto.Name);
+                cell3=Row1.CreateCell(3);
+                cell3.CellStyle = style;
+                cell3.SetCellValue(dto.Mobile);
+                cell4=Row1.CreateCell(4);
+                cell4.CellStyle = style;
+                cell4.SetCellValue(dto.Address);
+                cell5=Row1.CreateCell(5);
+                cell5.CellStyle = style;
+                cell5.SetCellValue(dto.PassCount);
+                cell6=Row1.CreateCell(6);
+                cell6.CellStyle = style;
+                cell6.SetCellValue(dto.WinCount);
+            }
+
+            for(int j=0;j<=6;j++)
+            {
+                sheet1.SetColumnWidth(j, 20*150);
+            }
+            sheet1.SetColumnWidth(4,40*256);
+
+            var ms = new NpoiMemoryStream();
+            ms.AllowClose = false;
+            wb1.Write(ms);
+            ms.Flush();
+            ms.Seek(0, SeekOrigin.Begin);
+            ms.AllowClose = true;
+            // 写入到客户端 
+            return File(ms, "application/vnd.ms-excel", "获奖用户信息.xls");
         }
 
         [Permission("manager")]

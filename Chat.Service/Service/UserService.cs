@@ -79,7 +79,21 @@ namespace Chat.Service.Service
                 {
                     return null;
                 }
-                return dbc.Database.SqlQuery<UserDTO>("select top(20) u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id", new SqlParameter("@id", id)).ToArray();
+                return dbc.Database.SqlQuery<UserDTO>("select top(20) u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
+            }
+        }
+
+        public UserDTO[] GetByActivityIdHavePrize(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var activity = cs.GetAll().SingleOrDefault(a => a.Id == id);
+                if (activity == null)
+                {
+                    return null;
+                }
+                return dbc.Database.SqlQuery<UserDTO>("select u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsWon=0 and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
             }
         }
 
@@ -93,7 +107,7 @@ namespace Chat.Service.Service
                 {
                     return null;
                 }
-                return dbc.Database.SqlQuery<UserDTO>("select u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and a.IswWon=1", new SqlParameter("@id", id)).ToArray();
+                return dbc.Database.SqlQuery<UserDTO>("select u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsWon=1 and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
             }
         }
 
@@ -107,7 +121,7 @@ namespace Chat.Service.Service
                 {
                     return null;
                 }
-                string sql= "select top(10) * from T_Users as u, (select UserId from T_UserActivities where ActivityId = @id) as a where a.UserId = u.Id";
+                string sql= "select top(10) u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId = @id) as a where a.UserId = u.Id and u.IsDeleted=0";
                 if (startTime!=null)
                 {
                      sql= sql+" and u.ChangeTime >= @startTime";
@@ -198,6 +212,7 @@ namespace Chat.Service.Service
                     return false;
                 }
                 user.IsWon = true;
+                user.WinCount++;
                 dbc.SaveChanges();
                 return true;
             }

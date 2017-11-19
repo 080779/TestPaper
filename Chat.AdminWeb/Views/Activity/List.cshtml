@@ -84,7 +84,8 @@
                                 <td data-attr="操作">
                                     <a href="~/activity/edit?id=@activity.Id" class="btn btn-primary btn-sm">编辑</a>
                                     <a href="~/activity/prize?id=@activity.Id" class="btn btn-primary btn-sm">开奖处理</a>
-                                    <a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-default btn-sm">导出开奖结果</a>
+                                    <a href="/activity/createexcel?id=@activity.Id" class="btn btn-primary btn-sm">导出开奖结果</a>
+                                    <!--<button data-toggle="modal" value="@activity.Id" data-target="#myModal2" class="btn btn-default btn-sm excelSave">导出开奖结果</button>-->
                                     <button data-toggle="modal" data-target="#myModal" value="@activity.Id" class="btn btn-danger btn-sm Jsdel">删除</button>
                                 </td>
                             </tr>
@@ -101,7 +102,7 @@
                     pager.TotalCount = ViewBag.TotalCount;
                     pager.UrlPattern = "/activity/list?&pageIndex={pn}";
                 }
-                <div id="pager">@Html.Raw(pager.GetPager())</div>
+                <div id="pager"><!--@Html.Raw(pager.GetPager())--></div>
             </div>            
         </div>
     </div><!-- contentpanel -->
@@ -128,7 +129,7 @@
 </div>
 
 
-<div class="modal fade" tabindex="-1" role="dialog" id="myModal2">
+<!--<div class="modal fade" tabindex="-1" role="dialog" id="myModal2">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -140,11 +141,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" id="cancelSave" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="sureSave">确认</button>
+                <button type="button" class="btn btn-primary" id="sureSaveCel">确认</button>
             </div>
         </div>
     </div>
-</div>            
+</div>-->
 @section FooterScript
 {
 <script type="text/javascript">
@@ -153,6 +154,10 @@
 
             $('.Jsdel').click(function () {
                 $("#sureDel").val($(this).val());
+            });
+
+            $('.excelSave').click(function () {
+                $("#sureSaveCel").val($(this).val());
             });
 
             //搜索
@@ -170,7 +175,7 @@
                         else if (result.status == "success") {
                             $("#paperList").empty();
                             for (var i = 0; i < result.data.length; i++) {
-                                $("#paperList").append('<tr><td data-attr="期数">' + result.data[i].num + result.data[i].id + '</td><td data-attr="活动名称">' + result.data[i].name + '</td><td data-attr="状态">' + result.data[i].statusName + '</td><td data-attr="页面URL"><a>www.baidu.com</a></td><td data-attr="访问量">' + result.data[i].visitCount + '</td><td data-attr="转发次数">' + result.data[i].forwardCount + '</td><td data-attr="答题次数">' + result.data[i].answerCount + '</td><td data-attr="获奖资格人数">' + result.data[i].havePrizeCount + '</td><td data-attr="获奖人数">' + result.data[i].prizeCount + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td><td data-attr="操作"><a href="/activity/edit?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">编辑</a><a href="/activity/prize?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">开奖处理</a><a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-default btn-sm">导出开奖结果</a><button data-toggle="modal" data-target="#myModal" value="'+result.data[i].id+'" class="btn btn-danger btn-sm Jsdel">删除</button></td></tr>');
+                                $("#paperList").append('<tr><td data-attr="期数">' + result.data[i].num + result.data[i].id + '</td><td data-attr="活动名称">' + result.data[i].name + '</td><td data-attr="状态">' + result.data[i].statusName + '</td><td data-attr="页面URL"><a>www.baidu.com</a></td><td data-attr="访问量">' + result.data[i].visitCount + '</td><td data-attr="转发次数">' + result.data[i].forwardCount + '</td><td data-attr="答题次数">' + result.data[i].answerCount + '</td><td data-attr="获奖资格人数">' + result.data[i].havePrizeCount + '</td><td data-attr="获奖人数">' + result.data[i].prizeCount + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td><td data-attr="操作"><a href="/activity/edit?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">编辑</a><a href="/activity/prize?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">开奖处理</a><a href="/activity/createexcel?id='+result.data[i].id+'" class="btn btn-primary btn-sm">导出开奖结果</a><button data-toggle="modal" data-target="#myModal" value="' + result.data[i].id + '" class="btn btn-danger btn-sm Jsdel">删除</button></td></tr>');
                             }
                         }
                         else {
@@ -185,7 +190,7 @@
             $("#sureDel").click(function () {
                 var id = $(this).val();
                 $.ajax({
-                    url: "/activity/delactivity?id=", type: "post", data: { id: id },
+                    url: "/activity/delactivity", type: "post", data: { id: id },
                     success: function (result) {
                         if (result.status == "error") {
                             alert(result.errorMsg);
@@ -203,6 +208,28 @@
                     error: function () { alert("网络错误"); $("#cancel").click(); }
                 });
             });
+            //导出开奖结果
+            //$("#sureSaveCel").click(function () {
+            //    var id = $(this).val();
+            //    $.ajax({
+            //        url: "/activity/createexcel", type: "post", data: { id: id },
+            //        success: function (result) {
+            //            if (result.status == "error") {
+            //                alert(result.errorMsg);
+            //                $("#cancelSave").click();
+            //            }
+            //            else if (result.status == "success") {
+            //                $("#cancelSave").click();
+            //                window.location.reload();
+            //            }
+            //            else {
+            //                alert("未知错误");
+            //                $("#cancelSave").click();
+            //            }
+            //        },
+            //        error: function () { alert("网络错误"); $("#cancel").click(); }
+            //    });
+            //});
 
         })
 </script>    

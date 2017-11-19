@@ -30,7 +30,22 @@ namespace Chat.Service.Service
                 exercises.OptionD = optionD;
                 exercises.RightKeyId = rightKeyId;
                 exercises.Point = 0;
-                exercises.Tip = tip;
+
+                switch(rightKeyId)
+                {
+                    case 1:
+                        exercises.Tip = title + optionA;
+                        break;
+                    case 2:
+                        exercises.Tip = title + optionB;
+                        break;
+                    case 3:
+                        exercises.Tip = title + optionC;
+                        break;
+                    case 4:
+                        exercises.Tip = title + optionD;
+                        break;
+                }
                 dbc.Exercises.Add(exercises);
                 dbc.SaveChanges();
                 string sql = "update T_TestPapers set ExercisesCount=c.b from T_TestPapers, (select t.Id, COUNT(e.TestPaperId) as b from T_TestPapers t inner join (select TestPaperId from T_Exercises where IsDeleted=0) as e on t.Id=e.TestPaperId group by t.id) as c where T_TestPapers.Id=c.Id";

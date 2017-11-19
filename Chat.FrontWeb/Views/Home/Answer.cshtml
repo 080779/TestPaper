@@ -44,18 +44,13 @@
             var qus = $(this).parents('.jsQus');
             qus.attr('data-ask', '1');
             var that = $(this);
-            var wrongcount=0
+            
             if (!that.hasClass("isrightclass")) {
-                wrongcount++;
                 //回答错误
                 $(this).addClass('wrong').siblings().removeClass('wrong right');
                 qus.find('.anserli-knowledge').css('display', 'block');
             }
-            else {
-                if (wrongcount == 0)
-                {
-
-                }
+            else {                
                 //回答正确
                 $(this).addClass('right').siblings().removeClass('wrong right');
             }            
