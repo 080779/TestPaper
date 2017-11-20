@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /* font */
 @font-face{ font-family: "hzgb"; src: url('../font/hzgb.ttf') format('truetype');}
@@ -13,10 +13,10 @@
 /* 首页 */
 .index-bg{
 	min-height: 100%;
-	background: url(../img/default/bg-i.jpg) no-repeat fixed;
+	background: url(../img/default/bg-l.jpg) no-repeat fixed;
 	background-size: 100% auto;
 	box-sizing: border-box;
-	padding: 25% 3%;
+	padding: 3% 3% 5rem;
 }
 
 .index-wrap{
@@ -126,18 +126,20 @@
 /* 答题页 */
 .answer-bg{
 	position: relative;
-	min-height: 160%;
-	background: #b7ebf6 url(../img/default/bg2.png) repeat-y;
+	/*min-height: 160%;*/
+	/*background: #b7ebf6 url(../img/default/bg2.png) repeat-y;*/
+	background-image: url(../img/default/bg-i.jpg);
+    background-attachment: fixed;
 	background-size: 100% auto;
 }
 
-.answer-bg::before,.answer-bg::after{
+/*.answer-bg::before,.answer-bg::after{
 	position: absolute;
 	display: block;
 	content: '';
 	width: 100%;
 	left: 0;
-}
+}*/
 
 .answer-bg::before{
 	padding-bottom: 85%;
@@ -198,7 +200,7 @@
 	min-height: 15rem;
 	background-size: 100% 100%;
 	box-sizing: border-box;
-	padding: 2rem 1.5rem 3rem 2.8rem;
+	padding: 2rem 3.5rem 3rem 2.8rem;
 }
 
 .anserli-knowledge{
@@ -271,7 +273,7 @@
 }
 
 .anserli-con{
-	padding: 0 3rem 0 1rem;
+	padding: 0 1rem;
 }
 
 .anserli-as{

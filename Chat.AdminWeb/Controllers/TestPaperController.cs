@@ -15,6 +15,7 @@ namespace Chat.AdminWeb.Controllers
     {
         public ITestPaperService testPaperService { get; set; }
         public IExercisesService exercisesService { get; set; }
+        public IActivityService activityService { get; set; }
 
         [Permission("list")]
         public ActionResult List()
@@ -66,7 +67,7 @@ namespace Chat.AdminWeb.Controllers
             long exId= exercisesService.AddNew(model.Title, model.TestPaperId, model.OptionA, model.OptionB, model.OptionC, model.OptionD, model.RightKeyId,"");
             if(exId<=0)
             {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "考题添加失败" });
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "添加错误或考题已经存在" });
             }
             loadmodel.Exercises = exercisesService.GetExercisesByPaperId(model.TestPaperId);
             loadmodel.PaperExeCount = exercisesService.GetPaperExercisesCount(model.TestPaperId);
@@ -175,6 +176,10 @@ namespace Chat.AdminWeb.Controllers
         [Permission("manager")]
         public ActionResult DelPaper(long id)
         {
+            if(activityService.CheckByPaperId(id))
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "有活动正在使用此试卷，无法删除" });
+            }
             if(!testPaperService.Delete(id))
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "试卷删除失败" });

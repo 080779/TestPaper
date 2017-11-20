@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Chat.DTO.DTO;
 using System.Data.SqlClient;
+using Chat.WebCommon;
 
 namespace Chat.Service.Service
 {
@@ -74,11 +75,16 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                CommonService<UserEntity> ucs = new CommonService<UserEntity>(dbc);
                 var activity = cs.GetAll().SingleOrDefault(a => a.Id == id);
                 if (activity == null)
                 {
                     return null;
                 }
+               // var users = cs.GetAll().SelectMany(a=>a.Users);
+                //var activities = ucs.GetAll().SelectMany(u=>u.Activities).Where(a=>a.Id==id).Select(a=>ToDTO(a));
+
+
                 return dbc.Database.SqlQuery<UserDTO>("select top(20) u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
             }
         }
@@ -93,7 +99,7 @@ namespace Chat.Service.Service
                 {
                     return null;
                 }
-                return dbc.Database.SqlQuery<UserDTO>("select u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsWon=0 and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
+                return dbc.Database.SqlQuery<UserDTO>("select u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.LoginErrorTimes=1 and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
             }
         }
 
@@ -183,15 +189,17 @@ namespace Chat.Service.Service
                 }
                 if(isWon!=null)
                 {
-                    items = items.Where(u => u.Gender == gender);
+                    items = items.Where(u => u.IsWon == isWon);
                 }
                 if (startTime != null)
                 {
-                    items = items.Where(u => u.ChangeTime >= startTime);
+                    startTime = DateTimeHelper.GetBeginDate((DateTime)startTime);
+                    items = items.Where(u => u.CreateDateTime >= startTime);
                 }
                 if (endTime != null)
                 {
-                    items = items.Where(u => u.ChangeTime <= endTime);
+                    endTime = DateTimeHelper.GetEndDate((DateTime)endTime);
+                    items = items.Where(u => u.CreateDateTime <= endTime);
                 }
                 if (keyWord != null)
                 {
@@ -213,6 +221,90 @@ namespace Chat.Service.Service
                 }
                 user.IsWon = true;
                 user.WinCount++;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool RetSetWon(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                var user = cs.GetAll().SingleOrDefault(u => u.Id == id);
+                if (user == null)
+                {
+                    return false;
+                }
+                user.IsWon = false;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool UserIsWonByMobile(string mobile)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                if(string.IsNullOrEmpty(mobile))
+                {
+                    return false;
+                }
+                var user= cs.GetAll().SingleOrDefault(u=>u.Mobile==mobile);
+                if(user==null)
+                {
+                    return false;
+                }
+               return user.IsWon == true;
+            }
+        }
+
+        public bool UpdateUser(string mobile,string name,bool gender,string address)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                UserEntity user= cs.GetAll().SingleOrDefault(u=>u.Mobile==mobile);
+                if(user==null)
+                {
+                    return false;
+                }
+                user.Name = name;
+                user.Gender = gender;
+                user.Address = address;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool IsHavePrizeChance(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                UserEntity user= cs.GetAll().SingleOrDefault(u=>u.Id==id);
+                if(user==null)
+                {
+                    return false;
+                }
+                user.LoginErrorTimes = 1;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool ReSetPrizeChance(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                UserEntity user = cs.GetAll().SingleOrDefault(u => u.Id == id);
+                if (user == null)
+                {
+                    return false;
+                }
+                user.LoginErrorTimes = 0;
                 dbc.SaveChanges();
                 return true;
             }

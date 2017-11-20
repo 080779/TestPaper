@@ -9,52 +9,87 @@
     <link rel="stylesheet" type="text/css" href="~/css/style-default.css" />
 </head>
 <body>
-    <div class="answer-bg">
+    <div class="answer-bg" style="background-image:url(@Model.FirstUrl@Model.ImgUrl)">
         <div class="answer-wrap">
             <div class="answer-title">
                 <span class="font answer-tit-txt">@Model.ActivityName</span>
+                <input type="hidden" id="activityId" value="@Model.Id" />
             </div>
             <div class="anser-list">
-                @for(int i=1; i<=Model.Exercises.Count();i++)
+                @for (int i = 1; i <= Model.Exercises.Count(); i++)
                 {
-                    <div class="anserli jsQus">
+                    <div class="anserli jsQus" data-id="@Model.Exercises[i - 1].Id">
                         <div class="anserli-tit">
                             <span class="anserli-num num@(i)">@i</span>
-                            <span class="anserli-qus">@Model.Exercises[i-1].Title</span>
+                            <span class="anserli-qus">@Model.Exercises[i - 1].Title</span>
                         </div>
                         <div class="anserli-con">
-                            <div class="anserli-as isright@(1==Model.Exercises[i - 1].RightKeyId)" >A.@Model.Exercises[i - 1].OptionA</div>
-                            <div class="anserli-as isright@(2==Model.Exercises[i - 1].RightKeyId)" >B.@Model.Exercises[i - 1].OptionB</div>
-                            <div class="anserli-as isright@(3==Model.Exercises[i - 1].RightKeyId)" >C.@Model.Exercises[i - 1].OptionC</div>
-                            <div class="anserli-as isright@(4==Model.Exercises[i - 1].RightKeyId)" >D.@Model.Exercises[i - 1].OptionD</div>
+                            <div class="anserli-as isright@(1==Model.Exercises[i - 1].RightKeyId)">A.@Model.Exercises[i - 1].OptionA</div>
+                            <div class="anserli-as isright@(2==Model.Exercises[i - 1].RightKeyId)">B.@Model.Exercises[i - 1].OptionB</div>
+                            <div class="anserli-as isright@(3==Model.Exercises[i - 1].RightKeyId)">C.@Model.Exercises[i - 1].OptionC</div>
+                            <div class="anserli-as isright@(4==Model.Exercises[i - 1].RightKeyId)">D.@Model.Exercises[i - 1].OptionD</div>
                         </div>
-                        <a href="~/home/topic" class="anserli-knowledge" style="display: none;">知识点提示</a>
+                        <a href="~/home/topic?id=@Model.Id" class="anserli-knowledge" style="display: none;">知识点提示</a>
                     </div>
                 }
             </div>
             <div class="anser-btn">
                 <a href="~/home/index" class="btn-home">返回首页</a>
-                <a href="~/home/result" class="btn-sub">提交答卷</a>
+                <a href="#" id="btnSave" class="btn-sub">提交答卷</a>@*~/home/result*@
             </div>
         </div>
     </div>
     <script src="~/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-        $(".anserli-as").click(function () {
-            var qus = $(this).parents('.jsQus');
-            qus.attr('data-ask', '1');
-            var that = $(this);
-            
-            if (!that.hasClass("isrightclass")) {
-                //回答错误
-                $(this).addClass('wrong').siblings().removeClass('wrong right');
-                qus.find('.anserli-knowledge').css('display', 'block');
-            }
-            else {                
-                //回答正确
-                $(this).addClass('right').siblings().removeClass('wrong right');
-            }            
-        })
+                $(".anserli-as").click(function () {
+                    var qus = $(this).parents('.jsQus');
+                    qus.attr('data-ask', '1');
+                    var that = $(this);
+
+                    if (!that.hasClass("isrightclass")) {
+                        //回答错误
+                        $(this).addClass('wrong').siblings().removeClass('wrong right');
+                        qus.find('.anserli-knowledge').css('display', 'block');
+                    }
+                    else {
+                        //回答正确
+                        $(this).addClass('right').siblings().removeClass('wrong right');
+                        qus.find('.anserli-knowledge').css('display', 'none');
+                    }
+                })
+
+                $("#btnSave").click(function () {
+                    var id = $("#activityId").val();
+                    var tid = '';
+                    var vt = 0;
+                    $('.anserli').each(function () {
+                        tid += $(this).data('id');
+                        k = $(this).data('ask');
+                        if (k == 1) vt += 1;
+                        asklist = $(this).find('.anserli-con');
+                        ask = asklist.children().index(asklist.find('.right'))
+                        if (ask == -1)
+                            ask = asklist.children().index(asklist.find('.wrong'))
+                        ask += 1;
+                        tid += ":";
+                        tid += ask;
+                        tid += ',';
+
+                    });
+                    if ($('.anserli').length != vt) {
+                        alert('请答完全部题目再提交');
+                    }
+                    else {
+                        window.location.href = "/home/result?id=" + id + "&asks=" + tid;
+                    }
+                    //$.post("/home/result",
+                    //{
+                    //    asks: tid
+                    //},
+                    //function (data, status) {
+                    //    window.location.href="/home/result";
+                    //});
+                })
     </script>
 </body>
 </html>

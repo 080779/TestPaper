@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Chat.DTO.DTO;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using Chat.WebCommon;
 
 namespace Chat.Service.Service
 {
@@ -106,10 +107,10 @@ namespace Chat.Service.Service
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
                 ActivityEntity entity = cs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a => a.Status.Name == statusName);
-                if (entity == null)
-                {
-                    return null;
-                }
+                //if (entity == null)
+                //{
+                //    return null;
+                //}
                 return ToDTO(entity);
             }
         }
@@ -126,13 +127,15 @@ namespace Chat.Service.Service
                 }
                 activity.Name = name;
                 activity.Description = description;
-                activity.ImgUrl = imgUrl;
+                if(!string.IsNullOrWhiteSpace(imgUrl))
+                    activity.ImgUrl = imgUrl;
                 activity.StartTime = startTime;
                 activity.ExamEndTime = examEndTime;
                 activity.RewardTime = rewardTime;
                 activity.PaperId = paperId;
                 activity.PrizeName = prizeName;
-                activity.PrizeImgUrl = prizeImgUrl;
+                if (!string.IsNullOrWhiteSpace(prizeImgUrl))
+                    activity.PrizeImgUrl = prizeImgUrl;
                 activity.AnswerCount = 0;
                 activity.ForwardCount = 0;
                 activity.HavePrizeCount = 0;
@@ -152,14 +155,17 @@ namespace Chat.Service.Service
                 var items = cs.GetAll();
                 if(statusId!=null)
                 {
+                    
                     items = items.Where(p => p.StatusId == statusId);
                 }
                 if (startTime != null)
                 {
+                    startTime = DateTimeHelper.GetBeginDate((DateTime)startTime);
                     items = items.Where(p => p.CreateDateTime >= startTime);
                 }
                 if (endTime != null)
                 {
+                    endTime = DateTimeHelper.GetEndDate((DateTime)endTime);
                     items = items.Where(p => p.CreateDateTime <= endTime);
                 }
                 if (!string.IsNullOrEmpty(keyWord))
@@ -202,7 +208,7 @@ namespace Chat.Service.Service
                 {
                     return false;
                 }
-                var count = dbc.Database.SqlQuery<long>("select UserId from t_useractivities where ActivityId=4 and UserId=1");
+                var count = dbc.Database.SqlQuery<long>("select UserId from t_useractivities where ActivityId=@activityId and UserId=@userId",new SqlParameter("@activityId", activityId), new SqlParameter("@userId", userId));
                 if (count.Count()>=1)
                 {
                     return false;
@@ -244,6 +250,87 @@ namespace Chat.Service.Service
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
                 return cs.GetTotalCount();
+            }
+        }
+
+        public bool CheckByStatusId(long id,long statusId)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                return cs.GetAll().Where(a=>a.Id!=id).Any(a => a.StatusId == id);
+            }
+        }
+
+        public bool CheckByStatusId(long statusId)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                return cs.GetAll().Any(a => a.StatusId == statusId);
+            }
+        }
+
+        public bool CheckByPaperId(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                return cs.GetAll().Any(a => a.PaperId == id);
+            }
+        }
+
+        /// <summary>
+        /// 更新访问次数等
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="setVisitCount">访问次数</param>
+        /// <param name="setForwardCount">转发次数</param>
+        /// <param name="setAnswerCount">答题人数</param>
+        /// <param name="setHavePrizeCount">获奖资格人数</param>
+        /// <param name="setPrizeCount">获奖人数</param>
+        /// <returns></returns>
+        public bool UpdateCount(long id, bool setVisitCount,bool setForwardCount,bool setAnswerCount, bool setHavePrizeCount,bool setPrizeCount)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                ActivityEntity entity = cs.GetAll().SingleOrDefault(a=>a.Id==id);
+                if(entity==null)
+                {
+                    return false;
+                }
+                if(setVisitCount)
+                {
+                    entity.VisitCount++;
+                }
+                if(setForwardCount)
+                {
+                    entity.ForwardCount++;
+                }
+                if (setAnswerCount)
+                {
+                    entity.AnswerCount++;
+                }
+                if (setHavePrizeCount)
+                {
+                    entity.HavePrizeCount++;
+                }
+                if(setPrizeCount)
+                {
+                    entity.PrizeCount++;
+                }
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool CheckHaveStatusId(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                return cs.GetAll().Any(a => a.StatusId == id);
             }
         }
     }

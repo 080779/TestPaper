@@ -1,4 +1,4 @@
-﻿
+﻿@model Chat.FrontWeb.Models.ResultModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,86 +11,100 @@
 <body>
     <div class="result-bg">
         <div class="result-wrap">
-            <div class="result-title font">第68期有奖环保答题活动</div>
+            <div class="result-title font">@Model.ActivityName</div>
             <div class="result-qus clear">
+            @for (int i = 0; i < Model.Result.Count; i++)
+            {
                 <div class="result-qusli clear">
-                    <div class="result-qusli-t">第1题</div>
-                    <div class="result-qusli-r right"></div>
+                    <div class="result-qusli-t">第@(i+1)题</div>
+                    <div class="result-qusli-r @Model.Result[i]"></div>
                 </div>
-                <div class="result-qusli clear">
-                    <div class="result-qusli-t">第2题</div>
-                    <div class="result-qusli-r wrong"></div>
-                </div>
-                <div class="result-qusli clear">
-                    <div class="result-qusli-t">第3题</div>
-                    <div class="result-qusli-r right"></div>
-                </div>
-                <div class="result-qusli clear">
-                    <div class="result-qusli-t">第4题</div>
-                    <div class="result-qusli-r wrong"></div>
-                </div>
-                <div class="result-qusli clear">
-                    <div class="result-qusli-t">第5题</div>
-                    <div class="result-qusli-r right"></div>
-                </div>
-                <div class="result-qusli clear">
-                    <div class="result-qusli-t">第6题</div>
-                    <div class="result-qusli-r wrong"></div>
-                </div>
+            }
             </div>
+            @if (!Model.IsAllRight)
+            {
+                <!--答题失败-->
+                <div class="result-rs font">很遗憾，本次答题您未能通关。请再接再厉！</div>
+            }
+            else
+            {
+                <!--答题正确-->
+                <div class="result-rs font">恭喜您全部答对！</div>
+                <div class="result-qx"><a href="javascript:;" id="openForm">立刻完善我的信息，获取抽奖资格</a></div>
+            }            
 
-            <!--答题失败-->
-            <!--<div class="result-rs font">很遗憾，本次答题您未能通关。请再接再厉！</div>-->
-            <!--答题正确-->
-            <div class="result-rs font">恭喜您全部答对！</div>
-            <div class="result-qx"><a href="javascript:;" id="openForm">立刻完善我的信息，获取抽奖资格</a></div>
-
-            <div class="result-code"><img src="~/img/code.png" /></div>
+            <div class="result-code"><img src="~/img/code.jpg" /></div>
             <div class="result-codetxt font">关注官方公众号（广西环保）<br />了解更多相关资讯！</div>
         </div>
     </div>
     <div class="result-fixed clear">
         <div class="result-fixed-wrap">
             <a href="~/home/index" class="btn-def"><b class="icon1"></b><span>返回首页</span></a>
-            <a href="~/home/topic" class="btn-def"><b class="icon2"></b><span>知识点回顾</span></a>
-            <a href="~/home/answer" class="btn-prm"><span>再试一次</span></a>
+            <a href="~/home/topic?id=@Model.Id" class="btn-def"><b class="icon2"></b><span>知识点回顾</span></a>
+            <a href="~/home/answer?id=@Model.Id" class="btn-prm"><span>再试一次</span></a>
         </div>
     </div>
     <div class="mask" id="mask" style="display: none;">
         <div class="mask-wrap">
             <a href="javascript:;" class="mask-close closeMask">×</a>
             <div class="mask-title">完善您的信息</div>
-            <form action="" method="post">
+            <form id="formUser">
                 <div class="mask-form">
                     <div class="form-group">
                         <label for="">您的姓名</label>
-                        <input type="text" name="" id="" value="" placeholder="请填写您的姓名" />
+                        <input type="text" name="name" id="" value="" placeholder="请填写您的姓名" />
+                        <input type="hidden" name="id" value="@Model.Id" />
                     </div>
                     <div class="form-group">
                         <label for="">您的性别</label>
-                        <input type="radio" name="sex" id="" value="" checked="checked" /> <span>男</span>
-                        <input type="radio" name="sex" id="" value="" /> <span>女</span>
+                        <input type="radio" name="gender" id="" value="true" checked="checked" /> <span>男</span>
+                        <input type="radio" name="gender" id="" value="false" /> <span>女</span>
                     </div>
                     <div class="form-group">
                         <label for="">您的手机</label>
-                        <input type="text" name="" id="" value="" placeholder="请填写您的手机号码" />
+                        <input type="text" name="mobile" id="" value="" placeholder="请填写您的手机号码" />
                     </div>
                     <div class="form-group">
-                        <textarea name="" rows="" cols="" placeholder="请填写您的详细地址以便邮寄奖品"></textarea>
+                        <textarea name="address" rows="" cols="" placeholder="请填写您的详细地址以便邮寄奖品"></textarea>
                     </div>
                 </div>
-                <input type="submit" class="mask-btn" name="" id="" value="确认并保存" />
+                <input type="button" class="mask-btn" id="btnSave" value="确认并保存" />
             </form>
         </div>
     </div>
     <script src="~/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-			$("#openForm").click(function(){
-				$("#mask").css('display','block');
-			})
-			$(".closeMask").click(function () {
-				$("#mask").css('display','none');
-			})
+        $("#openForm").click(function () {
+            $("#mask").css('display', 'block');
+        })
+        $(".closeMask").click(function () {
+            $("#mask").css('display', 'none');
+        })
+
+        $(function () {            
+            $("#btnSave").click(function () {
+                var formData = $("#formUser").serializeArray();
+                $.ajax({
+                    url: "/home/saveuser", type: "post", data: formData,
+                    success: function (result) {
+                        if (result.status == "error") {
+                            alert(result.errorMsg);
+                            $("#mask").css('display', 'none');
+                        }
+                        else if (result.status == "success") {
+                            alert("资料保存成功！");
+                            $("#mask").css('display', 'none');
+
+                        }
+                        else {
+                            alert("未知错误");
+                            $("#mask").css('display', 'none');
+                        }
+                    },
+                    error: function () { }
+                });
+            });
+        });
     </script>
 </body>
 </html>

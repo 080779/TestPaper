@@ -92,6 +92,10 @@
       <Project>{1D7C08A8-8ED2-4A8F-A22B-FE1FEA8C869A}</Project>
       <Name>Chat.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Chat.WebCommon\Chat.WebCommon.csproj">
+      <Project>{D9BE0C2C-29C7-45A6-9542-1FA31960F500}</Project>
+      <Name>Chat.WebCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

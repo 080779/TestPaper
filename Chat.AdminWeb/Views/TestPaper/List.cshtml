@@ -85,7 +85,11 @@
 {
 <script type="text/javascript">
         $(function () {
-            jQuery('.datepicker').datepicker({ altFormat: "yyyy-mm-dd" });
+            jQuery('.datepicker').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                format: 'yyyy-mm-dd'
+            });
             $('.Jsdel').click(function () {
                 $("#sureDel").val($(this).val());
             })

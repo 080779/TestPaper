@@ -71,6 +71,7 @@
     <Compile Include="AjaxResult.cs" />
     <Compile Include="CommonHelper.cs" />
     <Compile Include="DataPaging.cs" />
+    <Compile Include="DateTimeHelper.cs" />
     <Compile Include="JsonNetActionFilter.cs" />
     <Compile Include="JsonNetResult.cs" />
     <Compile Include="MVCHelper.cs" />

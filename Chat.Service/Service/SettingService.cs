@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Chat.DTO.DTO;
+using Chat.Service.Entities;
 
 namespace Chat.Service.Service
 {
@@ -27,7 +28,19 @@ namespace Chat.Service.Service
 
         public string GetValue(string name)
         {
-            throw new NotImplementedException();
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<SettingEntity> cs = new CommonService<SettingEntity>(dbc);
+                var setting = cs.GetAll().SingleOrDefault(s => s.Name == name);
+                if (setting == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return setting.Value;
+                }
+            }
         }
 
         public void SetBoolValue(string name, bool value)

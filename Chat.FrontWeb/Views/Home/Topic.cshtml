@@ -1,4 +1,4 @@
-﻿
+﻿@model Chat.FrontWeb.Models.TopicModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,20 +11,12 @@
 <body>
     <div class="knowlege-bg">
         <div class="knowlege-wrap">
-            <div class="knowlege-title font">第123期有奖环保答题活动知识点</div>
+            <div class="knowlege-title font">@Model.ActivityName</div>
             <div class="knowlege-con">
-                <div class="knowlege-qes">1.新修订的《建设项目环境保护管理条例》自2017年10月1日开始施行。</div>
-                <div class="knowlege-qes">2.《建设项目环境保护管理条例》适用中华人民共和国领域和中华人民共和国管辖的其他海域内建设对环境有影响的建设项目。</div>
-                <div class="knowlege-qes">3.建设项目环境影响评价分类管理名录，由国务院环境保护行政主管部门在组织专家进行论证和征求有关部门、行业协会、企事业单位、公众等意见的基础上制定并公布。</div>
-                <div class="knowlege-qes">4. 依法应当编制环境影响报告书、环境影响报告表的建设项目，建设单位应当在开工建设前将环境影响报告书、环境影响报告表报有审批权的环境保护行政主管部门审批。</div>
-                <div class="knowlege-qes">5. 环境保护行政主管部门可以组织技术机构对建设项目环境影响报告书、环境影响报告表进行技术评估，并承担相应费用。</div>
-                <div class="knowlege-qes">6. 依法应当填报环境影响登记表的建设项目，建设单位应当按照国务院环境保护行政主管部门的规定将环境影响登记表报建设项目所在地县级环境保护行政主管部门备案。</div>
-                <div class="knowlege-qes">7. 建设项目类型及其选址、布局、规模等不符合环境保护法律法规和相关法定规划的环境保护行政主管部门应当对环境影响报告书、环境影响报告表作出不予批准的决定。</div>
-                <div class="knowlege-qes">8.建设项目环境影响报告书、环境影响报告表经批准后，建设项目的性质、规模、地点、采用的生产工艺或者防治污染、防止生态破坏的措施发生重大变动的，建设单位应当重新报批建设项目环境影响报告书、环境影响报告表。</div>
-                <div class="knowlege-qes">9. 建设项目环境影响报告书、环境影响报告表自批准之日起满5 年，建设项目方开工建设的，其环境影响报告书、环境影响报告表应当报原审批部门重新审核。原审批部门应当自收到建设项目环境影响报告书、环境影响报告表之日10日起内，将审核意见书面通知建设单位；逾期未通知的，视为审核同意。</div>
-                <div class="knowlege-qes">10. 审核、审批建设项目环境影响报告书、环境影响报告表及备案环境影响登记表，不得收取费用。</div>
-                <div class="knowlege-qes">11. 建设项目的初步设计，应当按照环境保护设计规范的要求，编制环境保护篇章，落实防治环境污染和生态破坏的措施以及环境保护设施投资概算。</div>
-                <div class="knowlege-qes">12. 编制环境影响报告书、环境影响报告表的建设项目竣工后，建设单位应当按照国务院环境保护行政主管部门规定的标准和程序，对配套建设的环境保护设施进行验收，编制验收报告。</div>
+                @for (int i = 0; i < Model.ExesTip.Count; i++)
+                {
+                    <div class="knowlege-qes">@(i+1).@Model.ExesTip[i]</div>
+                }                             
             </div>
         </div>
     </div>

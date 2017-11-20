@@ -15,5 +15,6 @@ namespace Chat.IService.Interface
         ExercisesDTO[] GetExercisesByPaperId(long testPaperId);
         bool DelExercisesById(long id);
         bool Update(long id,string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId, string tip);
+        bool IsRightOrWrong(long paperId, long id, long rightKeyId);
     }
 }

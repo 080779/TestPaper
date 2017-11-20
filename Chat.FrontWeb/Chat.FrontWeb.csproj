@@ -116,7 +116,8 @@
     <Content Include="css\common.css" />
     <Content Include="css\style-default.css" />
     <Content Include="Global.asax" />
-    <Content Include="img\code.png" />
+    <Content Include="img\23e.png" />
+    <Content Include="img\code.jpg" />
     <Content Include="img\default\ask-title-border.png" />
     <Content Include="img\default\bg-i.jpg" />
     <Content Include="img\default\bg-l.jpg" />
@@ -153,7 +154,11 @@
     </Compile>
     <Compile Include="Models\ActivityViewModel.cs" />
     <Compile Include="Models\AnswerViewModel.cs" />
+    <Compile Include="Models\IsWonUser.cs" />
     <Compile Include="Models\PrizeViewModel.cs" />
+    <Compile Include="Models\ResultModel.cs" />
+    <Compile Include="Models\TopicModel.cs" />
+    <Compile Include="Models\user\AddUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

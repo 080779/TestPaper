@@ -12,7 +12,7 @@
     <div class="index-bg">
         <div class="index-wrap">
             <div class="index-title">@Model.Activity.Name</div>
-            <div class="index-dec">@Model.Activity.Description</div>
+            <div class="index-dec">@Html.Raw(Model.Activity.Description.Replace("{{br}}", @"<br>"))</div>
         </div>
         <div class="index-wrap">
             <dl class="index-dl">
@@ -36,30 +36,34 @@
             <dl class="index-dl">
                 <dt>活动状态</dt>
                 <dd class="txt-foces">@Model.Activity.StatusName</dd>
-            </dl>
-            <dl class="index-dl">
-                <dt>我的参与情况</dt>
-                <dd class="txt-foces">未参与</dd>
-            </dl>
+            </dl>            
         </div>
     </div>
     <div class="menu">
-        <a href="~/home/topic" class="menu-li">
+        <a href="~/home/topic?id=@Model.Activity.Id" class="menu-li">
             <span class="menu-icon icon1"></span>
             <span class="menu-txt">本期知识</span>
         </a>
-        <a href="~/home/answer" class="menu-li">
+        <a href="~/home/answer?id=@Model.Activity.Id" class="menu-li">
             <span class="menu-icon icon2"></span>
             <span class="menu-txt">立即答题</span>
         </a>
-        <a href="~/home/prize" class="menu-li">
+        <a href="~/home/prize?id=@Model.Activity.Id" class="menu-li">
             <span class="menu-icon icon3"></span>
             <span class="menu-txt">获奖查询</span>
         </a>
-        <a href="#" class="menu-li">
+        <a href="#" id="zfhy" class="menu-li">
             <span class="menu-icon icon4"></span>
             <span class="menu-txt">转发好友</span>
         </a>
     </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#zfhy").click(function () {
+                alert("点击右上角转发给朋友或转发到朋友圈。成功转发后，系统将在开奖计算中为您增加30%的中奖概率。");                
+            });
+        });
+    </script>
 </body>
 </html>

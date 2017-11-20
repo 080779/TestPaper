@@ -11,6 +11,10 @@ namespace Chat.FrontWeb.Models
         public string ActivityName { get; set; }
         public string PrizeName { get; set; }
         public string PrizeImgUrl { get; set; }
-        UserDTO User { get; set; }
+        public int winCount { get; set; }
+        public List<IsWonUser> Users { get; set; }
+        public bool UserIsWon { get; set; }
+        public DateTime PrizeTime { get; set; }
+        public string PrizeFirstUrl { get; set; }
     }
 }

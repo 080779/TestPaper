@@ -54,17 +54,17 @@
                 <table class="table table-bordered table-primary mb30">
                     <thead>
                         <tr>
-                            <th style="min-width: 80px;">期数</th>
-                            <th style="min-width: 80px;">活动名称</th>
-                            <th style="min-width: 80px;">状态</th>
-                            <th style="min-width: 80px;">页面URL（用于设置微信公众号跳转）</th>
-                            <th style="min-width: 80px;">访问量</th>
-                            <th style="min-width: 80px;">转发次数</th>
-                            <th style="min-width: 80px;">答题次数</th>
-                            <th style="min-width: 80px;">获奖资格人数</th>
-                            <th style="min-width: 80px;">获奖人数</th>
-                            <th style="min-width: 80px;">创建时间</th>
-                            <th style="min-width: 80px;">操作</th>
+                            <th >期数</th>
+                            <th >活动名称</th>
+                            <th >状态</th>
+                            <th >页面URL（用于设置微信公众号跳转）</th>
+                            <th >访问量</th>
+                            <th >转发次数</th>
+                            <th >答题次数</th>
+                            <th >获奖资格人数</th>
+                            <th >获奖人数</th>
+                            <th >创建时间</th>
+                            <th >操作</th>
                         </tr>
                     </thead>
                     <tbody id="paperList">
@@ -150,7 +150,11 @@
 {
 <script type="text/javascript">
         $(function () {
-            jQuery('.datepicker').datepicker();
+            jQuery('.datepicker').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                format: 'yyyy-mm-dd'
+            });
 
             $('.Jsdel').click(function () {
                 $("#sureDel").val($(this).val());
