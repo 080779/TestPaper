@@ -2461,3 +2461,2558 @@ WHERE ([Id] = @1)
 
 2017-11-20 16:01:31,638 [35] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 16:01:31 +08:00
 
+2017-11-20 18:15:33,409 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,419 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.T_Activities','dbo.T_TestPapers','dbo.T_IdNames','dbo.T_Users','dbo.T_ActivityImgs','dbo.T_AdminLogs','dbo.T_AdminUsers','dbo.T_Roles','dbo.T_Permissions','dbo.T_Cities','dbo.T_Exercises','dbo.T_Settings','dbo.T_UserActivities','dbo.T_RolePermissions','dbo.T_AdminUserRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2017-11-20 18:15:33,419 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,419 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,421 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: 15
+
+2017-11-20 18:15:33,421 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,421 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,451 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,498 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2017-11-20 18:15:33,498 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,498 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'Chat.Service.MyDbContext' (Type = String, Size = 4000)
+
+2017-11-20 18:15:33,498 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,501 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 2 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2017-11-20 18:15:33,501 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,501 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,501 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,503 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2017-11-20 18:15:33,503 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,503 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,507 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Failed in 3 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2017-11-20 18:15:33,507 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,507 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,532 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,592 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Mobile] AS [Mobile], 
+    [Extent1].[Gender] AS [Gender], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+2017-11-20 18:15:33,592 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,592 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'system' (Type = String, Size = 4000)
+
+2017-11-20 18:15:33,592 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,594 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:33,594 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,598 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,602 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,605 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-11-20 18:15:33,605 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,605 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'system' (Type = String, Size = 4000)
+
+2017-11-20 18:15:33,605 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,606 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:15:33,606 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,610 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,610 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,610 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Mobile] AS [Mobile], 
+    [Extent1].[Gender] AS [Gender], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Name] = @p__linq__0)
+2017-11-20 18:15:33,610 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,610 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: 'system' (Type = String, Size = 4000)
+
+2017-11-20 18:15:33,610 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,612 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:33,612 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,612 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,761 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,805 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:15:33,805 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,805 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:33,805 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,808 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:15:33,808 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,811 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,813 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,837 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:15:33,837 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,837 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:33,837 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,838 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:33,838 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,839 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,844 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,852 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (10) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Id] AS [Id], 
+    [Project1].[TestTitle] AS [TestTitle], 
+    [Project1].[ExercisesCount] AS [ExercisesCount], 
+    [Project1].[CreateDateTime] AS [CreateDateTime], 
+    [Project1].[Num] AS [Num]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Num] AS [Num], 
+        [Extent1].[TestTitle] AS [TestTitle], 
+        [Extent1].[ExercisesCount] AS [ExercisesCount], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        1 AS [C1]
+        FROM [dbo].[T_TestPapers] AS [Extent1]
+        WHERE 0 = [Extent1].[IsDeleted]
+    )  AS [Project1]
+    ORDER BY [Project1].[CreateDateTime] DESC
+2017-11-20 18:15:33,852 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,852 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:33,853 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:33,853 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:33,854 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:33 +08:00
+
+2017-11-20 18:15:37,403 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,403 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:15:37,404 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:37,404 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:37,404 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 3 ms with result: SqlDataReader
+
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:37,407 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,408 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:37,408 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:37,408 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,409 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,409 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (10) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[Id] AS [Id], 
+    [Project1].[TestTitle] AS [TestTitle], 
+    [Project1].[ExercisesCount] AS [ExercisesCount], 
+    [Project1].[CreateDateTime] AS [CreateDateTime], 
+    [Project1].[Num] AS [Num]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Num] AS [Num], 
+        [Extent1].[TestTitle] AS [TestTitle], 
+        [Extent1].[ExercisesCount] AS [ExercisesCount], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        1 AS [C1]
+        FROM [dbo].[T_TestPapers] AS [Extent1]
+        WHERE 0 = [Extent1].[IsDeleted]
+    )  AS [Project1]
+    ORDER BY [Project1].[CreateDateTime] DESC
+2017-11-20 18:15:37,409 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:37,409 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:37,411 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:37,411 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:37,411 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:37 +08:00
+
+2017-11-20 18:15:41,243 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,243 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:15:41,243 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,243 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,243 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,246 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,248 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,248 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,248 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,250 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,258 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:15:41,258 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,258 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,258 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,259 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,260 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,261 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,266 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,275 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT_BIG(1) AS [A1]
+        FROM [dbo].[T_Exercises] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-11-20 18:15:41,275 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,275 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,275 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,276 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,276 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,280 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,282 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,282 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:15:41,282 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,282 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,282 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,284 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,284 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,284 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,285 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,315 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent1].[Point] AS [Point], 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[TestPaperId] AS [TestPaperId], 
+    [Extent1].[OptionA] AS [OptionA], 
+    [Extent1].[OptionB] AS [OptionB], 
+    [Extent1].[OptionC] AS [OptionC], 
+    [Extent1].[OptionD] AS [OptionD], 
+    [Extent1].[RightKeyId] AS [RightKeyId], 
+    [Extent1].[Tip] AS [Tip], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[Id] AS [Id1], 
+    [Extent2].[Num] AS [Num], 
+    [Extent2].[TestTitle] AS [TestTitle], 
+    [Extent2].[ExercisesCount] AS [ExercisesCount], 
+    [Extent2].[IsDeleted] AS [IsDeleted1], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+    [Extent3].[Id] AS [Id2], 
+    [Extent3].[TypeName] AS [TypeName], 
+    [Extent3].[Name] AS [Name], 
+    [Extent3].[ImgUrl] AS [ImgUrl], 
+    [Extent3].[IsDeleted] AS [IsDeleted2], 
+    [Extent3].[CreateDateTime] AS [CreateDateTime2]
+    FROM   [dbo].[T_Exercises] AS [Extent1]
+    INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+    INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+2017-11-20 18:15:41,316 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,316 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,316 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,445 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 128 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,445 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,453 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,649 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,649 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:15:41,649 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,649 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,649 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,652 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,653 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,653 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,653 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,656 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,659 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Limit1].[Point] AS [Point], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Title] AS [Title], 
+    [Limit1].[TestPaperId] AS [TestPaperId], 
+    [Limit1].[OptionA] AS [OptionA], 
+    [Limit1].[OptionB] AS [OptionB], 
+    [Limit1].[OptionC] AS [OptionC], 
+    [Limit1].[OptionD] AS [OptionD], 
+    [Limit1].[RightKeyId] AS [RightKeyId], 
+    [Limit1].[Tip] AS [Tip], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Num] AS [Num], 
+    [Limit1].[TestTitle] AS [TestTitle], 
+    [Limit1].[ExercisesCount] AS [ExercisesCount], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[Id2] AS [Id2], 
+    [Limit1].[TypeName] AS [TypeName], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[ImgUrl] AS [ImgUrl], 
+    [Limit1].[IsDeleted2] AS [IsDeleted2], 
+    [Limit1].[CreateDateTime2] AS [CreateDateTime2]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Title] AS [Title], 
+        [Extent1].[TestPaperId] AS [TestPaperId], 
+        [Extent1].[OptionA] AS [OptionA], 
+        [Extent1].[OptionB] AS [OptionB], 
+        [Extent1].[OptionC] AS [OptionC], 
+        [Extent1].[OptionD] AS [OptionD], 
+        [Extent1].[RightKeyId] AS [RightKeyId], 
+        [Extent1].[Point] AS [Point], 
+        [Extent1].[Tip] AS [Tip], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Num] AS [Num], 
+        [Extent2].[TestTitle] AS [TestTitle], 
+        [Extent2].[ExercisesCount] AS [ExercisesCount], 
+        [Extent2].[IsDeleted] AS [IsDeleted1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent3].[Id] AS [Id2], 
+        [Extent3].[TypeName] AS [TypeName], 
+        [Extent3].[Name] AS [Name], 
+        [Extent3].[ImgUrl] AS [ImgUrl], 
+        [Extent3].[IsDeleted] AS [IsDeleted2], 
+        [Extent3].[CreateDateTime] AS [CreateDateTime2]
+        FROM   [dbo].[T_Exercises] AS [Extent1]
+        INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+        INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-11-20 18:15:41,659 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,659 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '38' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:15:41,659 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:15:41,661 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:15:41,661 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:15:41,662 [14] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:15:41 +08:00
+
+2017-11-20 18:16:34,126 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,127 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:16:34,127 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,127 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:34,127 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,129 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:16:34,130 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,130 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,130 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,130 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:16:34,130 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,130 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:34,130 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,131 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:16:34,131 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,132 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,133 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,133 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:16:34,133 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,133 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:34,133 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,134 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:16:34,134 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,134 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,135 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,135 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT_BIG(1) AS [A1]
+        FROM [dbo].[T_Exercises] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-11-20 18:16:34,135 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,135 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:34,135 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,136 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:16:34,136 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,137 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,137 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,137 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:16:34,137 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,137 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:34,137 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,138 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:16:34,138 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,139 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,139 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,139 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent1].[Point] AS [Point], 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[TestPaperId] AS [TestPaperId], 
+    [Extent1].[OptionA] AS [OptionA], 
+    [Extent1].[OptionB] AS [OptionB], 
+    [Extent1].[OptionC] AS [OptionC], 
+    [Extent1].[OptionD] AS [OptionD], 
+    [Extent1].[RightKeyId] AS [RightKeyId], 
+    [Extent1].[Tip] AS [Tip], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[Id] AS [Id1], 
+    [Extent2].[Num] AS [Num], 
+    [Extent2].[TestTitle] AS [TestTitle], 
+    [Extent2].[ExercisesCount] AS [ExercisesCount], 
+    [Extent2].[IsDeleted] AS [IsDeleted1], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+    [Extent3].[Id] AS [Id2], 
+    [Extent3].[TypeName] AS [TypeName], 
+    [Extent3].[Name] AS [Name], 
+    [Extent3].[ImgUrl] AS [ImgUrl], 
+    [Extent3].[IsDeleted] AS [IsDeleted2], 
+    [Extent3].[CreateDateTime] AS [CreateDateTime2]
+    FROM   [dbo].[T_Exercises] AS [Extent1]
+    INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+    INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+2017-11-20 18:16:34,139 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,139 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:34,139 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:34,142 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:16:34,142 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:34,143 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:34 +08:00
+
+2017-11-20 18:16:39,106 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,106 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:16:39,106 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:39,107 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:39,107 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:39,109 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,111 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:16:39,111 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:39,111 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,111 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,112 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Limit1].[Point] AS [Point], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Title] AS [Title], 
+    [Limit1].[TestPaperId] AS [TestPaperId], 
+    [Limit1].[OptionA] AS [OptionA], 
+    [Limit1].[OptionB] AS [OptionB], 
+    [Limit1].[OptionC] AS [OptionC], 
+    [Limit1].[OptionD] AS [OptionD], 
+    [Limit1].[RightKeyId] AS [RightKeyId], 
+    [Limit1].[Tip] AS [Tip], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Num] AS [Num], 
+    [Limit1].[TestTitle] AS [TestTitle], 
+    [Limit1].[ExercisesCount] AS [ExercisesCount], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[Id2] AS [Id2], 
+    [Limit1].[TypeName] AS [TypeName], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[ImgUrl] AS [ImgUrl], 
+    [Limit1].[IsDeleted2] AS [IsDeleted2], 
+    [Limit1].[CreateDateTime2] AS [CreateDateTime2]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Title] AS [Title], 
+        [Extent1].[TestPaperId] AS [TestPaperId], 
+        [Extent1].[OptionA] AS [OptionA], 
+        [Extent1].[OptionB] AS [OptionB], 
+        [Extent1].[OptionC] AS [OptionC], 
+        [Extent1].[OptionD] AS [OptionD], 
+        [Extent1].[RightKeyId] AS [RightKeyId], 
+        [Extent1].[Point] AS [Point], 
+        [Extent1].[Tip] AS [Tip], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Num] AS [Num], 
+        [Extent2].[TestTitle] AS [TestTitle], 
+        [Extent2].[ExercisesCount] AS [ExercisesCount], 
+        [Extent2].[IsDeleted] AS [IsDeleted1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent3].[Id] AS [Id2], 
+        [Extent3].[TypeName] AS [TypeName], 
+        [Extent3].[Name] AS [Name], 
+        [Extent3].[ImgUrl] AS [ImgUrl], 
+        [Extent3].[IsDeleted] AS [IsDeleted2], 
+        [Extent3].[CreateDateTime] AS [CreateDateTime2]
+        FROM   [dbo].[T_Exercises] AS [Extent1]
+        INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+        INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-11-20 18:16:39,112 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:39,112 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '38' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:16:39,112 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:16:39,114 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:16:39,115 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:16:39,115 [10] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:16:39 +08:00
+
+2017-11-20 18:17:58,846 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,848 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:17:58,848 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,848 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:17:58,848 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,851 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:17:58,851 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,851 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,851 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,851 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:17:58,851 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,852 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:17:58,852 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,853 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:17:58,853 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,853 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,854 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,854 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:17:58,854 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,854 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:17:58,854 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,855 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:17:58,855 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,855 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,856 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,856 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT_BIG(1) AS [A1]
+        FROM [dbo].[T_Exercises] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-11-20 18:17:58,856 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,856 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:17:58,856 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,857 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:17:58,857 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,857 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,858 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,858 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:17:58,858 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,858 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:17:58,858 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,860 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:17:58,860 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,860 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,860 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,861 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent1].[Point] AS [Point], 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[TestPaperId] AS [TestPaperId], 
+    [Extent1].[OptionA] AS [OptionA], 
+    [Extent1].[OptionB] AS [OptionB], 
+    [Extent1].[OptionC] AS [OptionC], 
+    [Extent1].[OptionD] AS [OptionD], 
+    [Extent1].[RightKeyId] AS [RightKeyId], 
+    [Extent1].[Tip] AS [Tip], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[Id] AS [Id1], 
+    [Extent2].[Num] AS [Num], 
+    [Extent2].[TestTitle] AS [TestTitle], 
+    [Extent2].[ExercisesCount] AS [ExercisesCount], 
+    [Extent2].[IsDeleted] AS [IsDeleted1], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+    [Extent3].[Id] AS [Id2], 
+    [Extent3].[TypeName] AS [TypeName], 
+    [Extent3].[Name] AS [Name], 
+    [Extent3].[ImgUrl] AS [ImgUrl], 
+    [Extent3].[IsDeleted] AS [IsDeleted2], 
+    [Extent3].[CreateDateTime] AS [CreateDateTime2]
+    FROM   [dbo].[T_Exercises] AS [Extent1]
+    INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+    INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+2017-11-20 18:17:58,861 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,861 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:17:58,861 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:17:58,865 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 4 ms with result: SqlDataReader
+
+2017-11-20 18:17:58,865 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:17:58,866 [5] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:17:58 +08:00
+
+2017-11-20 18:18:04,187 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,187 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:18:04,187 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:04,187 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:04,187 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:04,190 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,192 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:18:04,192 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:04,192 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,193 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,193 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Limit1].[Point] AS [Point], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Title] AS [Title], 
+    [Limit1].[TestPaperId] AS [TestPaperId], 
+    [Limit1].[OptionA] AS [OptionA], 
+    [Limit1].[OptionB] AS [OptionB], 
+    [Limit1].[OptionC] AS [OptionC], 
+    [Limit1].[OptionD] AS [OptionD], 
+    [Limit1].[RightKeyId] AS [RightKeyId], 
+    [Limit1].[Tip] AS [Tip], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Num] AS [Num], 
+    [Limit1].[TestTitle] AS [TestTitle], 
+    [Limit1].[ExercisesCount] AS [ExercisesCount], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[Id2] AS [Id2], 
+    [Limit1].[TypeName] AS [TypeName], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[ImgUrl] AS [ImgUrl], 
+    [Limit1].[IsDeleted2] AS [IsDeleted2], 
+    [Limit1].[CreateDateTime2] AS [CreateDateTime2]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Title] AS [Title], 
+        [Extent1].[TestPaperId] AS [TestPaperId], 
+        [Extent1].[OptionA] AS [OptionA], 
+        [Extent1].[OptionB] AS [OptionB], 
+        [Extent1].[OptionC] AS [OptionC], 
+        [Extent1].[OptionD] AS [OptionD], 
+        [Extent1].[RightKeyId] AS [RightKeyId], 
+        [Extent1].[Point] AS [Point], 
+        [Extent1].[Tip] AS [Tip], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Num] AS [Num], 
+        [Extent2].[TestTitle] AS [TestTitle], 
+        [Extent2].[ExercisesCount] AS [ExercisesCount], 
+        [Extent2].[IsDeleted] AS [IsDeleted1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent3].[Id] AS [Id2], 
+        [Extent3].[TypeName] AS [TypeName], 
+        [Extent3].[Name] AS [Name], 
+        [Extent3].[ImgUrl] AS [ImgUrl], 
+        [Extent3].[IsDeleted] AS [IsDeleted2], 
+        [Extent3].[CreateDateTime] AS [CreateDateTime2]
+        FROM   [dbo].[T_Exercises] AS [Extent1]
+        INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+        INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-11-20 18:18:04,193 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:04,193 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '38' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:04,193 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:04,196 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 3 ms with result: SqlDataReader
+
+2017-11-20 18:18:04,196 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:04,197 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:04 +08:00
+
+2017-11-20 18:18:31,727 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,727 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:18:31,727 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,727 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:31,727 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,730 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:18:31,730 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,730 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,730 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,731 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:18:31,731 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,731 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:31,731 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,732 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:18:31,732 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,732 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,733 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,733 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:18:31,733 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,733 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:31,733 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,734 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:18:31,734 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,734 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,735 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,735 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT_BIG(1) AS [A1]
+        FROM [dbo].[T_Exercises] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-11-20 18:18:31,735 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,735 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:31,735 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,736 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:18:31,736 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,736 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,736 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,737 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:18:31,737 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,737 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:31,737 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent1].[Point] AS [Point], 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[TestPaperId] AS [TestPaperId], 
+    [Extent1].[OptionA] AS [OptionA], 
+    [Extent1].[OptionB] AS [OptionB], 
+    [Extent1].[OptionC] AS [OptionC], 
+    [Extent1].[OptionD] AS [OptionD], 
+    [Extent1].[RightKeyId] AS [RightKeyId], 
+    [Extent1].[Tip] AS [Tip], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[Id] AS [Id1], 
+    [Extent2].[Num] AS [Num], 
+    [Extent2].[TestTitle] AS [TestTitle], 
+    [Extent2].[ExercisesCount] AS [ExercisesCount], 
+    [Extent2].[IsDeleted] AS [IsDeleted1], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+    [Extent3].[Id] AS [Id2], 
+    [Extent3].[TypeName] AS [TypeName], 
+    [Extent3].[Name] AS [Name], 
+    [Extent3].[ImgUrl] AS [ImgUrl], 
+    [Extent3].[IsDeleted] AS [IsDeleted2], 
+    [Extent3].[CreateDateTime] AS [CreateDateTime2]
+    FROM   [dbo].[T_Exercises] AS [Extent1]
+    INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+    INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:31,738 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:31,742 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 3 ms with result: SqlDataReader
+
+2017-11-20 18:18:31,742 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:31,743 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:31 +08:00
+
+2017-11-20 18:18:36,519 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,519 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:18:36,519 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:36,519 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:36,520 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,522 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:18:36,522 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:36,522 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,523 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,523 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:18:36,523 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:36,523 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:36,523 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,525 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:18:36,525 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:36,525 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,525 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,526 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Limit1].[Point] AS [Point], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Title] AS [Title], 
+    [Limit1].[TestPaperId] AS [TestPaperId], 
+    [Limit1].[OptionA] AS [OptionA], 
+    [Limit1].[OptionB] AS [OptionB], 
+    [Limit1].[OptionC] AS [OptionC], 
+    [Limit1].[OptionD] AS [OptionD], 
+    [Limit1].[RightKeyId] AS [RightKeyId], 
+    [Limit1].[Tip] AS [Tip], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Num] AS [Num], 
+    [Limit1].[TestTitle] AS [TestTitle], 
+    [Limit1].[ExercisesCount] AS [ExercisesCount], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[Id2] AS [Id2], 
+    [Limit1].[TypeName] AS [TypeName], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[ImgUrl] AS [ImgUrl], 
+    [Limit1].[IsDeleted2] AS [IsDeleted2], 
+    [Limit1].[CreateDateTime2] AS [CreateDateTime2]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Title] AS [Title], 
+        [Extent1].[TestPaperId] AS [TestPaperId], 
+        [Extent1].[OptionA] AS [OptionA], 
+        [Extent1].[OptionB] AS [OptionB], 
+        [Extent1].[OptionC] AS [OptionC], 
+        [Extent1].[OptionD] AS [OptionD], 
+        [Extent1].[RightKeyId] AS [RightKeyId], 
+        [Extent1].[Point] AS [Point], 
+        [Extent1].[Tip] AS [Tip], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Num] AS [Num], 
+        [Extent2].[TestTitle] AS [TestTitle], 
+        [Extent2].[ExercisesCount] AS [ExercisesCount], 
+        [Extent2].[IsDeleted] AS [IsDeleted1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent3].[Id] AS [Id2], 
+        [Extent3].[TypeName] AS [TypeName], 
+        [Extent3].[Name] AS [Name], 
+        [Extent3].[ImgUrl] AS [ImgUrl], 
+        [Extent3].[IsDeleted] AS [IsDeleted2], 
+        [Extent3].[CreateDateTime] AS [CreateDateTime2]
+        FROM   [dbo].[T_Exercises] AS [Extent1]
+        INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+        INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-11-20 18:18:36,526 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:36,526 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '38' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:18:36,526 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:18:36,528 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:18:36,529 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:18:36,529 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:18:36 +08:00
+
+2017-11-20 18:20:08,676 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,676 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:20:08,676 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,676 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,676 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,679 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,679 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,680 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,680 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,680 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:20:08,680 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,680 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,680 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,681 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,681 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,681 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,682 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,683 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:20:08,683 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,683 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,683 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,684 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,684 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,684 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,684 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,685 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT_BIG(1) AS [A1]
+        FROM [dbo].[T_Exercises] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-11-20 18:20:08,685 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,685 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,685 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,686 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,686 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,686 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,687 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,687 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:20:08,687 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,687 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,687 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent1].[Point] AS [Point], 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[TestPaperId] AS [TestPaperId], 
+    [Extent1].[OptionA] AS [OptionA], 
+    [Extent1].[OptionB] AS [OptionB], 
+    [Extent1].[OptionC] AS [OptionC], 
+    [Extent1].[OptionD] AS [OptionD], 
+    [Extent1].[RightKeyId] AS [RightKeyId], 
+    [Extent1].[Tip] AS [Tip], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[Id] AS [Id1], 
+    [Extent2].[Num] AS [Num], 
+    [Extent2].[TestTitle] AS [TestTitle], 
+    [Extent2].[ExercisesCount] AS [ExercisesCount], 
+    [Extent2].[IsDeleted] AS [IsDeleted1], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+    [Extent3].[Id] AS [Id2], 
+    [Extent3].[TypeName] AS [TypeName], 
+    [Extent3].[Name] AS [Name], 
+    [Extent3].[ImgUrl] AS [ImgUrl], 
+    [Extent3].[IsDeleted] AS [IsDeleted2], 
+    [Extent3].[CreateDateTime] AS [CreateDateTime2]
+    FROM   [dbo].[T_Exercises] AS [Extent1]
+    INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+    INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,688 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,692 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 3 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,692 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,693 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,943 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,943 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:20:08,943 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,943 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,943 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,946 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,946 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,946 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,946 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,946 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:20:08,947 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,947 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,947 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,948 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,948 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,948 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,949 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,949 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Limit1].[Point] AS [Point], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Title] AS [Title], 
+    [Limit1].[TestPaperId] AS [TestPaperId], 
+    [Limit1].[OptionA] AS [OptionA], 
+    [Limit1].[OptionB] AS [OptionB], 
+    [Limit1].[OptionC] AS [OptionC], 
+    [Limit1].[OptionD] AS [OptionD], 
+    [Limit1].[RightKeyId] AS [RightKeyId], 
+    [Limit1].[Tip] AS [Tip], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Num] AS [Num], 
+    [Limit1].[TestTitle] AS [TestTitle], 
+    [Limit1].[ExercisesCount] AS [ExercisesCount], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[Id2] AS [Id2], 
+    [Limit1].[TypeName] AS [TypeName], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[ImgUrl] AS [ImgUrl], 
+    [Limit1].[IsDeleted2] AS [IsDeleted2], 
+    [Limit1].[CreateDateTime2] AS [CreateDateTime2]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Title] AS [Title], 
+        [Extent1].[TestPaperId] AS [TestPaperId], 
+        [Extent1].[OptionA] AS [OptionA], 
+        [Extent1].[OptionB] AS [OptionB], 
+        [Extent1].[OptionC] AS [OptionC], 
+        [Extent1].[OptionD] AS [OptionD], 
+        [Extent1].[RightKeyId] AS [RightKeyId], 
+        [Extent1].[Point] AS [Point], 
+        [Extent1].[Tip] AS [Tip], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Num] AS [Num], 
+        [Extent2].[TestTitle] AS [TestTitle], 
+        [Extent2].[ExercisesCount] AS [ExercisesCount], 
+        [Extent2].[IsDeleted] AS [IsDeleted1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent3].[Id] AS [Id2], 
+        [Extent3].[TypeName] AS [TypeName], 
+        [Extent3].[Name] AS [Name], 
+        [Extent3].[ImgUrl] AS [ImgUrl], 
+        [Extent3].[IsDeleted] AS [IsDeleted2], 
+        [Extent3].[CreateDateTime] AS [CreateDateTime2]
+        FROM   [dbo].[T_Exercises] AS [Extent1]
+        INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+        INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-11-20 18:20:08,949 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,949 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '38' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:08,949 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:08,951 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:20:08,952 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:08,952 [19] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:08 +08:00
+
+2017-11-20 18:20:09,394 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,394 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:20:09,394 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,394 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,394 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,397 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,397 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,397 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,397 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,397 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:20:09,398 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,398 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,398 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,399 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,399 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,399 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,400 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,400 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:20:09,400 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,400 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,400 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,401 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,401 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,401 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,402 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,402 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT_BIG(1) AS [A1]
+        FROM [dbo].[T_Exercises] AS [Extent1]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+    )  AS [GroupBy1]
+2017-11-20 18:20:09,402 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,402 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,402 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,403 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,403 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,403 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,404 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,404 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Num] AS [Num], 
+    [Extent1].[TestTitle] AS [TestTitle], 
+    [Extent1].[ExercisesCount] AS [ExercisesCount], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime]
+    FROM [dbo].[T_TestPapers] AS [Extent1]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+2017-11-20 18:20:09,404 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,404 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,404 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,405 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 0 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,405 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,405 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,405 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,406 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent1].[Point] AS [Point], 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Title] AS [Title], 
+    [Extent1].[TestPaperId] AS [TestPaperId], 
+    [Extent1].[OptionA] AS [OptionA], 
+    [Extent1].[OptionB] AS [OptionB], 
+    [Extent1].[OptionC] AS [OptionC], 
+    [Extent1].[OptionD] AS [OptionD], 
+    [Extent1].[RightKeyId] AS [RightKeyId], 
+    [Extent1].[Tip] AS [Tip], 
+    [Extent1].[IsDeleted] AS [IsDeleted], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent2].[Id] AS [Id1], 
+    [Extent2].[Num] AS [Num], 
+    [Extent2].[TestTitle] AS [TestTitle], 
+    [Extent2].[ExercisesCount] AS [ExercisesCount], 
+    [Extent2].[IsDeleted] AS [IsDeleted1], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+    [Extent3].[Id] AS [Id2], 
+    [Extent3].[TypeName] AS [TypeName], 
+    [Extent3].[Name] AS [Name], 
+    [Extent3].[ImgUrl] AS [ImgUrl], 
+    [Extent3].[IsDeleted] AS [IsDeleted2], 
+    [Extent3].[CreateDateTime] AS [CreateDateTime2]
+    FROM   [dbo].[T_Exercises] AS [Extent1]
+    INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+    INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+    WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[TestPaperId] = @p__linq__0)
+2017-11-20 18:20:09,406 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,406 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '4' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,406 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,409 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 3 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,409 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,410 [15] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,615 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,616 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Project2].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Project2].[Id] AS [Id], 
+    [Project2].[Name] AS [Name], 
+    [Project2].[Mobile] AS [Mobile], 
+    [Project2].[Gender] AS [Gender], 
+    [Project2].[PasswordSalt] AS [PasswordSalt], 
+    [Project2].[PasswordHash] AS [PasswordHash], 
+    [Project2].[Email] AS [Email], 
+    [Project2].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+    [Project2].[IsDeleted] AS [IsDeleted], 
+    [Project2].[CreateDateTime] AS [CreateDateTime], 
+    [Project2].[C1] AS [C1], 
+    [Project2].[Id1] AS [Id1], 
+    [Project2].[Name1] AS [Name1], 
+    [Project2].[Description] AS [Description], 
+    [Project2].[IsDeleted1] AS [IsDeleted1], 
+    [Project2].[CreateDateTime1] AS [CreateDateTime1]
+    FROM ( SELECT 
+        [Limit1].[Id] AS [Id], 
+        [Limit1].[Name] AS [Name], 
+        [Limit1].[Mobile] AS [Mobile], 
+        [Limit1].[Gender] AS [Gender], 
+        [Limit1].[PasswordSalt] AS [PasswordSalt], 
+        [Limit1].[PasswordHash] AS [PasswordHash], 
+        [Limit1].[Email] AS [Email], 
+        [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Limit1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+        [Limit1].[IsDeleted] AS [IsDeleted], 
+        [Limit1].[CreateDateTime] AS [CreateDateTime], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name1], 
+        [Join1].[Description] AS [Description], 
+        [Join1].[IsDeleted] AS [IsDeleted1], 
+        [Join1].[CreateDateTime] AS [CreateDateTime1], 
+        CASE WHEN ([Join1].[AdminUserId] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C1]
+        FROM   (SELECT TOP (2) 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[Name] AS [Name], 
+            [Extent1].[Mobile] AS [Mobile], 
+            [Extent1].[Gender] AS [Gender], 
+            [Extent1].[PasswordSalt] AS [PasswordSalt], 
+            [Extent1].[PasswordHash] AS [PasswordHash], 
+            [Extent1].[Email] AS [Email], 
+            [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+            [Extent1].[LastLoginErrorTime] AS [LastLoginErrorTime], 
+            [Extent1].[IsDeleted] AS [IsDeleted], 
+            [Extent1].[CreateDateTime] AS [CreateDateTime]
+            FROM [dbo].[T_AdminUsers] AS [Extent1]
+            WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0) ) AS [Limit1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[AdminUserId] AS [AdminUserId], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[Description] AS [Description], [Extent3].[IsDeleted] AS [IsDeleted], [Extent3].[CreateDateTime] AS [CreateDateTime]
+            FROM  [dbo].[T_AdminUserRoles] AS [Extent2]
+            INNER JOIN [dbo].[T_Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleId] ) AS [Join1] ON [Limit1].[Id] = [Join1].[AdminUserId]
+    )  AS [Project2]
+    ORDER BY [Project2].[Id] ASC, [Project2].[C1] ASC
+2017-11-20 18:20:09,616 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,616 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,616 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,618 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,618 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,618 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,619 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,619 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Extent2].[Id] AS [Id], 
+    [Extent2].[Description] AS [Description], 
+    [Extent2].[Name] AS [Name], 
+    [Extent2].[IsDeleted] AS [IsDeleted], 
+    [Extent2].[CreateDateTime] AS [CreateDateTime]
+    FROM  [dbo].[T_RolePermissions] AS [Extent1]
+    INNER JOIN [dbo].[T_Permissions] AS [Extent2] ON [Extent1].[PermissionId] = [Extent2].[Id]
+    WHERE [Extent1].[RoleId] = @EntityKeyValue1
+2017-11-20 18:20:09,619 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,619 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- EntityKeyValue1: '1' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,619 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,620 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 1 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,620 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,621 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,621 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：Opened connection at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,622 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：SELECT 
+    [Limit1].[Point] AS [Point], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Title] AS [Title], 
+    [Limit1].[TestPaperId] AS [TestPaperId], 
+    [Limit1].[OptionA] AS [OptionA], 
+    [Limit1].[OptionB] AS [OptionB], 
+    [Limit1].[OptionC] AS [OptionC], 
+    [Limit1].[OptionD] AS [OptionD], 
+    [Limit1].[RightKeyId] AS [RightKeyId], 
+    [Limit1].[Tip] AS [Tip], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Num] AS [Num], 
+    [Limit1].[TestTitle] AS [TestTitle], 
+    [Limit1].[ExercisesCount] AS [ExercisesCount], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[Id2] AS [Id2], 
+    [Limit1].[TypeName] AS [TypeName], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[ImgUrl] AS [ImgUrl], 
+    [Limit1].[IsDeleted2] AS [IsDeleted2], 
+    [Limit1].[CreateDateTime2] AS [CreateDateTime2]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Title] AS [Title], 
+        [Extent1].[TestPaperId] AS [TestPaperId], 
+        [Extent1].[OptionA] AS [OptionA], 
+        [Extent1].[OptionB] AS [OptionB], 
+        [Extent1].[OptionC] AS [OptionC], 
+        [Extent1].[OptionD] AS [OptionD], 
+        [Extent1].[RightKeyId] AS [RightKeyId], 
+        [Extent1].[Point] AS [Point], 
+        [Extent1].[Tip] AS [Tip], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Num] AS [Num], 
+        [Extent2].[TestTitle] AS [TestTitle], 
+        [Extent2].[ExercisesCount] AS [ExercisesCount], 
+        [Extent2].[IsDeleted] AS [IsDeleted1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent3].[Id] AS [Id2], 
+        [Extent3].[TypeName] AS [TypeName], 
+        [Extent3].[Name] AS [Name], 
+        [Extent3].[ImgUrl] AS [ImgUrl], 
+        [Extent3].[IsDeleted] AS [IsDeleted2], 
+        [Extent3].[CreateDateTime] AS [CreateDateTime2]
+        FROM   [dbo].[T_Exercises] AS [Extent1]
+        INNER JOIN [dbo].[T_TestPapers] AS [Extent2] ON [Extent1].[TestPaperId] = [Extent2].[Id]
+        INNER JOIN [dbo].[T_IdNames] AS [Extent3] ON [Extent1].[RightKeyId] = [Extent3].[Id]
+        WHERE (0 = [Extent1].[IsDeleted]) AND ([Extent1].[Id] = @p__linq__0)
+    )  AS [Limit1]
+2017-11-20 18:20:09,622 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,622 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- p__linq__0: '38' (Type = Int64, IsNullable = false)
+
+2017-11-20 18:20:09,622 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Executing at 2017/11/20 18:20:09 +08:00
+
+2017-11-20 18:20:09,624 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：-- Completed in 2 ms with result: SqlDataReader
+
+2017-11-20 18:20:09,624 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：
+
+2017-11-20 18:20:09,625 [16] DEBUG Chat.Service.MyDbContext - EF执行SQL：Closed connection at 2017/11/20 18:20:09 +08:00
+

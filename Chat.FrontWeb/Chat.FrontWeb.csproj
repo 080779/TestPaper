@@ -171,6 +171,7 @@
     <Content Include="Views\Home\Prize.cshtml" />
     <Content Include="Views\Home\Result.cshtml" />
     <None Include="Properties\PublishProfiles\Answer.pubxml" />
+    <Content Include="Views\Home\huanbao-html%283%29.rar" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

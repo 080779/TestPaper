@@ -12,7 +12,7 @@ namespace Chat.Service.Service
 {
     public class ExercisesService : IExercisesService
     {
-        public long AddNew(string title, long testPaperId, string optionA, string optionB, string optionC, string optionD, long rightKeyId, string tip)
+        public long AddNew(string title, long testPaperId, string optionA, string optionB, string optionC, string optionD, long rightKeyId)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -72,6 +72,11 @@ namespace Chat.Service.Service
             return dto;
         }
 
+        /// <summary>
+        /// 根据试卷id获得试题
+        /// </summary>
+        /// <param name="testPaperId"></param>
+        /// <returns></returns>
         public ExercisesDTO[] GetExercisesByPaperId(long testPaperId)
         {
             using (MyDbContext dbc = new MyDbContext())
@@ -127,7 +132,7 @@ namespace Chat.Service.Service
             }
         }
 
-        public bool Update(long id, string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId, string tip)
+        public bool Update(long id, string title, string optionA, string optionB, string optionC, string optionD, long rightKeyId)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -159,7 +164,6 @@ namespace Chat.Service.Service
                         break;
                 }
                 exe.Title = title;
-                exe.Tip = tip;
                 dbc.SaveChanges();
                 return true;
             }
