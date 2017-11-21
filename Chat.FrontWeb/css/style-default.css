@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /* font */
 @font-face{ font-family: "hzgb"; src: url('../font/hzgb.ttf') format('truetype');}
@@ -88,6 +88,8 @@
 .menu-li{
 	width: 25%;
 	display: inline-block;
+    background-color: transparent;
+    border: none;
 }
 
 .menu-icon{
@@ -128,8 +130,7 @@
 	position: relative;
 	/*min-height: 160%;*/
 	/*background: #b7ebf6 url(../img/default/bg2.png) repeat-y;*/
-	background-image: url(../img/default/bg-l.jpg);
-	background-attachment: fixed;
+	background: url(../img/default/bg-l.jpg) fixed;
 	background-size: 100% auto;
 }
 
@@ -200,7 +201,7 @@
 	min-height: 15rem;
 	background-size: 100% 100%;
 	box-sizing: border-box;
-	padding: 2rem 3.5rem 3rem 2.8rem;
+	padding: 2rem 2rem 3rem 2.8rem;
 }
 
 .anserli-knowledge{
@@ -230,38 +231,39 @@
 	background-size: 100% auto;
 	text-indent: -999em;
 	display: inline-block;
+	font-size: ;
 }
 
 .anserli-num.num1{ background-position: 0 0;}
-.anserli-num.num2{ background-position: 0 -1.5rem;}
-.anserli-num.num3{ background-position: 0 -3rem;}
-.anserli-num.num4{ background-position: 0 -4.5rem;}
-.anserli-num.num5{ background-position: 0 -6rem;}
-.anserli-num.num6{ background-position: 0 -7.5rem;}
-.anserli-num.num7{ background-position: 0 -9rem;}
-.anserli-num.num8{ background-position: 0 -10.5rem;}
-.anserli-num.num9{ background-position: 0 -12rem;}
-.anserli-num.num10{ background-position: 0 -13.5rem;}
-.anserli-num.num11{ background-position: 0 -15rem;}
-.anserli-num.num12{ background-position: 0 -16.5rem;}
-.anserli-num.num13{ background-position: 0 -18rem;}
-.anserli-num.num14{ background-position: 0 -19.5rem;}
-.anserli-num.num15{ background-position: 0 -21rem;}
-.anserli-num.num16{ background-position: 0 -22.5rem;}
-.anserli-num.num17{ background-position: 0 -24rem;}
-.anserli-num.num18{ background-position: 0 -25.5rem;}
-.anserli-num.num19{ background-position: 0 -27rem;}
-.anserli-num.num20{ background-position: 0 -28.5rem;}
-.anserli-num.num21{ background-position: 0 -30rem;}
-.anserli-num.num22{ background-position: 0 -31.5rem;}
-.anserli-num.num23{ background-position: 0 -33rem;}
-.anserli-num.num24{ background-position: 0 -34.5rem;}
-.anserli-num.num25{ background-position: 0 -36rem;}
-.anserli-num.num26{ background-position: 0 -37.5rem;}
-.anserli-num.num27{ background-position: 0 -39rem;}
-.anserli-num.num28{ background-position: 0 -40.5rem;}
-.anserli-num.num29{ background-position: 0 -42rem;}
-.anserli-num.num30{ background-position: 0 -43.5rem;}
+.anserli-num.num2{ background-position: 0 -1.8rem;}
+.anserli-num.num3{ background-position: 0 -3.6rem;}
+.anserli-num.num4{ background-position: 0 -5.4rem;}
+.anserli-num.num5{ background-position: 0 -7.2rem;}
+.anserli-num.num6{ background-position: 0 -9rem;}
+.anserli-num.num7{ background-position: 0 -10.8rem;}
+.anserli-num.num8{ background-position: 0 -12.6rem;}
+.anserli-num.num9{ background-position: 0 -14.4rem;}
+.anserli-num.num10{ background-position: 0 -16.2rem;}
+.anserli-num.num11{ background-position: 0 -18rem;}
+.anserli-num.num12{ background-position: 0 -19.8rem;}
+.anserli-num.num13{ background-position: 0 -21.6rem;}
+.anserli-num.num14{ background-position: 0 -23.4rem;}
+.anserli-num.num15{ background-position: 0 -25.2rem;}
+.anserli-num.num16{ background-position: 0 -27rem;}
+.anserli-num.num17{ background-position: 0 -28.8rem;}
+.anserli-num.num18{ background-position: 0 -30.6rem;}
+.anserli-num.num19{ background-position: 0 -32.4rem;}
+.anserli-num.num20{ background-position: 0 -34.2rem;}
+.anserli-num.num21{ background-position: 0 -36rem;}
+.anserli-num.num22{ background-position: 0 -37.8rem;}
+.anserli-num.num23{ background-position: 0 -39.6rem;}
+.anserli-num.num24{ background-position: 0 -41.4rem;}
+.anserli-num.num25{ background-position: 0 -43.2rem;}
+.anserli-num.num26{ background-position: 0 -45rem;}
+.anserli-num.num27{ background-position: 0 -46.8rem;}
+.anserli-num.num28{ background-position: 0 -48.6rem;}
+.anserli-num.num29{ background-position: 0 -50.4rem;}
+.anserli-num.num30{ background-position: 0 -52.2rem;}
 
 .anserli-qus{
 	padding-bottom: .8rem;
@@ -272,7 +274,7 @@
 }
 
 .anserli-con{
-	padding: 0 1rem;
+	padding: 0 2.5rem 0 1rem;
 }
 
 .anserli-as{
@@ -427,6 +429,9 @@
     font-size: .8rem;
     box-sizing: border-box;
 }
+.star-time {
+    text-align: center;
+}
 
 
 .result-code{
@@ -513,6 +518,7 @@
 }
 
 .mask{
+    display:none;
 	position: fixed;
 	left: 0;
 	top: 0;

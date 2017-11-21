@@ -11,57 +11,112 @@
 <body>
     <div class="index-bg">
         <div class="index-wrap">
-            <div class="index-title">@Model.Activity.Name</div>
-            <div class="index-dec">@Html.Raw(Model.Activity.Description.Replace("{{br}}", @"<br>"))</div>
+            <div class="index-title">@Model.Name</div>
+            <div class="index-dec">@Html.Raw(Model.Description.Replace("{{br}}", @"<br>"))</div>
         </div>
         <div class="index-wrap">
             <dl class="index-dl">
                 <dt>活动开始时间</dt>
-                <dd>@Model.Activity.StartTime.ToString("yyyy-MM-dd")</dd>
+                <dd>@Model.StartTime</dd>
             </dl>
             <dl class="index-dl">
                 <dt>答题截止时间</dt>
-                <dd>@Model.Activity.ExamEndTime.ToString("yyyy-MM-dd")</dd>
+                <dd>@Model.ExamEndTime</dd>
             </dl>
             <dl class="index-dl">
                 <dt>开奖时间</dt>
-                <dd>@Model.Activity.RewardTime.ToString("yyyy-MM-dd")</dd>
+                <dd>@Model.RewardTime</dd>
             </dl>
         </div>
         <div class="index-wrap">
             <dl class="index-dl">
                 <dt>当前参与人数</dt>
-                <dd>@(Model.Activity.AnswerCount)人</dd>
+                <dd>@(Model.AnswerCount)人</dd>
             </dl>
             <dl class="index-dl">
                 <dt>活动状态</dt>
-                <dd class="txt-foces">@Model.Activity.StatusName</dd>
+                <dd class="txt-foces">@Model.StatusName</dd>
             </dl>            
         </div>
     </div>
     <div class="menu">
-        <a href="~/home/topic?id=@Model.Activity.Id" class="menu-li">
+        <button id="topic" class="menu-li" value="@Model.Id">
             <span class="menu-icon icon1"></span>
             <span class="menu-txt">本期知识</span>
-        </a>
-        <a href="~/home/answer?id=@Model.Activity.Id" class="menu-li">
+        </button>
+        <button id="answer" class="menu-li" value="@Model.Id">
             <span class="menu-icon icon2"></span>
             <span class="menu-txt">立即答题</span>
-        </a>
-        <a href="~/home/prize?id=@Model.Activity.Id" class="menu-li">
+        </button>
+        <button id="prize" class="menu-li" value="@Model.Id">
             <span class="menu-icon icon3"></span>
             <span class="menu-txt">获奖查询</span>
-        </a>
-        <a href="#" id="zfhy" class="menu-li">
+        </button>
+        <button id="share" class="menu-li">
             <span class="menu-icon icon4"></span>
             <span class="menu-txt">转发好友</span>
-        </a>
+        </button>           
+</div>
+    <div class="mask" id="mask-star">
+        <div class="mask-wrap">
+            <!--活动开始-->
+            <div class="green1">
+                <a href="javascript:;" class="close jsClose">×</a>
+                <div class="mask-popimg"><img src="/img/active-start.jpg"/></div>
+                <a href="javascript:;" class="mask-popbtn jsClose">知道了</a>
+            </div>
+        </div>
+    </div>
+    <div class="mask" id="mask-over">
+        <div class="mask-wrap">
+            <!--完成答题等待开奖-->
+            <div class="green2">
+                <a href="javascript:;" class="close jsClose">×</a>
+                <div class="mask-popimg"><img src="/img/active-complete.jpg"/></div>
+                <a href="javascript:;" class="mask-popbtn jsClose">知道了</a>
+            </div>
+        </div>
+    </div>
+    <div class="mask" id="mask-over">
+        <div class="mask-wrap">            
+            <!--已结束-->
+            <div class="white1">
+                <a href="javascript:;" class="close jsClose">×</a>
+                <div class="mask-popimg"><img src="/img/active-over.jpg"/></div>
+                <a href="javascript:;" class="mask-popbtn jsClose">知道了</a>
+            </div>
+        </div>
+    </div>
+    <div class="mask" id="mask-share">        
+        <div class="share jsClose"><img src="/img/share.png" /></div>
     </div>
     <script src="~/js/jquery.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $("#zfhy").click(function () {
-                alert("点击右上角转发给朋友或转发到朋友圈。成功转发后，系统将在开奖计算中为您增加30%的中奖概率。");                
+            $(".jsClose").click(function () {
+                $(".mask").css("display", "none");
+            });
+
+            $("#topic").click(function () {
+                var id = $(this).val();
+                $.ajax({
+                    url: "/home/judge", type: "post", data: { id: id, typeName: "topic" },
+                    success: function (result) {
+                        if(result.status=="nonExist")
+                        {
+                            alert("暂无活动");
+                        }
+                    },
+                    error: function () { alert("网络错误");}
+                });
+            });
+
+            $("#answer").click(function () {
+                $("#mask-star").css("display", "block");
+            });
+
+            $("#share").click(function () {
+                $("#mask-share").css("display", "block");
             });
         });
     </script>

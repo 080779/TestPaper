@@ -82,6 +82,11 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                long count = cs.GetTotalCount();
+                if(count<=0)
+                {
+                    return null;
+                }
                 ActivityEntity entity = cs.GetAll().OrderByDescending(a => a.CreateDateTime).First();
                 return ToDTO(entity);
             }
@@ -101,16 +106,30 @@ namespace Chat.Service.Service
             }
         }
 
+        /// <summary>
+        /// 判断活动id 的活动是否存在
+        /// </summary>
+        /// <param name="id">活动id</param>
+        /// <returns></returns>
+        public bool ExistActivity(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                return cs.GetAll().Any(a=>a.Id==id);
+            }
+        }
+
         public ActivityDTO GetByStatus(string statusName)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
                 ActivityEntity entity = cs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a => a.Status.Name == statusName);
-                //if (entity == null)
-                //{
-                //    return null;
-                //}
+                if (entity == null)
+                {
+                    return null;
+                }
                 return ToDTO(entity);
             }
         }
@@ -136,12 +155,7 @@ namespace Chat.Service.Service
                 activity.PrizeName = prizeName;
                 if (!string.IsNullOrWhiteSpace(prizeImgUrl))
                     activity.PrizeImgUrl = prizeImgUrl;
-                activity.AnswerCount = 0;
-                activity.ForwardCount = 0;
-                activity.HavePrizeCount = 0;
-                activity.PrizeCount = 0;
                 activity.StatusId = statusId;
-                activity.VisitCount = 0;
                 dbc.SaveChanges();
                 return true;
             }
@@ -175,6 +189,56 @@ namespace Chat.Service.Service
                 items = items.OrderByDescending(p => p.CreateDateTime).Take(10);
                 return items.ToList().Select(p => ToDTO(p)).ToArray();
             }
+        }
+
+        /// <summary>
+        /// 根据条件查询活动
+        /// </summary>
+        /// <param name="statusId">活动状态</param>
+        /// <param name="startTime">活动开始时间</param>
+        /// <param name="endTime">活动结束时间</param>
+        /// <param name="keyWord">关键字</param>
+        /// <param name="currentIndex">跳过的条数（（当前页-1）*每页数）</param>
+        /// <param name="pageSize">每页数</param>
+        /// <returns></returns>
+        public ActivitySearchResult Search(long? statusId, DateTime? startTime, DateTime? endTime, string keyWord, int currentIndex, int pageSize)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<Entities.ActivityEntity>(dbc);
+                var items = cs.GetAll();
+                if (statusId != null)
+                {
+
+                    items = items.Where(p => p.StatusId == statusId);
+                }
+                if (startTime != null)
+                {
+                    startTime = DateTimeHelper.GetBeginDate((DateTime)startTime);
+                    items = items.Where(p => p.CreateDateTime >= startTime);
+                }
+                if (endTime != null)
+                {
+                    endTime = DateTimeHelper.GetEndDate((DateTime)endTime);
+                    items = items.Where(p => p.CreateDateTime <= endTime);
+                }
+                if (!string.IsNullOrEmpty(keyWord))
+                {
+                    items = items.Where(p => p.Name.Contains(keyWord) || p.Description.Contains(keyWord));
+                }
+                items = items.OrderByDescending(p => p.CreateDateTime);
+                int count = items.Count();
+                ActivitySearchResult result = new ActivitySearchResult();
+                result.Activities= items.Skip(currentIndex).Take(pageSize).ToList().Select(p => ToDTO(p)).ToArray();
+                result.TotalCount = count;
+                return result;
+            }
+        }
+
+        public class ActivitySearchResult
+        {
+            public ActivityDTO[] Activities { get; set; }
+            public int TotalCount { get; set; }
         }
 
         public bool Delete(long id)
@@ -258,7 +322,7 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
-                return cs.GetAll().Where(a=>a.Id!=id).Any(a => a.StatusId == id);
+                return cs.GetAll().Any(a => a.Id==id && a.StatusId == statusId);
             }
         }
 

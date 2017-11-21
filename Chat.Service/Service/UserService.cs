@@ -89,6 +89,25 @@ namespace Chat.Service.Service
             }
         }
 
+        public UserDTO[] GetUsersByActivityId(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                CommonService<UserEntity> ucs = new CommonService<UserEntity>(dbc);
+                var activity = cs.GetAll().SingleOrDefault(a => a.Id == id);
+                if (activity == null)
+                {
+                    return null;
+                }
+                var users = from u in dbc.Users
+                            from a in u.Activities
+                            where a.Id == id
+                            select u;
+                return users.Select(u => ToDTO(u)).ToArray();
+            }
+        }
+
         public UserDTO[] GetByActivityIdHavePrize(long id)
         {
             using (MyDbContext dbc = new MyDbContext())

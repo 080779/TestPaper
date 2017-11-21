@@ -75,14 +75,14 @@ namespace Chat.AdminWeb.Controllers
                 return Content("活动状态必须选择");
             }
             //statusId=6为活动正在进行中
-            if(activityService.CheckByPaperId(6))
+            if(activityService.CheckByStatusId(6))
             {
-                return Content("有活动已经在进行中，请选择其他状态");
+                return Content("有活动已经在进行中，不能存在两个同时进行的活动，请选择其他状态");
             }
-            if (model.imgUrl == null)
-            {
-                return Content("活动背景图不能为空");
-            }
+            //if (model.imgUrl == null)
+            //{
+            //    return Content("活动背景图不能为空");
+            //}
             string ext = Path.GetExtension(model.imgUrl.FileName);
             string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp" };
             if (!imgs.Contains(ext))
@@ -109,10 +109,10 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("奖品名称不能为空");
             }
-            if (model.PrizeImgUrl == null)
-            {
-                return Content("奖品图片不能为空");
-            }
+            //if (model.PrizeImgUrl == null)
+            //{
+            //    return Content("奖品图片不能为空");
+            //}
             ext = Path.GetExtension(model.PrizeImgUrl.FileName);
             if (!imgs.Contains(ext))
             {
@@ -162,10 +162,14 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("活动状态必须选择");
             }
-            //statusId=6为活动正在进行中
-            if (activityService.CheckByStatusId(model.activityId,6))
+            //判断此活动是否正在进行中，如果是就可以随便编辑状态，statusId=6为活动正在进行中
+            if (!activityService.CheckByStatusId(model.activityId,6))
             {
-                return Content("有活动已经在进行中，请选择其他状态");
+                //当当前活动状态不为“进行中”，判断所有活动中是否有已经为“进行中的活动”，如果有提示
+                if (activityService.CheckByStatusId(6))
+                {
+                    return Content("有活动已经在进行中，不能存在两个同时进行的活动，请选择其他状态");
+                }
             }
             //if (model.imgUrl == null)
             //{

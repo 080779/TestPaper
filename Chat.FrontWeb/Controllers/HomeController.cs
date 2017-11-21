@@ -21,26 +21,86 @@ namespace Chat.FrontWeb.Controllers
         public ActionResult Index()
         {
             ActivityViewModel model = new ActivityViewModel();
-            model.Activity= activityService.GetByStatus("答题进行中");
-            if(model.Activity==null)
+            ActivityDTO activity;
+            if(activityService.GetByStatus("答题进行中") == null)
             {
-                model.Activity = activityService.GetNew();
+                if(activityService.GetNew()!=null)
+                {
+                    activity = activityService.GetNew();
+                    model.Id = activity.Id;
+                    model.Name = activity.Name;
+                    model.Description = activity.Description;
+                    model.StartTime = activity.StartTime.ToString("yyyy-MM-dd");
+                    model.ExamEndTime = activity.ExamEndTime.ToString("yyyy-MM-dd");
+                    model.RewardTime = activity.RewardTime.ToString("yyyy-MM-dd");
+                    model.AnswerCount = activity.AnswerCount;
+                    model.StatusName = activity.StatusName;
+                }
+                else
+                {
+                    model.Id = 0;
+                    model.Name = "当前暂无活动";
+                    model.Description = "当前暂无活动简介";
+                    model.StartTime = "****-**-**";
+                    model.ExamEndTime = "****-**-**";
+                    model.RewardTime = "****-**-**";
+                    model.AnswerCount = 0;
+                    model.StatusName = "无活动";
+                }
             }
-            if(activityService.GetAll().Count()<=0)
+            else
             {
-                return Content("当前没有活动！");
-            }
-            activityService.UpdateCount(model.Activity.Id, true, false, false, false, false);
+                activity = activityService.GetByStatus("答题进行中");
+                model.Id = activity.Id;
+                model.Name = activity.Name;
+                model.Description = activity.Description;
+                model.StartTime = activity.StartTime.ToString("yyyy-MM-dd");
+                model.ExamEndTime = activity.ExamEndTime.ToString("yyyy-MM-dd");
+                model.RewardTime = activity.RewardTime.ToString("yyyy-MM-dd");
+                model.AnswerCount = activity.AnswerCount;
+                model.StatusName = activity.StatusName;
+            }           
+
+            activityService.UpdateCount(model.Id, true, false, false, false, false);
             return View(model);
+        }
+
+        public ActionResult Judge(long id,string typeName)
+        {
+            if(activityService.GetTotalCount()<=0)
+            {
+                return Json(new AjaxResult { Status = "nonExist", ErrorMsg = "无活动" });
+            }
+            if(!activityService.ExistActivity(id))
+            {
+                return Json(new AjaxResult { Status="nonExist",ErrorMsg="活动不存在"});
+            }
+            if(typeName=="topic")
+            {
+                return Json(new AjaxResult { Status = "redirect",Data="/home/topic?id="+id });
+            }
+            if(typeName=="answer")
+            {
+                return Json(new AjaxResult { Status = "redirect", Data = "/home/answer?id=" + id });
+            }
+            if(typeName=="prize")
+            {
+                return Json(new AjaxResult { Status = "redirect", Data = "/home/prize?id=" + id });
+            }
+            return Json(new AjaxResult { Status="success"});
         }
 
         public ActionResult Answer(long id)
         {
             AnswerViewModel model = new AnswerViewModel();
             ActivityDTO activity;
-            if (id<=0)
+            if (!activityService.ExistActivity(id))
             {
                 activity = activityService.GetByStatus("答题进行中");
+            }
+            else
+            {
+
             }
             activity = activityService.GetById(id);
             model.ActivityName = activity.Name;
@@ -59,7 +119,10 @@ namespace Chat.FrontWeb.Controllers
             {
                 activity = activityService.GetByStatus("答题进行中");
             }
-            activity = activityService.GetById(id);
+            else
+            {
+                activity = activityService.GetById(id);
+            }            
             model.ActivityName = activity.Name;
             var exetips = exeService.GetExercisesByPaperId(activity.PaperId);
             List<string> lists = new List<string>();
@@ -78,6 +141,10 @@ namespace Chat.FrontWeb.Controllers
             if (id <= 0)
             {
                 activity = activityService.GetByStatus("答题进行中");
+            }
+            else
+            {
+                activity = activityService.GetById(id);
             }
             activity = activityService.GetById(id);
             model.ActivityName = activity.Name;

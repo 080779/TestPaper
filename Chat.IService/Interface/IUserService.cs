@@ -13,6 +13,7 @@ namespace Chat.IService.Interface
         UserDTO[] GetAll();
         UserDTO[] Search(bool? gender,bool? isWon,DateTime? startTime,DateTime? endTime,string keyWord);
         UserDTO[] GetByActivityId(long id);
+        UserDTO[] GetUsersByActivityId(long id);
         UserDTO[] PrizeSearch(long id, DateTime? startTime, DateTime? endTime, string keyWord);
         bool SetWon(long id);
         UserDTO[] GetByActivityIdHavePrize(long id);

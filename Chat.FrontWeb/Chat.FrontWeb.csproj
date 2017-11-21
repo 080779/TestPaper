@@ -118,6 +118,9 @@
     <Content Include="Global.asax" />
     <Content Include="img\23e.png" />
     <Content Include="img\code.jpg" />
+    <Content Include="img\active-complete.jpg" />
+    <Content Include="img\active-over.jpg" />
+    <Content Include="img\active-start.jpg" />
     <Content Include="img\default\ask-title-border.png" />
     <Content Include="img\default\bg-i.jpg" />
     <Content Include="img\default\bg-l.jpg" />
@@ -136,6 +139,7 @@
     <Content Include="img\default\prize-top-bg.jpg" />
     <Content Include="img\default\result-right.png" />
     <Content Include="img\default\result-wrong.png" />
+    <Content Include="img\share.png" />
     <Content Include="img\default\tit-bg.png" />
     <Content Include="img\default\tm-bg.png" />
     <Content Include="js\jquery.min.js" />
@@ -171,7 +175,6 @@
     <Content Include="Views\Home\Prize.cshtml" />
     <Content Include="Views\Home\Result.cshtml" />
     <None Include="Properties\PublishProfiles\Answer.pubxml" />
-    <Content Include="Views\Home\huanbao-html%283%29.rar" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
