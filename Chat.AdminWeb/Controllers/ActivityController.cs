@@ -166,7 +166,7 @@ namespace Chat.AdminWeb.Controllers
             if (!activityService.CheckByStatusId(model.activityId,6))
             {
                 //当当前活动状态不为“进行中”，判断所有活动中是否有已经为“进行中的活动”，如果有提示
-                if (activityService.CheckByStatusId(6))
+                if (model.StatusId==6)
                 {
                     return Content("有活动已经在进行中，不能存在两个同时进行的活动，请选择其他状态");
                 }

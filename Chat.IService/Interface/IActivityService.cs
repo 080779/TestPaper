@@ -20,11 +20,11 @@ namespace Chat.IService.Interface
         ActivityDTO[] Search(long? statusId, DateTime? startTime, DateTime? endTime, string keyWord);
         bool Delete(long id);
         bool AddUserId(long activityId, long userId);
-        ActivityDTO[] GetActivityByUserId(long id);
         ActivityDTO[] GetByUserId(long id);
         long GetTotalCount();
         bool CheckByStatusId(long id,long statusId);
-        bool CheckByStatusId(long statusId);
+        bool CheckByStatusId(long id);
+        bool CheckByStatusIdExcludeMe(long id,long statusId);
         bool CheckByPaperId(long id);
         /// <summary>
         /// 更新访问次数等

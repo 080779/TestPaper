@@ -150,9 +150,6 @@ namespace Test
             //userService.e
 
             //Console.WriteLine(paperService.Delete(3));
-
-            long c= actService.GetActivityByUserId(3).Count();
-            Console.WriteLine(c);
             Console.ReadKey();
         }
     }

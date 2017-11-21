@@ -106,13 +106,45 @@
                         {
                             alert("暂无活动");
                         }
+                        else if(result.status=="redirect")
+                        {
+                            window.location.href=result.data
+                        }
                     },
                     error: function () { alert("网络错误");}
                 });
             });
 
             $("#answer").click(function () {
-                $("#mask-star").css("display", "block");
+                var id = $(this).val();
+                $.ajax({
+                    url: "/home/judge", type: "post", data: { id: id, typeName: "answer" },
+                    success: function (result) {
+                        if (result.status == "nonExist") {
+                            alert("暂无活动");
+                        }
+                        else if (result.status == "redirect") {
+                            window.location.href = result.data
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
+
+            $("#prize").click(function () {
+                var id = $(this).val();
+                $.ajax({
+                    url: "/home/judge", type: "post", data: { id: id, typeName: "prize" },
+                    success: function (result) {
+                        if (result.status == "nonExist") {
+                            alert("暂无活动");
+                        }
+                        else if (result.status == "redirect") {
+                            window.location.href = result.data
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
             });
 
             $("#share").click(function () {
