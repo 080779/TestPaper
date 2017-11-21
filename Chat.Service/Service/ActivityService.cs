@@ -325,6 +325,7 @@ namespace Chat.Service.Service
                 return cs.GetAll().Any(a => a.Id==id && a.StatusId == statusId);
             }
         }
+
         /// <summary>
         /// 检查状态是否存在，添加活动时使用
         /// </summary>

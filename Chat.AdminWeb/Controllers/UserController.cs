@@ -23,7 +23,7 @@ namespace Chat.AdminWeb.Controllers
         [Permission("manager")]
         public ActionResult Search(bool? gender, bool? isWon, DateTime? startTime, DateTime? endTime, string keyWord)
         {
-            return Json(new AjaxResult { Status = "success", Data = userService.Search(gender,isWon, startTime, endTime, keyWord) });
+            return Json(new AjaxResult { Status = "success", Data = userService.Search(gender,isWon, startTime, endTime, keyWord, 0, 10) });
         }
     }
 }

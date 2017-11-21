@@ -245,7 +245,7 @@ namespace Chat.AdminWeb.Controllers
         public ActionResult Prize(long id)
         {
             PrizeSetModel model = new PrizeSetModel();
-            model.Users = userService.GetByActivityIdHavePrize(id);
+            model.Users = userService.GetByActivityIdHavePrize1(id);
             model.ActivityId = id;
             return View(model);
         }
@@ -257,7 +257,7 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Json(new AjaxResult { Status="error",ErrorMsg="不存在这个答题活动"});
             }
-            return Json(new AjaxResult { Status = "success", Data = userService.PrizeSearch(id,startTime, endTime, keyWord) });
+            return Json(new AjaxResult { Status = "success", Data = userService.PrizeSearch1(id,startTime, endTime, keyWord,0,10) });
         }
 
         [HttpPost]
@@ -279,7 +279,7 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "不存在这个答题活动" });
             }
-            UserDTO[] dtos = userService.GetByActivityIdIsWon(id);
+            UserDTO[] dtos = userService.GetByActivityIdIsWon1(id);
             IWorkbook wb1 = new XSSFWorkbook();
             ISheet sheet1 = wb1.CreateSheet();
             sheet1.AutoSizeColumn(1);

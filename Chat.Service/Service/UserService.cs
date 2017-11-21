@@ -60,7 +60,7 @@ namespace Chat.Service.Service
             dto.ChangeTime = entity.ChangeTime;
             return dto;
         }
-
+                
         public UserDTO[] GetAll()
         {
             using (MyDbContext dbc = new MyDbContext())
@@ -81,15 +81,17 @@ namespace Chat.Service.Service
                 {
                     return null;
                 }
-               // var users = cs.GetAll().SelectMany(a=>a.Users);
-                //var activities = ucs.GetAll().SelectMany(u=>u.Activities).Where(a=>a.Id==id).Select(a=>ToDTO(a));
-
 
                 return dbc.Database.SqlQuery<UserDTO>("select top(20) u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
             }
         }
 
-        public UserDTO[] GetUsersByActivityId(long id)
+        /// <summary>
+        /// 根据活动id查找参与活动的用户
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public UserSearchResult GetUsersByActivityId(long id, int currentIndex, int pageSize)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -102,13 +104,16 @@ namespace Chat.Service.Service
                 }
                 var users = from u in dbc.Users
                             from a in u.Activities
-                            where a.Id == id
+                            where a.Id == id && u.IsDeleted==false
                             select u;
-                return users.Select(u => ToDTO(u)).ToArray();
+                UserSearchResult result = new UserSearchResult();
+                result.TotalCount = users.Count();
+                result.Users= users.OrderByDescending(u=>u.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
+                return result;
             }
         }
 
-        public UserDTO[] GetByActivityIdHavePrize(long id)
+        public UserDTO[] GetByActivityIdHavePrize1(long id)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -122,7 +127,34 @@ namespace Chat.Service.Service
             }
         }
 
-        public UserDTO[] GetByActivityIdIsWon(long id)
+        /// <summary>
+        /// 根据活动id查找出该活动有获奖资格的用户
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public UserSearchResult GetByActivityIdHavePrize(long id, int currentIndex, int pageSize)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                CommonService<UserEntity> ucs = new CommonService<UserEntity>(dbc);
+                var activity = cs.GetAll().SingleOrDefault(a => a.Id == id);
+                if (activity == null)
+                {
+                    return null;
+                }
+                var users = from u in dbc.Users
+                            from a in u.Activities
+                            where a.Id == id && u.IsDeleted == false && u.LoginErrorTimes==1
+                            select u;
+                UserSearchResult result = new UserSearchResult();
+                result.TotalCount = users.Count();
+                result.Users = users.OrderByDescending(u=>u.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
+                return result;
+            }
+        }
+
+        public UserDTO[] GetByActivityIdIsWon1(long id)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -136,7 +168,35 @@ namespace Chat.Service.Service
             }
         }
 
-        public UserDTO[] PrizeSearch(long id,DateTime? startTime,DateTime? endTime,string keyWord)
+        /// <summary>
+        /// 通过活动id查询出已经获奖的用户
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="currentIndex">跳过的条数（（当前页数-1）*每页数）</param>
+        /// <param name="pageSize">每页数</param>
+        /// <returns></returns>
+        public UserSearchResult GetByActivityIdIsWon(long id, int currentIndex, int pageSize)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var activity = cs.GetAll().SingleOrDefault(a => a.Id == id);
+                if (activity == null)
+                {
+                    return null;
+                }
+                var users = from u in dbc.Users
+                            from a in u.Activities
+                            where a.Id == id && u.IsDeleted == false && u.IsWon==true
+                            select u;
+                UserSearchResult result = new UserSearchResult();
+                result.TotalCount = users.Count();
+                result.Users = users.OrderByDescending(u=>u.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
+                return result;
+            }
+        }
+
+        public UserDTO[] PrizeSearch1(long id,DateTime? startTime,DateTime? endTime,string keyWord, int currentIndex, int pageSize)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -196,7 +256,12 @@ namespace Chat.Service.Service
             }
         }
 
-        public UserDTO[] Search(bool? gender, bool? isWon, DateTime? startTime, DateTime? endTime, string keyWord)
+        //public UserSearchResult PrizeSearch(long id, DateTime? startTime, DateTime? endTime, string keyWord, int currentIndex, int pageSize)
+        //{
+
+        //}
+
+        public UserSearchResult Search(bool? gender, bool? isWon, DateTime? startTime, DateTime? endTime, string keyWord, int currentIndex, int pageSize)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -224,7 +289,10 @@ namespace Chat.Service.Service
                 {
                     items = items.Where(u => u.Name.Contains(keyWord) || u.Mobile.Contains(keyWord));
                 }
-                return items.Take(10).ToList().Select(u => ToDTO(u)).ToArray();
+                UserSearchResult result = new UserSearchResult();
+                result.TotalCount = items.Count();
+                result.Users= items.Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
+                return result;
             }
         }
 

@@ -152,7 +152,7 @@ namespace Chat.FrontWeb.Controllers
             model.PrizeImgUrl = activity.PrizeImgUrl;
             model.PrizeTime = activity.RewardTime;
             model.PrizeFirstUrl = settingService.GetValue("前端奖品图片地址");
-            var users = userService.GetByActivityIdIsWon(activity.Id);
+            var users = userService.GetByActivityIdIsWon1(activity.Id);
             List<IsWonUser> winUsers = new List<IsWonUser>();            
             foreach (var user in users)
             {
