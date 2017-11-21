@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Chat.AdminWeb/App_Data/Log/Logs_20171120.txtLogs_20171120.txt
+/Chat.AdminWeb/upload/2017/11/20/6C97E36922ED477827DCA3FF1C3ED0C9.png
+/Chat.FrontWeb/App_Data/Log/Logs_20171120.txt
+/Chat.FrontWeb/App_Data/Log/Logs_20171120.txt

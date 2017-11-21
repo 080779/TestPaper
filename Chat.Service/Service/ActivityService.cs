@@ -299,6 +299,26 @@ namespace Chat.Service.Service
             }
         }
 
+        public ActivityDTO[] GetActivityByUserId(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> ucs = new CommonService<UserEntity>(dbc);
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var user = ucs.GetAll().SingleOrDefault(u => u.Id == id);
+                if (user == null)
+                {
+                    return null;
+                }
+                //linq查询语句多对多查询
+                var act = from a in dbc.Activities
+                          from u in a.Users
+                          where u.Id == id
+                          select a;
+               return act.OrderByDescending(a=>a.CreateDateTime).Take(10).ToList().Select(a => ToDTO(a)).ToArray();
+            }
+        }
+
         public ActivityDTO[] GetPageData(int pageSize, int currentIndex)
         {
             using (MyDbContext dbc = new MyDbContext())
