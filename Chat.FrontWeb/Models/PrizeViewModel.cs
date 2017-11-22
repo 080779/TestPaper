@@ -16,5 +16,6 @@ namespace Chat.FrontWeb.Models
         public bool UserIsWon { get; set; }
         public DateTime PrizeTime { get; set; }
         public string PrizeFirstUrl { get; set; }
+        public string StatusName { get; set; }
     }
 }

@@ -35,8 +35,9 @@
             </dl>
             <dl class="index-dl">
                 <dt>活动状态</dt>
-                <dd class="txt-foces">@Model.StatusName</dd>
+                <dd class="txt-foces">@Model.StatusName</dd>                
             </dl>            
+            <input type="hidden" id="status" value="@Model.StatusName" />
         </div>
     </div>
     <div class="menu">
@@ -59,24 +60,14 @@
 </div>
     <div class="mask" id="mask-star">
         <div class="mask-wrap">
-            <!--活动开始-->
+            <!--活动未开始-->
             <div class="green1">
                 <a href="javascript:;" class="close jsClose">×</a>
                 <div class="mask-popimg"><img src="/img/active-start.jpg"/></div>
                 <a href="javascript:;" class="mask-popbtn jsClose">知道了</a>
             </div>
         </div>
-    </div>
-    <div class="mask" id="mask-over">
-        <div class="mask-wrap">
-            <!--完成答题等待开奖-->
-            <div class="green2">
-                <a href="javascript:;" class="close jsClose">×</a>
-                <div class="mask-popimg"><img src="/img/active-complete.jpg"/></div>
-                <a href="javascript:;" class="mask-popbtn jsClose">知道了</a>
-            </div>
-        </div>
-    </div>
+    </div>    
     <div class="mask" id="mask-over">
         <div class="mask-wrap">            
             <!--已结束-->
@@ -99,12 +90,13 @@
 
             $("#topic").click(function () {
                 var id = $(this).val();
+                var statusName = $("#status").val();
                 $.ajax({
-                    url: "/home/judge", type: "post", data: { id: id, typeName: "topic" },
+                    url: "/home/judge", type: "post", data: { id: id, typeName: "topic", statusName: statusName },
                     success: function (result) {
                         if(result.status=="nonExist")
                         {
-                            alert("暂无活动");
+                            alert("当前暂时没有活动");
                         }
                         else if(result.status=="redirect")
                         {
@@ -117,14 +109,22 @@
 
             $("#answer").click(function () {
                 var id = $(this).val();
+                var statusName = $("#status").val();
                 $.ajax({
-                    url: "/home/judge", type: "post", data: { id: id, typeName: "answer" },
+                    url: "/home/judge", type: "post", data: { id: id, typeName: "answer", statusName: statusName },
                     success: function (result) {
                         if (result.status == "nonExist") {
-                            alert("暂无活动");
+                            alert("当前暂时没有活动");
                         }
                         else if (result.status == "redirect") {
                             window.location.href = result.data
+                        }
+                        else if(result.status=="tip" && result.errorMsg=="活动未开始")
+                        {
+                            $("#mask-star").css("display", "block");
+                        }
+                        else if (result.status == "tip" && result.errorMsg == "开奖中") {
+                            $("#mask-over").css("display", "block");
                         }
                     },
                     error: function () { alert("网络错误"); }
@@ -133,14 +133,18 @@
 
             $("#prize").click(function () {
                 var id = $(this).val();
+                var statusName = $("#status").val();
                 $.ajax({
-                    url: "/home/judge", type: "post", data: { id: id, typeName: "prize" },
+                    url: "/home/judge", type: "post", data: { id: id, typeName: "prize", statusName: statusName },
                     success: function (result) {
                         if (result.status == "nonExist") {
-                            alert("暂无活动");
+                            alert("当前暂时没有活动");
                         }
                         else if (result.status == "redirect") {
                             window.location.href = result.data
+                        }
+                        else if (result.status == "tip" && result.errorMsg == "活动未开始") {
+                            $("#mask-star").css("display", "block");
                         }
                     },
                     error: function () { alert("网络错误"); }

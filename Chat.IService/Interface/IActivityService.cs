@@ -16,15 +16,15 @@ namespace Chat.IService.Interface
         ActivityDTO GetById(long id);
         bool ExistActivity(long id);
         ActivityDTO GetByStatus(string statusName);
-        bool Update(long id, string name, string description, long statusId, string imgUrl, DateTime startTime, DateTime examEndTime, DateTime rewardTime, long paperId, string prizeName, string prizeImgUrl);
+        long Update(long id, string name, string description, long statusId, string imgUrl, DateTime startTime, DateTime examEndTime, DateTime rewardTime, long paperId, string prizeName, string prizeImgUrl);
         ActivityDTO[] Search(long? statusId, DateTime? startTime, DateTime? endTime, string keyWord);
         bool Delete(long id);
         bool AddUserId(long activityId, long userId);
         ActivityDTO[] GetByUserId(long id);
         long GetTotalCount();
-        bool CheckByStatusId(long id,long statusId);
+        bool CheckByStatusName(long id, string statusName);
         bool CheckByStatusId(long id);
-        bool CheckByStatusIdExcludeMe(long id,long statusId);
+        bool CheckByStatusNameExcludeMe(long id, string statusName);
         bool CheckByPaperId(long id);
         /// <summary>
         /// 更新访问次数等

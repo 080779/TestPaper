@@ -25,24 +25,30 @@
             {
                 <!--答题失败-->
                 <div class="result-rs font">很遗憾，本次答题您未能通关。请再接再厉！</div>
+                <input type="hidden" class="wrong" id="right" value="@Model.Id" />
             }
             else
             {
-                <!--答题正确-->
-                <div class="result-rs font">恭喜您全部答对！</div>
-                <div class="result-qx"><a href="javascript:;" id="openForm">立刻完善我的信息，获取抽奖资格</a></div>
-                <div class="star-time">您以成功参与此次互动，活动开奖时间为</div>
+                <div id="tj">
+                    <input type="hidden" class="right" id="right" value="@Model.Id" />
+                    <!--答题正确-->
+                    <div class="result-rs font">恭喜您全部答对！</div>
+                    <div class="result-qx"><a href="javascript:;" id="openForm">请完善个人信息，并关注官方微信公众号，获取抽奖资格！</a></div>
+                </div>
+                <div id="tjwc" style="display:none">
+                    <div class="star-time">恭喜您全部答对！<br />并获得抽奖资格！<br />开奖时间：@Model.PrizeTime</div>
+                </div>                
             }            
 
             <div class="result-code"><img src="~/img/code.jpg" /></div>
-            <div class="result-codetxt font">关注官方公众号（广西环保）<br />了解更多相关资讯！</div>
+            <div class="result-codetxt font">长按二维码，关注官方微信公众号（广西环保）<br />提高中奖率，获取中奖资讯。</div>
         </div>
     </div>
     <div class="result-fixed clear">
         <div class="result-fixed-wrap">
             <a href="~/home/index" class="btn-def"><b class="icon1"></b><span>返回首页</span></a>
             <a href="~/home/topic?id=@Model.Id" class="btn-def"><b class="icon2"></b><span>知识点回顾</span></a>
-            <a href="~/home/answer?id=@Model.Id" class="btn-prm"><span>再试一次</span></a>
+            <a href="javascript:;" id="tryagin" class="btn-prm"><span>再试一次</span></a>
         </div>
     </div>
     <div class="mask" id="mask" style="display: none;">
@@ -73,6 +79,16 @@
             </form>
         </div>
     </div>
+    <div class="mask" id="mask-complete">
+        <div class="mask-wrap">
+            <!--完成答题等待开奖-->
+            <div class="green2">
+                <a href="javascript:;" class="close jsClose">×</a>
+                <div class="mask-popimg"><img src="/img/active-complete.jpg" /></div>
+                <a href="javascript:;" class="mask-popbtn jsClose">知道了</a>
+            </div>
+        </div>
+    </div>
     <script src="~/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
         $("#openForm").click(function () {
@@ -82,7 +98,11 @@
             $("#mask").css('display', 'none');
         })
 
-        $(function () {            
+        $(function () {
+            $(".jsClose").click(function () {
+                $(".mask").css("display", "none");
+            });
+
             $("#btnSave").click(function () {
                 var formData = $("#formUser").serializeArray();
                 $.ajax({
@@ -90,12 +110,12 @@
                     success: function (result) {
                         if (result.status == "error") {
                             alert(result.errorMsg);
-                            $("#mask").css('display', 'none');
                         }
                         else if (result.status == "success") {
                             alert("资料保存成功！");
                             $("#mask").css('display', 'none');
-
+                            $("#tj").css('display', 'none');
+                            $("#tjwc").css('display', 'block');
                         }
                         else {
                             alert("未知错误");
@@ -104,6 +124,18 @@
                     },
                     error: function () { }
                 });
+            });
+
+            $("#tryagin").click(function () {
+                var id = $("#right").val();
+                if ($("#right").hasClass("right"))
+                {
+                    $("#mask-complete").css("display", "block");
+                }
+                if ($("#right").hasClass("wrong"))
+                {
+                    window.location.href = "/home/answer?id=" + id;
+                }
             });
         });
     </script>

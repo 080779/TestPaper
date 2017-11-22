@@ -74,15 +74,15 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("活动状态必须选择");
             }
-            //statusId=6为活动正在进行中
-            if(activityService.CheckByStatusId(6))
-            {
-                return Content("有活动已经在进行中，不能存在两个同时进行的活动，请选择其他状态");
-            }
-            //if (model.imgUrl == null)
+            ////statusId=6为活动正在进行中
+            //if(activityService.CheckByStatusId(6))
             //{
-            //    return Content("活动背景图不能为空");
+            //    return Content("有活动已经在进行中，不能存在两个同时进行的活动，请选择其他状态");
             //}
+            if (model.imgUrl == null)
+            {
+                return Content("活动背景图不能为空");
+            }
             string ext = Path.GetExtension(model.imgUrl.FileName);
             string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp" };
             if (!imgs.Contains(ext))
@@ -109,17 +109,42 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("奖品名称不能为空");
             }
-            //if (model.PrizeImgUrl == null)
-            //{
-            //    return Content("奖品图片不能为空");
-            //}
+            if (model.PrizeImgUrl == null)
+            {
+                return Content("奖品图片不能为空");
+            }
             ext = Path.GetExtension(model.PrizeImgUrl.FileName);
             if (!imgs.Contains(ext))
             {
                 return Content("请上传奖品图片文件，支持格式“png、jpg、jpeg、bmp”");
             }            
             long id= activityService.AddNew(model.Name, model.Description,model.StatusId, PicSave(model.imgUrl), model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName, PicSave(model.PrizeImgUrl));
-            if(id<=0)
+
+            if(id==-1)
+            {
+                return Content("添加失败");
+            }
+            if (id == -2)
+            {
+                return Content("不能添加活动的状态为“答题进行中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (id == -3)
+            {
+                return Content("不能添加活动的状态为“答题进行中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (id == -4)
+            {
+                return Content("不能添加活动的状态为“开奖中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (id == -5)
+            {
+                return Content("不能添加活动的状态为“开奖中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (id == -6)
+            {
+                return Content("活动尚未进行过，无法设置为开奖中");
+            }
+            if (id == 0)
             {
                 return Content("添加失败");
             }
@@ -162,15 +187,15 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Content("活动状态必须选择");
             }
-            //判断此活动是否正在进行中，如果是就可以随便编辑状态，statusId=6为活动正在进行中
-            if (!activityService.CheckByStatusId(model.activityId,6))
-            {
-                //当当前活动状态不为“进行中”，判断所有活动中是否有已经为“进行中的活动”，如果有提示
-                if (model.StatusId==6)
-                {
-                    return Content("有活动已经在进行中，不能存在两个同时进行的活动，请选择其他状态");
-                }
-            }
+            ////判断此活动是否正在进行中，如果是就可以随便编辑状态，statusId=6为活动正在进行中
+            //if (!activityService.CheckByStatusName(model.activityId, "答题进行中"))
+            //{
+            //    //当当前活动状态不为“进行中”，判断所有活动中是否有已经为“进行中的活动”，如果有提示..修改为状态名，用状态名判断
+            //    if (idNameService.GetById( model.StatusId).Name== "答题进行中") 
+            //    {
+            //        return Content("有活动已经在进行中，不能存在两个同时进行的活动，请选择其他状态");
+            //    }
+            //}
             //if (model.imgUrl == null)
             //{
             //    return Content("活动背景图不能为空");
@@ -183,8 +208,7 @@ namespace Chat.AdminWeb.Controllers
                 if (!imgs.Contains(ext))
                 {
                     return Content("请上传背景图片文件，支持格式“png、jpg、jpeg、bmp”");
-                }
-               
+                }               
             }
              
             if (model.StartTime == Convert.ToDateTime("0001-1-1 0:00:00"))
@@ -223,11 +247,47 @@ namespace Chat.AdminWeb.Controllers
             if (model.imgUrl != null)
                 sImgPath = PicSave(model.imgUrl);
             
-            bool b = activityService.Update( model.activityId,model.Name, model.Description, model.StatusId, sImgPath, model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName,sPrizeImgPath);
-            if (!b)
+            long index = activityService.Update( model.activityId,model.Name, model.Description, model.StatusId, sImgPath, model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName,sPrizeImgPath);
+            if (index == 0)
             {
-                return Content("编辑失败");
+                return Content("活动不存在");
             }
+            if (index == -1)
+            {
+                return Content("活动状态不存在");
+            }
+            if (index == -2)
+            {
+                return Content("不能编辑活动的状态为“答题进行中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (index == -3)
+            {
+                return Content("不能编辑活动的状态为“答题进行中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (index == -4)
+            {
+                return Content("不能编辑活动的状态为“开奖中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (index == -5)
+            {
+                return Content("不能编辑活动的状态为“开奖中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”");
+            }
+            if (index == -6)
+            {
+                return Content("活动尚未进行过，无法设置活动状态为“开奖中”");
+            }
+            if (index == -7)
+            {
+                return Content("已经结束的活动不能设置为其他活动状态");
+            }
+            //if (index == -8)
+            //{
+            //    return Content("不能设置状态为“活动进行中”只有一个活动能处于“活动进行中”或“开奖中”");
+            //}
+            //if (index == -9)
+            //{
+            //    return Content("不能设置状态为“开奖中”只有一个活动能处于“活动进行中”或“开奖中”");
+            //}
             return Redirect("~/activity/list");
         }
 

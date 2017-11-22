@@ -11,5 +11,6 @@ namespace Chat.FrontWeb.Models
         public long Id { get; set; }
         public List<string> Result { get; set; }
         public bool IsAllRight { get; set; }
+        public string PrizeTime { get; set; }
     }
 }

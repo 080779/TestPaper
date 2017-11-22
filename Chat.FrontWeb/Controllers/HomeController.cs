@@ -22,7 +22,7 @@ namespace Chat.FrontWeb.Controllers
         {
             ActivityViewModel model = new ActivityViewModel();
             ActivityDTO activity;
-            if(activityService.GetByStatus("答题进行中") == null)
+            if(activityService.GetByStatus("答题进行中") == null && activityService.GetByStatus("开奖中") ==null)
             {
                 if(activityService.GetNew()!=null)
                 {
@@ -48,7 +48,7 @@ namespace Chat.FrontWeb.Controllers
                     model.StatusName = "无活动";
                 }
             }
-            else
+            else if(activityService.GetByStatus("答题进行中") != null)
             {
                 activity = activityService.GetByStatus("答题进行中");
                 model.Id = activity.Id;
@@ -59,33 +59,74 @@ namespace Chat.FrontWeb.Controllers
                 model.RewardTime = activity.RewardTime.ToString("yyyy-MM-dd");
                 model.AnswerCount = activity.AnswerCount;
                 model.StatusName = activity.StatusName;
-            }           
+            }
+            else if (activityService.GetByStatus("开奖中") != null)
+            {
+                activity = activityService.GetByStatus("开奖中");
+                model.Id = activity.Id;
+                model.Name = activity.Name;
+                model.Description = activity.Description;
+                model.StartTime = activity.StartTime.ToString("yyyy-MM-dd");
+                model.ExamEndTime = activity.ExamEndTime.ToString("yyyy-MM-dd");
+                model.RewardTime = activity.RewardTime.ToString("yyyy-MM-dd");
+                model.AnswerCount = activity.AnswerCount;
+                model.StatusName = activity.StatusName;
+            }
 
             activityService.UpdateCount(model.Id, true, false, false, false, false);
             return View(model);
         }
 
-        public ActionResult Judge(long id,string typeName)
+        public ActionResult Judge(long id,string typeName,string statusName)
         {
-            if(activityService.GetTotalCount()<=0)
+            if(statusName=="无活动")
             {
-                return Json(new AjaxResult { Status = "nonExist", ErrorMsg = "无活动" });
+                return Json(new AjaxResult { Status = "nonExist", ErrorMsg = "当前暂无活动" });
             }
-            if(!activityService.ExistActivity(id))
+            if(statusName=="待开始")
             {
-                return Json(new AjaxResult { Status="nonExist",ErrorMsg="活动不存在"});
+                if (typeName == "topic")
+                {
+                    return Json(new AjaxResult { Status = "redirect", Data = "/home/topic?id=" + id });
+                }
+                if (typeName == "answer")
+                {
+                    return Json(new AjaxResult { Status = "tip", ErrorMsg="活动未开始"});
+                }
+                if (typeName == "prize")
+                {
+                    return Json(new AjaxResult { Status = "tip", ErrorMsg = "活动未开始" });
+                }
             }
-            if(typeName=="topic")
+            if (statusName == "答题进行中")
             {
-                return Json(new AjaxResult { Status = "redirect",Data="/home/topic?id="+id });
+                if (typeName == "topic")
+                {
+                    return Json(new AjaxResult { Status = "redirect", Data = "/home/topic?id=" + id });
+                }
+                if (typeName == "answer")
+                {
+                    return Json(new AjaxResult { Status = "redirect", Data = "/home/answer?id=" + id });
+                }
+                if (typeName == "prize")
+                {
+                    return Json(new AjaxResult { Status = "redirect", Data = "/home/prize?id=" + id });
+                }
             }
-            if(typeName=="answer")
+            if (statusName == "开奖中")
             {
-                return Json(new AjaxResult { Status = "redirect", Data = "/home/answer?id=" + id });
-            }
-            if(typeName=="prize")
-            {
-                return Json(new AjaxResult { Status = "redirect", Data = "/home/prize?id=" + id });
+                if (typeName == "topic")
+                {
+                    return Json(new AjaxResult { Status = "redirect", Data = "/home/topic?id=" + id });
+                }
+                if (typeName == "answer")
+                {
+                    return Json(new AjaxResult { Status = "tip", ErrorMsg = "开奖中" });
+                }
+                if (typeName == "prize")
+                {
+                    return Json(new AjaxResult { Status = "redirect", Data = "/home/prize?id=" + id });
+                }
             }
             return Json(new AjaxResult { Status="success"});
         }
@@ -152,6 +193,7 @@ namespace Chat.FrontWeb.Controllers
             model.PrizeImgUrl = activity.PrizeImgUrl;
             model.PrizeTime = activity.RewardTime;
             model.PrizeFirstUrl = settingService.GetValue("前端奖品图片地址");
+            model.StatusName = activity.StatusName;
             var users = userService.GetByActivityIdIsWon1(activity.Id);
             List<IsWonUser> winUsers = new List<IsWonUser>();            
             foreach (var user in users)
@@ -179,6 +221,7 @@ namespace Chat.FrontWeb.Controllers
             ActivityDTO activity = activityService.GetById(id);
             model.ActivityName = activity.Name;
             model.Id = activity.Id;
+            model.PrizeTime = activity.RewardTime.ToString("yyyy-MM-dd");
             long paperId = activity.PaperId;
             string[] strs = asks.Trim(',').Split(',');
             List<string> lists = new List<string>();

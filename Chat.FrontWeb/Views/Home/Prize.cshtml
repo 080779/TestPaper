@@ -18,13 +18,13 @@
             <div class="prize-top-box">
                 <div class="prize-top-tit">活动奖品</div>
                 <div class="prize-top-name">@Model.PrizeName</div>
-                @if (Model.PrizeTime > DateTime.Now)
+                @if (Model.StatusName == "开奖中")
                 {
                     <div class="prize-top-dec">获奖人数:@Model.winCount</div>
                 }
                 else
                 {
-                    <div class="prize-top-dec">开奖时间:@Model.PrizeTime.ToString("yyyy-MM-dd HH:mm")</div>
+                    <div class="prize-top-dec">开奖时间:@Model.PrizeTime.ToString("yyyy-MM-dd")</div>
                 }                
                 <div class="prize-top-ck">图片仅供产考请以实物为准</div>
                 <div class="prize-top-img"><img src="@Model.PrizeFirstUrl@Model.PrizeImgUrl" /></div>
@@ -37,7 +37,7 @@
         <div class="prize-people">
             <div class="prize-people-tit">获奖用户名</div>
             <div class="prize-list">
-                @if (Model.PrizeTime > DateTime.Now)
+                @if (Model.StatusName=="开奖中")
                 {
                     foreach (var user in Model.Users)
                     {
