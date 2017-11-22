@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">活动名称:</label>
                         <div class="col-sm-6">
-                            <input type="text" name="name" placeholder=""   maxlength="30" class="form-control">
+                            <input type="text" name="name" id="name" placeholder=""   maxlength="30" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">活动状态:</label>
                         <div class="col-sm-6">
-                            <select name="statusId" class="col-sm-3" style="height:30px">
+                            <select name="statusId" id="statusId" class="col-sm-3" style="height:30px">
                                 <option value="0">
                                     活动状态
                                 </option>
@@ -99,7 +99,7 @@
                             @foreach (var paper in Model.Papers)
                             {
                                 <tr>
-                                    <td data-attr="选择"><input type="radio" name="paperId" id="" value="@paper.Id" class="checkTm" /></td>
+                                    <td data-attr="选择"><input type="radio" name="paperId" id="paperId" value="@paper.Id" class="checkTm" /></td>
                                     <td data-attr="编号">@paper.Num@paper.Id</td>
                                     <td data-attr="试卷标题">@paper.TestTitle</td>
                                     <td data-attr="考题数">@paper.ExercisesCount</td>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <button type="submit" id="btnAdd" class="btn btn-primary mr5">确定</button>
+                    <button type="button" id="btnAdd" class="btn btn-primary mr5">确定</button>
                     <button class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>
                 </div>
             </div>
@@ -219,16 +219,33 @@
                 });
             });
 
-            //$("#btnAdd").click(function () {
-            //    var data = $("#formAdd").serializeArray();
-            //    $.ajax({
-            //        url: "/activity/add", type: "post", data: data,
-            //        success: function (result) {
-            //            alert("ok");
-            //        },
-            //        error: function () { alert("网络错误"); }
-            //    });
-            //});
+            $("#btnAdd").click(function () {
+                var name = $("#name").val();
+                var description = $("#desc").val();
+                var statusId = $("#statusId").val();
+                var imgUrl = $("#file_back").val();
+                var startTime = $("#startTime").val();
+                var examEndTime = $("#examEndTime").val();
+                var rewardTime = $("#rewardTime").val();
+                var paperId = $("#paperId").val();
+                var prizeName = $("#prizeName").val();
+                var prizeImgUrl = $("#file_prize").val();
+                $.ajax({
+                    url: "/activity/AddJsonResp", type: "post",
+                    data: { name: name, description: description, statusId: statusId, imgUrl: imgUrl, startTime: startTime, examEndTime: examEndTime, rewardTime: rewardTime, paperId: paperId, prizeName: prizeName, prizeImgUrl: prizeImgUrl },
+                    success: function (result) {
+                        if(result.status=="error")
+                        {
+                            alert(result.errorMsg);
+                        }
+                        else if(result.status=="success")
+                        {
+                            $("#formAdd").submit();
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
         })
 </script>    
 }

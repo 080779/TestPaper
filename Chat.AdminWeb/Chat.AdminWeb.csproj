@@ -204,7 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActivityAddJsonModel.cs" />
     <Compile Include="Models\ActivityAddLoadModel.cs" />
+    <Compile Include="Models\ActivityEditJsonModel.cs" />
     <Compile Include="Models\ActivityEditLoadModel.cs" />
     <Compile Include="Models\ActivityListModel.cs" />
     <Compile Include="Models\AddExercisesModel.cs" />

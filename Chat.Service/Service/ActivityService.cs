@@ -18,40 +18,40 @@ namespace Chat.Service.Service
         {
             using (MyDbContext dbc = new MyDbContext())
             {
-                CommonService<IdNameEntity> ics = new CommonService<IdNameEntity>(dbc);
-                CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
-                var status = ics.GetAll().SingleOrDefault(i => i.Id == statusId);
-                var act = acs.GetAll();
-                if (status == null)
-                {
-                    return -1;//状态不存在
-                }
-                if (status.Name == "答题进行中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
-                {
-                    if(act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
-                    {
-                        return -2;//活动进行中状态已经存在
-                    }
-                    if(act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
-                    {
-                        return -3;//开奖中状态已经存在
-                    }                    
-                }
-                if (status.Name == "开奖中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
-                {
-                    if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
-                    {
-                        return -4;//活动进行中状态已经存在
-                    }
-                    if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
-                    {
-                        return -5;//开奖中状态已经存在
-                    }                    
-                }
-                if (status.Name == "开奖中" && act.SingleOrDefault(a => a.Status.Name == "答题进行中") == null && act.SingleOrDefault(a => a.Status.Name == "开奖中") == null)
-                {
-                    return -6;//活动尚未进行过，无法设置为开奖中
-                }
+                //CommonService<IdNameEntity> ics = new CommonService<IdNameEntity>(dbc);
+                //CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
+                //var status = ics.GetAll().SingleOrDefault(i => i.Id == statusId);
+                //var act = acs.GetAll();
+                //if (status == null)
+                //{
+                //    return -1;//状态不存在
+                //}
+                //if (status.Name == "答题进行中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
+                //{
+                //    if(act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
+                //    {
+                //        return -2;//活动进行中状态已经存在
+                //    }
+                //    if(act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
+                //    {
+                //        return -3;//开奖中状态已经存在
+                //    }                    
+                //}
+                //if (status.Name == "开奖中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
+                //{
+                //    if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
+                //    {
+                //        return -4;//活动进行中状态已经存在
+                //    }
+                //    if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
+                //    {
+                //        return -5;//开奖中状态已经存在
+                //    }                    
+                //}
+                //if (status.Name == "开奖中" && act.SingleOrDefault(a => a.Status.Name == "答题进行中") == null && act.SingleOrDefault(a => a.Status.Name == "开奖中") == null)
+                //{
+                //    return -6;//活动尚未进行过，无法设置为开奖中
+                //}
 
                 ActivityEntity activity = new ActivityEntity();
                 activity.Name = name;
@@ -169,70 +169,16 @@ namespace Chat.Service.Service
             }
         }
 
-        public long Update(long id, string name, string description, long statusId, string imgUrl, DateTime startTime, DateTime examEndTime, DateTime rewardTime, long paperId, string prizeName, string prizeImgUrl)
+        public bool Update(long id, string name, string description, long statusId, string imgUrl, DateTime startTime, DateTime examEndTime, DateTime rewardTime, long paperId, string prizeName, string prizeImgUrl)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
-                CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
-                CommonService<IdNameEntity> ics = new CommonService<IdNameEntity>(dbc);
-                var act = acs.GetAll();
-                var activity = acs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a=>a.Id==id);//根据活动id获得活动信息
-                var status = ics.GetAll().SingleOrDefault(i => i.Id == statusId); //输入的状态
-                if(activity == null)
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var activity = cs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a => a.Id == id);//根据活动id获得活动信息
+                if(activity==null)
                 {
-                    return 0;//活动不存在
+                    return false; 
                 }
-                if(status==null)
-                {
-                    return -1;//状态不存在
-                }
-                if(activity.Status.Name!= "答题进行中" && activity.Status.Name != "开奖中")
-                {
-                    if (activity.Status.Name == "已结束")
-                    {
-                        return -7;//已经结束的活动不能设置状态了
-                    }
-                    if (status.Name == "答题进行中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
-                    {
-                        if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
-                        {
-                            return -2;//活动进行中状态已经存在
-                        }
-                        if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
-                        {
-                            return -3;//开奖中状态已经存在
-                        }
-                    }
-                    if (status.Name == "开奖中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
-                    {
-                        if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
-                        {
-                            return -4;//活动进行中状态已经存在
-                        }
-                        if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
-                        {
-                            return -5;//开奖中状态已经存在
-                        }                        
-                    }
-                    if (status.Name == "开奖中" && act.SingleOrDefault(a => a.Status.Name == "答题进行中") == null && act.SingleOrDefault(a => a.Status.Name == "开奖中") == null)
-                    {
-                        return -6;//活动尚未进行过，无法设置为开奖中
-                    }
-                }
-
-                //if (activity.Status.Name == "答题进行中" && status.Name == "答题进行中")
-                //{
-                //    if (status.Name == "答题进行中")
-                //    {
-                //        return -8;//只有一个活动能处于“进行中”或“开奖中”
-                //    }
-                //}
-                //if (activity.Status.Name == "开奖中")
-                //{
-                //    if(status.Name == "答题进行中")
-                //    return -8;//只有一个活动能处于“进行中”或“开奖中”                
-                //}
-
                 activity.Name = name;
                 activity.Description = description;
                 if(!string.IsNullOrWhiteSpace(imgUrl))
@@ -246,7 +192,7 @@ namespace Chat.Service.Service
                     activity.PrizeImgUrl = prizeImgUrl;
                 activity.StatusId = statusId;
                 dbc.SaveChanges();
-                return 1;
+                return true; 
             }
         }
 
@@ -406,12 +352,57 @@ namespace Chat.Service.Service
             }
         }
 
-        public bool CheckByStatusName(long id, string statusName)
+        public long CheckByStatusId(long id, long statusId)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
-                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
-                return cs.GetAll().Any(a => a.Id==id && a.Status.Name == statusName);
+                CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
+                CommonService<IdNameEntity> ics = new CommonService<IdNameEntity>(dbc);
+                var act = acs.GetAll();
+                var activity = acs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a => a.Id == id);//根据活动id获得活动信息
+                var status = ics.GetAll().SingleOrDefault(i => i.Id == statusId); //输入的状态
+                if (activity == null)
+                {
+                    return 0;//活动不存在
+                }
+                if (status == null)
+                {
+                    return -1;//状态不存在
+                }
+                if (activity.Status.Name != "答题进行中" && activity.Status.Name != "开奖中")
+                {
+                    if (activity.Status.Name == "已结束")
+                    {
+                        return -7;//已经结束的活动不能设置状态了
+                    }
+                    if (status.Name == "答题进行中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
+                    {
+                        if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
+                        {
+                            return -2;//活动进行中状态已经存在
+                        }
+                        if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
+                        {
+                            return -3;//开奖中状态已经存在
+                        }
+                    }
+                    if (status.Name == "开奖中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
+                    {
+                        if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
+                        {
+                            return -4;//活动进行中状态已经存在
+                        }
+                        if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
+                        {
+                            return -5;//开奖中状态已经存在
+                        }
+                    }
+                    if (status.Name == "开奖中" && act.SingleOrDefault(a => a.Status.Name == "答题进行中") == null && act.SingleOrDefault(a => a.Status.Name == "开奖中") == null)
+                    {
+                        return -6;//活动尚未进行过，无法设置为开奖中
+                    }
+                }
+                return 1;
             }
         }
 
@@ -420,13 +411,46 @@ namespace Chat.Service.Service
         /// </summary>
         /// <param name="statusId"></param>
         /// <returns></returns>
-        public bool CheckByStatusId(long id)
+        public long CheckByStatusId(long statusId)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
-                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
-                return cs.GetAll().Any(a => a.StatusId == id);
+                CommonService<IdNameEntity> ics = new CommonService<IdNameEntity>(dbc);
+                CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
+                var status = ics.GetAll().SingleOrDefault(i => i.Id == statusId);
+                var act = acs.GetAll();
+                if (status == null)
+                {
+                    return -1;//状态不存在
+                }
+                if (status.Name == "答题进行中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
+                {
+                    if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
+                    {
+                        return -2;//活动进行中状态已经存在
+                    }
+                    if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
+                    {
+                        return -3;//开奖中状态已经存在
+                    }
+                }
+                if (status.Name == "开奖中" && (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null || act.SingleOrDefault(a => a.Status.Name == "开奖中") != null))
+                {
+                    if (act.SingleOrDefault(a => a.Status.Name == "答题进行中") != null)
+                    {
+                        return -4;//活动进行中状态已经存在
+                    }
+                    if (act.SingleOrDefault(a => a.Status.Name == "开奖中") != null)
+                    {
+                        return -5;//开奖中状态已经存在
+                    }
+                }
+                if (status.Name == "开奖中" && act.SingleOrDefault(a => a.Status.Name == "答题进行中") == null && act.SingleOrDefault(a => a.Status.Name == "开奖中") == null)
+                {
+                    return -6;//活动尚未进行过，无法设置为开奖中
+                }
             }
+            return 0;
         }
 
         public bool CheckByStatusNameExcludeMe(long id,string statusName)

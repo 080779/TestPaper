@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">活动名称:</label>
                         <div class="col-sm-6">
-                            <input type="text" name="name" value="@Model.Activity.Name" placeholder="" maxlength="30" class="form-control">
+                            <input type="text" name="name" id="name" value="@Model.Activity.Name" placeholder="" maxlength="30" class="form-control">
                             <input type="hidden" name="activityId" id="activityId" value="@Model.Activity.Id" />
                             
                         </div>
@@ -29,7 +29,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">活动状态:</label>
                         <div class="col-sm-6">
-                            <select name="statusId" class="col-sm-3" style="height:30px">
+                            <select name="statusId"  id="statusId" class="col-sm-3" style="height:30px">
                                 <option value="0">
                                     活动状态
                                 </option>
@@ -48,7 +48,7 @@
                         <div class="col-sm-6">
                             <input type="file" id="file_back" name="imgUrl" />
                             <img src="@Model.Activity.ImgUrl" id="img_back" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
-                            <!--<input type="hidden" id="val_prize" value="imgUrl" />-->
+                            <input type="hidden" id="val_back_img" value="@Model.Activity.ImgUrl" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -100,7 +100,7 @@
                         </thead>
                         <tbody id="paperList">
                             <tr>
-                                <td data-attr="选择"><input type="radio" name="paperId" id="" value="@Model.Paper.Id" class="checkTm" checked="checked" /></td>
+                                <td data-attr="选择"><input type="radio" name="paperId" id="paperId" value="@Model.Paper.Id" class="checkTm" checked="checked" /></td>
                                 <td data-attr="编号">@Model.Paper.Num@Model.Paper.Id</td>
                                 <td data-attr="试卷标题">@Model.Paper.TestTitle</td>
                                 <td data-attr="考题数">@Model.Paper.ExercisesCount</td>
@@ -126,12 +126,12 @@
                         <div class="col-sm-6">
                             <input type="file" name="prizeImgUrl" id="file_prize" />
                             <img src="@Model.Activity.PrizeImgUrl" id="img_prize" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
-                            <!--<input type="hidden" id="val_prize" value="prizeImgUrl" />-->
+                            <input type="hidden" id="val_prize_img" value="@Model.Activity.PrizeImgUrl" />
                         </div>
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <button type="submit" id="btnAdd" class="btn btn-primary mr5">确定</button>
+                    <button type="button" id="btnAdd" class="btn btn-primary mr5">确定</button>
                     <button class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>
                 </div>
             </div>
@@ -227,16 +227,32 @@
                 });
             });
 
-            //$("#btnAdd").click(function () {
-            //    var data = $("#formAdd").serializeArray();
-            //    $.ajax({
-            //        url: "/activity/add", type: "post", data: data,
-            //        success: function (result) {
-            //            alert("ok");
-            //        },
-            //        error: function () { alert("网络错误"); }
-            //    });
-            //});
+            $("#btnAdd").click(function () {
+                var actId = $("#activityId").val();
+                var name = $("#name").val();
+                var description = $("#desc").val();
+                var statusId = $("#statusId").val();
+                var imgUrl = $("#val_back_img").val();
+                var startTime = $("#startTime").val();
+                var examEndTime = $("#examEndTime").val();
+                var rewardTime = $("#rewardTime").val();
+                var paperId = $("#paperId").val();
+                var prizeName = $("#prizeName").val();
+                var prizeImgUrl = $("#val_prize_img").val();
+                $.ajax({
+                    url: "/activity/editJsonResp", type: "post",
+                    data: {activityId:actId, name: name, description: description, statusId: statusId, imgUrl: imgUrl, startTime: startTime, examEndTime: examEndTime, rewardTime: rewardTime, paperId: paperId, prizeName: prizeName, prizeImgUrl: prizeImgUrl },
+                    success: function (result) {
+                        if (result.status == "error") {
+                            alert(result.errorMsg);
+                        }
+                        else if (result.status == "success") {
+                            $("#formAdd").submit();
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
 
             //显示textarea正确显示换行空格
             function replaceAll(str) {
@@ -256,6 +272,8 @@
             datastring = replaceAllstr(datastr);
             $("#description").val(datastring);
             $("#desc").val(datastring.replace(/\n/g, "{{br}}").replace(/\s/g, "&nbsp;"));
+
+
         })
 </script>    
 }
