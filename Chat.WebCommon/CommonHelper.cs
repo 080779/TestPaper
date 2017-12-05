@@ -92,6 +92,17 @@ namespace Chat.WebCommon
             return formatMoblie.ToString();
         }
 
+        public static string FormatUserName(string name)
+        {
+            if(string.IsNullOrEmpty(name))
+            {
+                return null;
+            }
+            StringBuilder formatName = new StringBuilder();
+            formatName.Append(name[0]).Append("**");
+            return formatName.ToString();
+        }
+
         public static void CopyDir(string fromDir, string toDir)
         {
             if (!Directory.Exists(fromDir))

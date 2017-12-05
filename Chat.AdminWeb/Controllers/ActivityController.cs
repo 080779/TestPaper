@@ -22,7 +22,7 @@ namespace Chat.AdminWeb.Controllers
         public IActivityService activityService { get; set; }
         public ITestPaperService paperService { get; set; }
         public IIdNameService idNameService { get; set; }
-        public IUserService userService { get; set; }
+        public IUserService userService { get; set; }        
 
         [Permission("list")]
         public ActionResult List(int pageIndex=1)
@@ -37,8 +37,10 @@ namespace Chat.AdminWeb.Controllers
         [Permission("list")]
         public ActionResult UserActList(long id)
         {
+            ActivityListModel model = new ActivityListModel();
             ActivityDTO[] dtos = activityService.GetByUserId(id);
-            return View(dtos);
+            model.Activities = dtos;
+            return View(model);
         }
 
         [Permission("manager")]
@@ -63,7 +65,7 @@ namespace Chat.AdminWeb.Controllers
                 return Content("活动背景图不能为空");
             }
             string ext = Path.GetExtension(model.imgUrl.FileName);
-            string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp" };
+            string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp", ".PNG", ".JPG", ".JPEG", ".BMP" };
             if (!imgs.Contains(ext))
             {
                 return Content("请上传背景图片文件，支持格式“png、jpg、jpeg、bmp”");
@@ -77,9 +79,8 @@ namespace Chat.AdminWeb.Controllers
             if (!imgs.Contains(ext))
             {
                 return Content("请上传奖品图片文件，支持格式“png、jpg、jpeg、bmp”");
-            }            
-            long id= activityService.AddNew(model.Name, model.Description,model.StatusId, PicSave(model.imgUrl), model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName, PicSave(model.PrizeImgUrl));
-                        
+            }              
+            long id= activityService.AddNew(model.Name, model.Description, BackImgSave(model.imgUrl), model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName, PicSave(model.PrizeImgUrl));
             return Redirect("~/activity/list");
         }
         [Permission("manager")]
@@ -93,6 +94,7 @@ namespace Chat.AdminWeb.Controllers
             ActivityEditLoadModel model = new ActivityEditLoadModel();
             model.Activity = activity;
             model.Paper = paperService.GetByActivityId(id);
+            model.Papers = paperService.GetAllExcludeBelongActId(id);
             model.Status = idNameService.GetAll("活动状态");
             return View(model);
         }
@@ -103,9 +105,9 @@ namespace Chat.AdminWeb.Controllers
             string sImgPath = string.Empty;
             string sPrizeImgPath = string.Empty;
 
-            
-            string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp" };
-            
+
+            string[] imgs = { ".png", ".jpg", ".jpeg", ".bmp", ".PNG", ".JPG", ".JPEG", ".BMP" };
+
             if (model.PrizeImgUrl != null)
             {
                 string ext = Path.GetExtension(model.PrizeImgUrl.FileName);
@@ -122,11 +124,11 @@ namespace Chat.AdminWeb.Controllers
                 {
                     return Content("请上传奖品图片文件，支持格式“png、jpg、jpeg、bmp”");
                 }
-                sImgPath = PicSave(model.imgUrl);
+                sImgPath = BackImgSave(model.imgUrl);
             }               
             
-            bool b = activityService.Update( model.activityId,model.Name, model.Description, model.StatusId, sImgPath, model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName,sPrizeImgPath);
-            
+            bool b = activityService.Update( model.activityId,model.Name, model.Description, sImgPath, model.StartTime, model.ExamEndTime, model.RewardTime, model.PaperId, model.PrizeName,sPrizeImgPath);
+            //return Content(b.ToString());
             return Redirect("~/activity/list");
         }
         [Permission("manager")]
@@ -140,10 +142,6 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "活动简介不能为空" });
             }
-            if (model.StatusId <= 0)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "活动状态必须选择" });
-            }
             ////statusId=6为活动正在进行中
             //if(activityService.CheckByStatusId(6))
             //{
@@ -154,22 +152,30 @@ namespace Chat.AdminWeb.Controllers
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "活动背景图不能为空" });
             }
             string ext = model.imgUrl.Split('.')[1];
-            string[] imgs = { "png", "jpg", "jpeg", "bmp" };
+            string[] imgs = { "png", "jpg", "jpeg", "bmp", "PNG", "JPG", "JPEG", "BMP" };
             if (!imgs.Contains(ext))
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "请上传背景图片文件，支持格式“png、jpg、jpeg、bmp”" });
             }
-            if (model.StartTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.StartTime==null)
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "活动开始时间不能为空" });
             }
-            if (model.ExamEndTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.ExamEndTime == null)
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "答题截止时间不能为空" });
             }
-            if (model.RewardTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.RewardTime ==null)
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "开奖时间不能为空" });
+            }
+            if (model.ExamEndTime <= model.StartTime)
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "答题截止时间必须大于活动开始时间" });
+            }
+            if (model.RewardTime <= model.ExamEndTime)
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "开奖时间必须大于答题截止时间" });
             }
             if (model.PaperId <= 0)
             {
@@ -188,32 +194,32 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "请上传奖品图片文件，支持格式“png、jpg、jpeg、bmp”" });
             }
-            long id = activityService.CheckByStatusId(model.StatusId);
+            //long id = activityService.CheckByStatusId(model.StatusId);
 
-            if (id == -1)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "添加失败" });
-            }
-            if (id == -2)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“答题进行中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -3)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“答题进行中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -4)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“开奖中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -5)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“开奖中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -6)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "活动尚未进行过，无法设置为开奖中" });
-            }
+            //if (id == -1)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "添加失败" });
+            //}
+            //if (id == -2)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“答题进行中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -3)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“答题进行中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -4)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“开奖中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -5)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“开奖中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -6)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "活动尚未进行过，无法设置为开奖中" });
+            //}
             return Json(new AjaxResult { Status = "success" });
         }
         [Permission("manager")]
@@ -234,31 +240,35 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "活动简介不能为空" });
             }
-            if (model.StatusId <= 0)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "活动状态必须选择" });
-            }
             if (model.imgUrl == null)
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "活动背景图不能为空" });
             }
             string ext = model.imgUrl.Split('.')[1];
-            string[] imgs = { "png", "jpg", "jpeg", "bmp" };
+            string[] imgs = { "png", "jpg", "jpeg", "bmp","PNG","JPG","JPEG","BMP" };
             if (!imgs.Contains(ext))
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "请上传背景图片文件，支持格式“png、jpg、jpeg、bmp”" });
             }
-            if (model.StartTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.StartTime == null)
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "活动开始时间不能为空" });
             }
-            if (model.ExamEndTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.ExamEndTime == null)
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "答题截止时间不能为空" });
             }
-            if (model.RewardTime == Convert.ToDateTime("0001-1-1 0:00:00"))
+            if (model.RewardTime ==null)
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "开奖时间不能为空" });
+            }
+            if (model.ExamEndTime <= model.StartTime)
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "答题截止时间必须大于活动开始时间" });
+            }
+            if (model.RewardTime <= model.ExamEndTime)
+            {
+                return Json(new AjaxResult { Status = "error", ErrorMsg = "开奖时间必须大于答题截止时间" });
             }
             if (model.PaperId <= 0)
             {
@@ -277,40 +287,40 @@ namespace Chat.AdminWeb.Controllers
             {
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "请上传奖品图片文件，支持格式“png、jpg、jpeg、bmp”" });
             }
-            long id = activityService.CheckByStatusId(model.activityId,model.StatusId);
+            //long id = activityService.CheckByStatusId(model.activityId,model.StatusId);
 
-            if (id == 0)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "活动不存在" });
-            }
-            if (id == -1)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "添加失败" });
-            }
-            if (id == -2)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“答题进行中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -3)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“答题进行中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -4)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“开奖中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -5)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "不能添加活动的状态为“开奖中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
-            }
-            if (id == -6)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "活动尚未进行过，无法设置为开奖中" });
-            }
-            if (id == -7)
-            {
-                return Json(new AjaxResult { Status = "error", ErrorMsg = "已经结束的活动不能设置为其他活动状态" }); 
-            }
+            //if (id == 0)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "活动不存在" });
+            //}
+            //if (id == -1)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "添加失败" });
+            //}
+            //if (id == -2)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能编辑活动的状态为“答题进行中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -3)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能编辑活动的状态为“答题进行中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -4)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能编辑活动的状态为“开奖中”，“答题进行中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -5)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "不能编辑活动的状态为“开奖中”，“开奖中”状态已经存在,只能有一个活动为“答题进行中”或“开奖中”" });
+            //}
+            //if (id == -6)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "活动尚未进行过，无法设置为开奖中" });
+            //}
+            //if (id == -7)
+            //{
+            //    return Json(new AjaxResult { Status = "error", ErrorMsg = "已经结束的活动不能设置为其他活动状态" }); 
+            //}
             return Json(new AjaxResult { Status = "success" });
         }
         [Permission("manager")]
@@ -324,31 +334,72 @@ namespace Chat.AdminWeb.Controllers
         }
 
         [Permission("manager")]
-        public ActionResult Prize(long id)
+        public ActionResult Prize(long id,int pageIndex=1)
         {
             PrizeSetModel model = new PrizeSetModel();
-            model.Users = userService.GetByActivityIdHavePrize1(id);
+            UserSearchResult result= userService.GetByActivityIdHavePrize(id, null, null, null, 0, 20);
+            model.Users = result.Users;
             model.ActivityId = id;
+            //分页
+            Pagination pager = new Pagination();
+            pager.CurrentLinkClassName = "curPager";
+            pager.MaxPagerCount = 10;
+            pager.PageIndex = pageIndex;//这些数据，cshtml不知道，就必须让Action传递给我们
+            //对于所有cshtml要用到，但是又获取不到的数据，都由Action来获取，然后放到ViewBag或者Model中传递给cshtml
+            pager.PageSize = 20;
+            pager.TotalCount = result.TotalCount;
+            pager.UrlPattern = "javascript:getPage({pn});";
+            if(result.TotalCount<=20)
+            {
+                model.Page = "";
+            }
+            else
+            {
+                model.Page = pager.GetPagerHtml();
+            }
             return View(model);
         }
         [HttpPost]
         [Permission("manager")]
-        public ActionResult PrizeSearch(long id, DateTime? startTime, DateTime? endTime, string keyWord)
+        public ActionResult PrizeSearch(long id, DateTime? startTime, DateTime? endTime, string keyWord,int pageIndex=1)
         {
             if(id<=0)
             {
                 return Json(new AjaxResult { Status="error",ErrorMsg="不存在这个答题活动"});
             }
-            return Json(new AjaxResult { Status = "success", Data = userService.PrizeSearch1(id,startTime, endTime, keyWord,0,10) });
+            PrizeSetModel model = new PrizeSetModel();
+            UserSearchResult result= userService.GetByActivityIdHavePrize(id, startTime, endTime, keyWord, (pageIndex-1)*20, 20);
+
+            Pagination pager = new Pagination();
+            pager.CurrentLinkClassName = "curPager";
+            pager.MaxPagerCount = 10;
+            pager.PageIndex = pageIndex;//这些数据，cshtml不知道，就必须让Action传递给我们
+            //对于所有cshtml要用到，但是又获取不到的数据，都由Action来获取，然后放到ViewBag或者Model中传递给cshtml
+            pager.PageSize = 20;
+            pager.TotalCount = result.TotalCount;
+            pager.UrlPattern = "javascript:getPage({pn});";
+
+            model.ActivityId = id;
+            model.Users = result.Users;
+            if(result.TotalCount<=20)
+            {
+                model.Page = "";
+            }
+            else
+            {
+                model.Page = pager.GetPagerHtml();
+            }
+
+            return Json(new AjaxResult { Status = "success", Data = model});
         }
 
         [HttpPost]
         [Permission("manager")]
-        public ActionResult PrizeWon(long[] isWonIds)
+        public ActionResult PrizeWon(long[] isWonIds,long activityId)
         {
             for(int i=0;i<isWonIds.Length;i++)
             {
-                userService.SetWon(isWonIds[i]);
+                userService.SetWon(isWonIds[i],activityId);
                 userService.ReSetPrizeChance(isWonIds[i]);
             }
             return Json("success");
@@ -485,6 +536,10 @@ namespace Chat.AdminWeb.Controllers
             string fullPath = HttpContext.Server.MapPath("~" + path);
             new FileInfo(fullPath).Directory.Create();
             ImageProcessingJob jobNormal = new ImageProcessingJob();
+            //FixedAspectRatioCropConstraint constraint = new FixedAspectRatioCropConstraint(1.0f);//宽高比
+            //constraint.LimitedDimension = SizeDimension.Height;//是限制宽度还是限制高度(Height为限制高度，Width为限制宽度)
+            //constraint.Min = 50;//最小50像素（根据LimitedDimension确定是限定宽度还是高度）
+            //constraint.Max = 200;//最大200像素（根据LimitedDimension确定是限定宽度还是高度）
             jobNormal.Filters.Add(new FixedResizeConstraint(512, 512));//限制图片的大小，避免生成
             jobNormal.SaveProcessedImageToFileSystem(file.InputStream, fullPath);
             return path;
@@ -498,7 +553,14 @@ namespace Chat.AdminWeb.Controllers
             string fullPath = HttpContext.Server.MapPath("~" + path);
             new FileInfo(fullPath).Directory.Create();
             ImageProcessingJob jobNormal = new ImageProcessingJob();
-            jobNormal.Filters.Add(new FixedResizeConstraint(360, 640));//限制图片的大小，避免生成
+
+            FixedAspectRatioCropConstraint constraint = new FixedAspectRatioCropConstraint(750/1334f);//宽高比
+            constraint.LimitedDimension = SizeDimension.Width;//是限制宽度还是限制高度(Height为限制高度，Width为限制宽度)
+            constraint.Min = 600;//最小50像素（根据LimitedDimension确定是限定宽度还是高度）
+            constraint.Max = 900;//最大200像素（根据LimitedDimension确定是限定宽度还是高度）
+            //constraint.DefaultImageSelectionStrategy = CropConstraintImageSelectionStrategy.WholeImage;// 来保证显示原图全部内容，不裁剪。
+
+            jobNormal.Filters.Add(constraint);//限制图片的大小，避免生成
             jobNormal.SaveProcessedImageToFileSystem(file.InputStream, fullPath);
             return path;
         }
@@ -514,6 +576,30 @@ namespace Chat.AdminWeb.Controllers
         public ActionResult SetData()
         {
             return Json("aa");
+        }
+
+        public ActionResult SetCurrent(long id,string yesOrNo)
+        {
+            if(id<=0)
+            {
+                return Json(new AjaxResult { Status="error",ErrorMsg="活动不存在"});
+            }
+            if(yesOrNo=="设为当前")
+            {
+                if (!activityService.SetCurrent(id))
+                {
+                    return Json(new AjaxResult { Status = "error", ErrorMsg = "活动不存在" });
+                }
+                return Json(new AjaxResult { Status = "successis" });
+            }
+            else
+            {
+                if (!activityService.ResetCurrent(id))
+                {
+                    return Json(new AjaxResult { Status = "error", ErrorMsg = "活动不存在" });
+                }
+                return Json(new AjaxResult { Status = "successno"});
+            }
         }
     }
 }

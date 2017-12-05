@@ -12,7 +12,6 @@ namespace Chat.AdminWeb.Models
         public string Name { get; set; }
         [Required(ErrorMessage = "活动描述不能为空")]
         public string Description { get; set; }
-        public long StatusId { get; set; }
         [Required]
         public HttpPostedFileBase imgUrl { get; set; }
         [Required(ErrorMessage = "活动开始时间不能为空")]

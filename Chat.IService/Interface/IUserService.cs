@@ -16,11 +16,12 @@ namespace Chat.IService.Interface
         UserSearchResult GetUsersByActivityId(long id, int currentIndex, int pageSize);
         //UserSearchResult PrizeSearch(long id, DateTime? startTime, DateTime? endTime, string keyWord, int currentIndex, int pageSize);
         UserDTO[] PrizeSearch1(long id, DateTime? startTime, DateTime? endTime, string keyWord, int currentIndex, int pageSize);
-        bool SetWon(long id);
-        UserSearchResult GetByActivityIdHavePrize(long id, int currentIndex, int pageSize);
+        bool SetWon(long id, long activityId);
+        UserSearchResult  GetByActivityIdHavePrize(long id, DateTime? startTime, DateTime? endTime, string keyWord, int currentIndex, int pageSize);
         UserDTO[] GetByActivityIdHavePrize1(long id);
         UserDTO[] GetByActivityIdIsWon1(long id);
         UserSearchResult GetByActivityIdIsWon(long id, int currentIndex, int pageSize);
+        UserSearchResult SearchIsWon(long activityId,string lastM, int currentIndex, int pageSize);
         bool UserIsWonByMobile(string mobile);
         bool UpdateUser(string mobile, string name, bool gender, string address);
         bool RetSetWon(long id);

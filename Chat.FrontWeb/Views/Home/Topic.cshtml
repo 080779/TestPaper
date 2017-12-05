@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>广西环保</title>
+    <title>广西环保 @Model.ActivityName</title>
     <link rel="stylesheet" type="text/css" href="~/css/common.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style-default.css" />
+    <link href="~/img/zhb.png" rel="shortcut icon" />
 </head>
 <body>
+    <div style="visibility:hidden;height:0px;width:0px;"><img src="~/img/zhb.jpg" /></div>   
     <div class="knowlege-bg">
         <div class="knowlege-wrap">
+            <input type="hidden" value="@Model.Topic" id="dt" />
             <div class="knowlege-title font">@Model.ActivityName</div>
             <div class="knowlege-con">
                 @for (int i = 0; i < Model.ExesTip.Count; i++)
@@ -21,9 +24,24 @@
         </div>
     </div>
     <div class="fixed-btn">
-        <div class="fixed-btn-wrap">
+        <div class="fixed-btn-wrap" id="home" style="display:none">
             <a href="~/home/index">返回首页</a>
         </div>
+        <div class="fixed-btn-wrap" id="tip" style="display:none">
+            <a href="javascript:history.back()">返回答题</a>
+        </div>
     </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            if($("#dt").val()=="home")
+            {
+                $("#home").css("display", "block");
+            }
+            else {
+                $("#tip").css("display", "block");
+            }
+        });
+    </script>
 </body>
 </html>

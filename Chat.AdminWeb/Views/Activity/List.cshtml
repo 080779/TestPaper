@@ -35,12 +35,12 @@
                             <option value="5">待开始</option>
                             <option value="6">答题进行中</option>
                             <option value="7">待开奖</option>
-                            <option value="8">已结束</option>
+                            <option value="8">活动结束正开奖</option>
                         </select>
                     </div>
                     <div class="form-group mt10">
-                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
                     </div>
                     <div class="form-group mt10">
                         <input type="text" id="keyword" placeholder="请输入活动名称" class="form-control">
@@ -54,17 +54,17 @@
                 <table class="table table-bordered table-primary mb30">
                     <thead>
                         <tr>
-                            <th >期数</th>
-                            <th >活动名称</th>
-                            <th >状态</th>
-                            <th >页面URL（用于设置微信公众号跳转）</th>
-                            <th >访问量</th>
-                            <th >转发次数</th>
-                            <th >答题次数</th>
-                            <th >获奖资格人数</th>
-                            <th >获奖人数</th>
-                            <th >创建时间</th>
-                            <th >操作</th>
+                            <th style="min-width: 80px;">期数</th>
+                            <th style="min-width: 80px;">活动名称</th>
+                            <th style="min-width: 80px;">状态</th>
+                            <th style="min-width: 80px;">是否当前活动</th>
+                            <th style="min-width: 80px;">访问量</th>
+                            <!--<th style="min-width: 80px;">转发次数</th>-->                            
+                            <th style="min-width: 80px;">答题次数</th>
+                            <th style="min-width: 80px;">获奖资格人数</th>
+                            <th style="min-width: 80px;">获奖人数</th>
+                            <th style="min-width: 80px;">创建时间</th>
+                            <th style="min-width: 120px;">操作</th>
                         </tr>
                     </thead>
                     <tbody id="paperList">
@@ -74,15 +74,16 @@
                                 <td data-attr="期数">@activity.Num@activity.Id</td>
                                 <td data-attr="活动名称">@activity.Name</td>
                                 <td data-attr="状态">@activity.StatusName</td>
-                                <td data-attr="页面URL"><a>www.baidu.com</a></td>
+                                <td data-attr="是否当前活动">@(activity.IsCurrent?"是":"否")</td>
                                 <td data-attr="访问量">@activity.VisitCount</td>
-                                <td data-attr="转发次数">@activity.ForwardCount</td>
+                                <!--<td data-attr="转发次数"></td>-->
                                 <td data-attr="答题次数">@activity.AnswerCount</td>
                                 <td data-attr="获奖资格人数">@activity.HavePrizeCount</td>
                                 <td data-attr="获奖人数">@activity.PrizeCount</td>
                                 <td data-attr="创建时间">@activity.CreateDateTime</td>
-                                <td data-attr="操作">
+                                <td data-attr="操作">                                    
                                     <a href="~/activity/edit?id=@activity.Id" class="btn btn-primary btn-sm">编辑</a>
+                                    <button value="@activity.Id" class="btn btn-primary btn-sm current">设为当前</button>
                                     <a href="~/activity/prize?id=@activity.Id" class="btn btn-primary btn-sm">开奖处理</a>
                                     <a href="/activity/createexcel?id=@activity.Id" class="btn btn-primary btn-sm">导出开奖结果</a>
                                     <!--<button data-toggle="modal" value="@activity.Id" data-target="#myModal2" class="btn btn-default btn-sm excelSave">导出开奖结果</button>-->
@@ -164,6 +165,32 @@
                 $("#sureSaveCel").val($(this).val());
             });
 
+            //设为当前,动态加载数据获取事件需要这样写           
+            $('.current').live('click', function () {
+                var id = $(this).val();
+                var yesorno = $(this).text();
+                $.ajax({
+                    url: "/activity/setcurrent", type: "post", data: { id: id,yesorno:yesorno},
+                    success: function (result) {
+                        if (result.status == "error") {
+                            alert(result.errorMsg);
+                        }
+                        else if (result.status == "successis") {
+                            alert("设为当前活动设置成功！");
+                            $("#search").click();
+                        }
+                        else if (result.status == "successno") {
+                            alert("取消当前活动设置成功！");
+                            $("#search").click();
+                        }
+                        else {
+                            alert("未知错误");
+                        }
+                    },
+                    error: function () { alert("网络错误"); }
+                });
+            });
+
             //搜索
             $("#search").click(function () {
                 var statusId = $("#status").val();
@@ -179,7 +206,8 @@
                         else if (result.status == "success") {
                             $("#paperList").empty();
                             for (var i = 0; i < result.data.length; i++) {
-                                $("#paperList").append('<tr><td data-attr="期数">' + result.data[i].num + result.data[i].id + '</td><td data-attr="活动名称">' + result.data[i].name + '</td><td data-attr="状态">' + result.data[i].statusName + '</td><td data-attr="页面URL"><a>www.baidu.com</a></td><td data-attr="访问量">' + result.data[i].visitCount + '</td><td data-attr="转发次数">' + result.data[i].forwardCount + '</td><td data-attr="答题次数">' + result.data[i].answerCount + '</td><td data-attr="获奖资格人数">' + result.data[i].havePrizeCount + '</td><td data-attr="获奖人数">' + result.data[i].prizeCount + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td><td data-attr="操作"><a href="/activity/edit?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">编辑</a><a href="/activity/prize?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">开奖处理</a><a href="/activity/createexcel?id='+result.data[i].id+'" class="btn btn-primary btn-sm">导出开奖结果</a><button data-toggle="modal" data-target="#myModal" value="' + result.data[i].id + '" class="btn btn-danger btn-sm Jsdel">删除</button></td></tr>');
+                                var iscurrent = result.data[i].isCurrent ? "是" : "否";
+                                $("#paperList").append('<tr><td data-attr="期数">' + result.data[i].num + result.data[i].id + '</td><td data-attr="活动名称">' + result.data[i].name + '</td><td data-attr="状态">' + result.data[i].statusName + '</td><td data-attr="是否当前活动">'+iscurrent+'</td><td data-attr="访问量">' + result.data[i].visitCount + '</td><td data-attr="答题次数">' + result.data[i].answerCount + '</td><td data-attr="获奖资格人数">' + result.data[i].havePrizeCount + '</td><td data-attr="获奖人数">' + result.data[i].prizeCount + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td><td data-attr="操作"><a href="/activity/edit?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">编辑</a><button value="' + result.data[i].id + '" class="btn btn-primary btn-sm current">设为当前</button><a href="/activity/prize?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">开奖处理</a><a href="/activity/createexcel?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">导出开奖结果</a><button data-toggle="modal" data-target="#myModal" value="' + result.data[i].id + '" class="btn btn-danger btn-sm Jsdel">删除</button></td></tr>');
                             }
                         }
                         else {

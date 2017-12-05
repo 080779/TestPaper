@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>广西环保</title>
+    <title>广西环保 @Model.ActivityName</title>
     <link rel="stylesheet" type="text/css" href="~/css/common.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style-default.css" />
+    <link href="~/img/zhb.png" rel="shortcut icon" />
 </head>
 <body>
+    <div style="visibility:hidden;height:0px;width:0px;"><img src="~/img/zhb.jpg" /></div>   
     <div class="result-bg">
         <div class="result-wrap">
             <div class="result-title font">@Model.ActivityName</div>
@@ -27,21 +29,29 @@
                 <div class="result-rs font">很遗憾，本次答题您未能通关。请再接再厉！</div>
                 <input type="hidden" class="wrong" id="right" value="@Model.Id" />
             }
-            else
+            else if(Model.IsFirst)
             {
                 <div id="tj">
                     <input type="hidden" class="right" id="right" value="@Model.Id" />
+                    <input type="hidden" id="isfirst" value="0" />
                     <!--答题正确-->
                     <div class="result-rs font">恭喜您全部答对！</div>
-                    <div class="result-qx"><a href="javascript:;" id="openForm">请完善个人信息，并关注官方微信公众号，获取抽奖资格！</a></div>
+                    <div class="result-rs font">请完善个人信息，并关注官方微信公众号<br />获取抽奖资格！</div>
+                    <div class="result-qx"><a href="javascript:;" id="openForm">填写邮寄信息，快递小哥将把奖品送达</a></div>
                 </div>
                 <div id="tjwc" style="display:none">
                     <div class="star-time">恭喜您全部答对！<br />并获得抽奖资格！<br />开奖时间：@Model.PrizeTime</div>
-                </div>                
-            }            
+                </div>
+            }
+            else
+            {
+                <div id="tjwc" style="display:block">
+                    <div class="star-time">恭喜您全部答对！<br />并获得抽奖资格！<br />开奖时间：@Model.PrizeTime</div>
+                </div>
+            }
 
             <div class="result-code"><img src="~/img/code.jpg" /></div>
-            <div class="result-codetxt font">长按二维码，关注官方微信公众号（广西环保）<br />提高中奖率，获取中奖资讯。</div>
+            <div class="result-codetxt font">长按二维码，关注官方微信公众号（广西环保）</div>
         </div>
     </div>
     <div class="result-fixed clear">
@@ -98,7 +108,14 @@
             $("#mask").css('display', 'none');
         })
 
-        $(function () {
+        window.onbeforeunload = function (event) {
+            window.location.href = window.location.href + "&first=1";
+        }
+
+        $(function () {           
+
+            //alert(window.location.href);
+
             $(".jsClose").click(function () {
                 $(".mask").css("display", "none");
             });

@@ -142,11 +142,9 @@
     <Content Include="img\share.png" />
     <Content Include="img\default\tit-bg.png" />
     <Content Include="img\default\tm-bg.png" />
+    <Content Include="img\zhb.jpg" />
+    <Content Include="img\zhb.png" />
     <Content Include="js\jquery.min.js" />
-    <Content Include="pic\header1.jpg" />
-    <Content Include="pic\header2.jpg" />
-    <Content Include="pic\header3.jpg" />
-    <Content Include="pic\pro1.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +161,7 @@
     <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Models\TopicModel.cs" />
     <Compile Include="Models\user\AddUser.cs" />
+    <Compile Include="Models\user\SearchUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

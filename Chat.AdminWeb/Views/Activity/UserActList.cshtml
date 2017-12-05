@@ -1,4 +1,4 @@
-﻿@model Chat.DTO.DTO.ActivityDTO[]
+﻿@model Chat.AdminWeb.Models.ActivityListModel
 @{
     ViewBag.Title = "用户参与答题活动管理";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,37 +6,8 @@
 <div class="mainpanel">
     <div class="contentpanel">
         <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="form-inline">
-                    <div class="form-group mt10">
-                        <a class="btn btn-primary mr5" iconcls="icon-search" href="~/Activity/Add"><i class="fa fa-plus"></i> 创建答题活动</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
             <div class="panel-heading">
-                <div class="form-inline">
-                    <div class="form-group mt10">
-                        <select name="" id="status" class="form-control">
-                            <option value="">状态</option>
-                            <option value="5">待开始</option>
-                            <option value="6">答题进行中</option>
-                            <option value="7">待开奖</option>
-                            <option value="8">已结束</option>
-                        </select>
-                    </div>
-                    <div class="form-group mt10">
-                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
-                    </div>
-                    <div class="form-group mt10">
-                        <input type="text" id="keyword" placeholder="请输入活动名称" class="form-control">
-                    </div>
-                    <div class="form-group mt10">
-                        <a class="btn btn-primary mr5" id="search" iconcls="icon-search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
-                    </div>
-                </div>
+                
             </div>
             <div class="panel-body">
                 <table class="table table-bordered table-primary mb30">
@@ -45,40 +16,33 @@
                             <th style="min-width: 80px;">期数</th>
                             <th style="min-width: 80px;">活动名称</th>
                             <th style="min-width: 80px;">状态</th>
-                            <th style="min-width: 80px;">页面URL（用于设置微信公众号跳转）</th>
+                            <th style="min-width: 80px;">是否当前活动</th>
                             <th style="min-width: 80px;">访问量</th>
-                            <th style="min-width: 80px;">转发次数</th>
+                            <!--<th style="min-width: 80px;">转发次数</th>-->
                             <th style="min-width: 80px;">答题次数</th>
                             <th style="min-width: 80px;">获奖资格人数</th>
                             <th style="min-width: 80px;">获奖人数</th>
                             <th style="min-width: 80px;">创建时间</th>
-                            <th style="min-width: 80px;">操作</th>
                         </tr>
                     </thead>
                     <tbody id="paperList">
-                        @foreach (var activity in Model)
+                        @foreach (var activity in Model.Activities)
                         {
                             <tr>
                                 <td data-attr="期数">@activity.Num@activity.Id</td>
                                 <td data-attr="活动名称">@activity.Name</td>
                                 <td data-attr="状态">@activity.StatusName</td>
-                                <td data-attr="页面URL"><a>www.baidu.com</a></td>
+                                <td data-attr="是否当前活动">@(activity.IsCurrent ? "是" : "否")</td>
                                 <td data-attr="访问量">@activity.VisitCount</td>
-                                <td data-attr="转发次数">@activity.ForwardCount</td>
+                                <!--<td data-attr="转发次数"></td>-->
                                 <td data-attr="答题次数">@activity.AnswerCount</td>
                                 <td data-attr="获奖资格人数">@activity.HavePrizeCount</td>
                                 <td data-attr="获奖人数">@activity.PrizeCount</td>
-                                <td data-attr="创建时间">@activity.CreateDateTime</td>
-                                <td data-attr="操作">
-                                    <a href="~/activity/edit?id=@activity.Id" class="btn btn-primary btn-sm">编辑</a>
-                                    <a href="~/activity/prize?id=@activity.Id" class="btn btn-primary btn-sm">开奖处理</a>
-                                    <a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-default btn-sm">导出开奖结果</a>
-                                    <button data-toggle="modal" data-target="#myModal" value="@activity.Id" class="btn btn-danger btn-sm Jsdel">删除</button>
-                                </td>
+                                <td data-attr="创建时间">@activity.CreateDateTime</td>                                
                             </tr>
                         }
                     </tbody>
-                </table>
+                </table>                
             </div>
         </div>
     </div><!-- contentpanel -->
@@ -86,105 +50,8 @@
         </div><!-- mainwrapper -->
     </section>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">提示</h4>
-            </div>
-            <div class="modal-body">
-                <p>确定删除该活动？</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="cancel" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="sureDel">确认</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-<div class="modal fade" tabindex="-1" role="dialog" id="myModal2">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">提示</h4>
-            </div>
-            <div class="modal-body">
-                <p>正在导出为excel表格，请选择保存地址</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="cancelSave" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="sureSave">确认</button>
-            </div>
-        </div>
-    </div>
-</div>
 @section FooterScript
 {
-    <script type="text/javascript">
-        $(function () {
-            jQuery('.datepicker').datepicker({
-                autoclose: true,
-                todayHighlight: true,
-                format: 'yyyy-mm-dd'
-            });
-
-            $('.Jsdel').click(function () {
-                $("#sureDel").val($(this).val());
-            });
-
-            //搜索
-            $("#search").click(function () {
-                var statusId = $("#status").val();
-                var startTime = $("#txtStar").val();
-                var endTime = $("#txtEnd").val();
-                var keyWord = $("#keyword").val();
-                $.ajax({
-                    url: "/activity/search", type: "post", data: {statusId:statusId, startTime: startTime, endTime: endTime, keyWord: keyWord },
-                    success: function (result) {
-                        if (result.status == "error") {
-                            alert(result.errorMsg);
-                        }
-                        else if (result.status == "success") {
-                            $("#paperList").empty();
-                            for (var i = 0; i < result.data.length; i++) {
-                                $("#paperList").append('<tr><td data-attr="期数">' + result.data[i].num + result.data[i].id + '</td><td data-attr="活动名称">' + result.data[i].name + '</td><td data-attr="状态">' + result.data[i].statusName + '</td><td data-attr="页面URL"><a>www.baidu.com</a></td><td data-attr="访问量">' + result.data[i].visitCount + '</td><td data-attr="转发次数">' + result.data[i].forwardCount + '</td><td data-attr="答题次数">' + result.data[i].answerCount + '</td><td data-attr="获奖资格人数">' + result.data[i].havePrizeCount + '</td><td data-attr="获奖人数">' + result.data[i].prizeCount + '</td><td data-attr="创建时间">' + result.data[i].createDateTime + '</td><td data-attr="操作"><a href="/activity/edit?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">编辑</a><a href="/activity/prize?id=' + result.data[i].id + '" class="btn btn-primary btn-sm">开奖处理</a><a href="#" data-toggle="modal" data-target="#myModal2" class="btn btn-default btn-sm">导出开奖结果</a><button data-toggle="modal" data-target="#myModal" value="'+result.data[i].id+'" class="btn btn-danger btn-sm Jsdel">删除</button></td></tr>');
-                            }
-                        }
-                        else {
-                            alert("未知错误");
-                        }
-                    },
-                    error: function () { alert("网络错误"); }
-                });
-            });
-
-            //删除
-            $("#sureDel").click(function () {
-                var id = $(this).val();
-                $.ajax({
-                    url: "/activity/delactivity?id=", type: "post", data: { id: id },
-                    success: function (result) {
-                        if (result.status == "error") {
-                            alert(result.errorMsg);
-                            $("#cancel").click();
-                        }
-                        else if (result.status == "success") {
-                            $("#cancel").click();
-                            window.location.reload();
-                        }
-                        else {
-                            alert("未知错误");
-                            $("#cancel").click();
-                        }
-                    },
-                    error: function () { alert("网络错误"); $("#cancel").click(); }
-                });
-            });
-
-        })
-    </script>
+   
 }

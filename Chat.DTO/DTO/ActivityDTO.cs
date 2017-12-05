@@ -27,5 +27,9 @@ namespace Chat.DTO.DTO
         public DateTime StartTime { get; set; }
         public DateTime ExamEndTime { get; set; }
         public DateTime RewardTime { get; set; }
+        /// <summary>
+        /// 是否当前活动
+        /// </summary>
+        public bool IsCurrent { get; set; }
     }
 }

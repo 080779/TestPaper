@@ -27,26 +27,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">活动状态:</label>
-                        <div class="col-sm-6">
-                            <select name="statusId"  id="statusId" class="col-sm-3" style="height:30px">
-                                <option value="0">
-                                    活动状态
-                                </option>
-                                @foreach (var status in Model.Status)
-                                {
-                                    <option value="@status.Id" selected="@(Model.Activity.StatusId==status.Id)">
-                                        @status.Name
-                                    </option>
-                                }
-                            </select>
-                            <!-<label class="col-sm-9 control-label">只有一个活动处于“答题进行中”或“开奖中”、“已结束”活动不能再设置其他状态</label>-->
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-sm-3 control-label">活动背景图:</label>
                         <div class="col-sm-6">
-                            <input type="file" id="file_back" name="imgUrl" />
+                            <input type="file" id="file_back" name="imgUrl" /><p>请上传750*1334图片，支持格式“png、jpg、jpeg、bmp”</p>
                             <img src="@Model.Activity.ImgUrl" id="img_back" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
                             <input type="hidden" id="val_back_img" value="@Model.Activity.ImgUrl" />
                         </div>
@@ -54,19 +37,19 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">活动开始时间:</label>
                         <div class="col-sm-6">
-                            <input type="text" name="startTime" id="startTime" value="@Model.Activity.StartTime" class="form-control datepicker" />
+                            <input type="text" name="startTime" id="startTime" value="@Model.Activity.StartTime" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">答题截止时间:</label>
                         <div class="col-sm-6">
-                            <input type="text" name="examEndTime" id="examEndTime" value="@Model.Activity.ExamEndTime" class="form-control datepicker" />
+                            <input type="text" name="examEndTime" id="examEndTime" value="@Model.Activity.ExamEndTime" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">开奖时间:</label>
                         <div class="col-sm-6">
-                            <input type="text" name="rewardTime" id="rewardTime" value="@Model.Activity.RewardTime" class="form-control datepicker" />
+                            <input type="text" name="rewardTime" id="rewardTime" value="@Model.Activity.RewardTime" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/>
                         </div>
                     </div>
                 </div>
@@ -75,8 +58,8 @@
                 <div class="panel-heading">
                     <div class="form-inline">
                         <div class="form-group mt10">
-                            <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                            <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                            <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                            <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
                         </div>
                         <div class="form-group mt10">
                             <input id="keyWord" type="text" placeholder="请输入试卷标题" class="form-control">
@@ -106,6 +89,16 @@
                                 <td data-attr="考题数">@Model.Paper.ExercisesCount</td>
                                 <td data-attr="创建时间">@Model.Paper.CreateDateTime</td>
                             </tr>
+                         @foreach (var paper in Model.Papers)
+                         {
+                            <tr>
+                                <td data-attr="选择"><input type="radio" name="paperId" id="paperId" value="@paper.Id" class="checkTm" /></td>
+                                <td data-attr="编号">@paper.Num@paper.Id</td>
+                                <td data-attr="试卷标题">@paper.TestTitle</td>
+                                <td data-attr="考题数">@paper.ExercisesCount</td>
+                                <td data-attr="创建时间">@paper.CreateDateTime</td>
+                            </tr>
+                         }
                         </tbody>
                     </table>
                 </div>
@@ -124,15 +117,15 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">奖品图片:</label>
                         <div class="col-sm-6">
-                            <input type="file" name="prizeImgUrl" id="file_prize" />
+                            <input type="file" name="prizeImgUrl" id="file_prize" /><p>请上传512*512图片，支持格式“png、jpg、jpeg、bmp”</p>
                             <img src="@Model.Activity.PrizeImgUrl" id="img_prize" alt="" style="margin-top: 10px; max-width: 100px; max-height: 400px;" />
                             <input type="hidden" id="val_prize_img" value="@Model.Activity.PrizeImgUrl" />
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer">
+                <div class="panel-footer" style="text-align:center">
                     <button type="button" id="btnAdd" class="btn btn-primary mr5">确定</button>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>
+                    <!--<button class="btn btn-default" data-toggle="modal" data-target="#myModal">删除</button>-->
                 </div>
             </div>
         </div><!-- contentpanel -->
@@ -140,24 +133,7 @@
 </div><!-- mainpanel -->
         </div><!-- mainwrapper -->
     </section>
-
-<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">提示</h4>
-            </div>
-            <div class="modal-body">
-                <p>确定删除该活动？</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="sureDel">确认</button>
-            </div>
-        </div>
-    </div>
-</div>            
+          
 @section FooterScript
 {
 <script type="text/javascript">
@@ -172,10 +148,7 @@
             $(".checkTm").click(function () {
                 $(this).parents('tr').addClass('check').siblings().removeClass('check');
             })
-            //确认删除
-            $("#sureDel").click(function(){
 
-            })
             //上传图片
             uploadpic("#file_back", "#img_back");
             uploadpic("#file_prize", "#img_prize");
@@ -227,11 +200,18 @@
                 });
             });
 
+            $("#file_back").change(function () {
+                $("#val_back_img").val($(this).val());
+            });
+            
+            $("#file_prize").change(function () {
+                $("#val_prize_img").val($(this).val());
+            });
+
             $("#btnAdd").click(function () {
                 var actId = $("#activityId").val();
                 var name = $("#name").val();
                 var description = $("#desc").val();
-                var statusId = $("#statusId").val();
                 var imgUrl = $("#val_back_img").val();
                 var startTime = $("#startTime").val();
                 var examEndTime = $("#examEndTime").val();
@@ -241,7 +221,7 @@
                 var prizeImgUrl = $("#val_prize_img").val();
                 $.ajax({
                     url: "/activity/editJsonResp", type: "post",
-                    data: {activityId:actId, name: name, description: description, statusId: statusId, imgUrl: imgUrl, startTime: startTime, examEndTime: examEndTime, rewardTime: rewardTime, paperId: paperId, prizeName: prizeName, prizeImgUrl: prizeImgUrl },
+                    data: {activityId:actId, name: name, description: description, imgUrl: imgUrl, startTime: startTime, examEndTime: examEndTime, rewardTime: rewardTime, paperId: paperId, prizeName: prizeName, prizeImgUrl: prizeImgUrl },
                     success: function (result) {
                         if (result.status == "error") {
                             alert(result.errorMsg);

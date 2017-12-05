@@ -146,8 +146,8 @@
     <Content Include="Css\ambiance.css" />
     <Content Include="Css\animate.delay.css" />
     <Content Include="Css\animate.min.css" />
+    <Content Include="Css\bootstrap-datetimepicker.min.css" />
     <Content Include="Css\bootstrap-override.css" />
-    <Content Include="Css\bootstrap-timepicker.min.css" />
     <Content Include="Css\bootstrap-wysihtml5.css" />
     <Content Include="Css\bootstrap.min.css" />
     <Content Include="Css\codemirror.css" />
@@ -171,11 +171,29 @@
     <Content Include="Css\toggles.css" />
     <Content Include="Css\weather-icons.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="lib\My97DatePicker\calendar.js" />
+    <Content Include="lib\My97DatePicker\lang\en.js" />
+    <Content Include="lib\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="lib\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="lib\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="lib\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="lib\My97DatePicker\skin\default\img.gif" />
+    <Content Include="lib\My97DatePicker\skin\twoer\datepicker-dev.css" />
+    <Content Include="lib\My97DatePicker\skin\twoer\datepicker.css" />
+    <Content Include="lib\My97DatePicker\skin\twoer\img.gif" />
+    <Content Include="lib\My97DatePicker\skin\twoer\img.png" />
+    <Content Include="lib\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="lib\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="lib\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="lib\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="lib\My97DatePicker\WdatePicker.js" />
     <Content Include="Picture\admin.png" />
     <Content Include="Picture\logo-primary.png" />
     <Content Include="Picture\logo.png" />
     <Content Include="Picture\profile.png" />
+    <Content Include="Picture\zhb.png" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\dropzone.min.js" />
@@ -215,6 +233,7 @@
     <Compile Include="Models\AtivityEditModel.cs" />
     <Compile Include="Models\LoadAddExeModel.cs" />
     <Compile Include="Models\PrizeSetModel.cs" />
+    <Compile Include="Models\UserListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -232,9 +251,11 @@
     <Content Include="Views\Activity\Edit.cshtml" />
     <Content Include="Views\Activity\Prize.cshtml" />
     <Content Include="Views\TestPaper\AddEditExe.cshtml" />
+    <Content Include="lib\My97DatePicker\skin\Thumbs.db" />
     <None Include="Properties\PublishProfiles\AnswerAdmin.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Activity\UserActList.cshtml" />
+    <Content Include="Views\Home\SetPicAdminUrl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

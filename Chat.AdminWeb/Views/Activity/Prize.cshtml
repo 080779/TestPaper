@@ -3,6 +3,21 @@
     ViewBag.Title = "开奖处理";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style type="text/css">
+    #pager ul li {
+        float: left;
+        margin-left: 10px;
+        color: darkslategray;
+        list-style-type: none;
+        width: 30px;
+        font-size: 15px;
+        margin: 0px;
+    }
+
+    .curPager {
+        color: cornflowerblue;
+    }
+</style>
 <div class="mainpanel">
     <div class="contentpanel">
         <!--<div class="panel panel-default">
@@ -27,12 +42,12 @@
             <div class="panel-heading">
                 <div class="form-inline">
                     <div class="form-group mt10">
-                        <input type="hidden" id="actId" value="@Model.ActivityId" />
-                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control datepicker">
-                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control datepicker">
+                        
+                        <input type="text" id="txtStar" placeholder="请输入起始时间" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                        <input type="text" id="txtEnd" placeholder="请输入结束时间" class="form-control Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
                     </div>
                     <div class="form-group mt10">
-                        <input id="keyWord" type="text" placeholder="按昵称/姓名/电话搜索" class="form-control">
+                        <input id="keyWord" type="text" placeholder="按姓名/电话搜索" class="form-control">
                     </div>
                     <div class="form-group mt10">
                         <a class="btn btn-primary mr5" iconcls="icon-search" id="search" href="javascript:;"><i class="fa fa-search"></i> 搜 索 </a>
@@ -41,11 +56,12 @@
             </div>
             <div class="panel-body">
                 <form id="formCheck">
+                    <input type="hidden" name="activityId" id="actId" value="@Model.ActivityId" />
                     <table class="table table-bordered table-primary mb30">
                         <thead>
                             <tr>
                                 <th style="min-width: 20px;">选择</th>
-                                <th style="min-width: 80px;">昵称</th>
+                                <th style="min-width: 80px;">编号</th>
                                 <th style="min-width: 80px;">姓名</th>
                                 <th style="min-width: 80px;">性别</th>
                                 <th style="min-width: 80px;">联系方式</th>
@@ -59,7 +75,7 @@
                             {
                                 <tr class="check">
                                     <td data-attr="选择"><input type="checkbox" name="isWonIds" id="" value="@user.Id" class="checkTm" /></td>
-                                    <td data-attr="昵称">@user.NickName</td>
+                                    <td data-attr="编号">@user.Id</td>
                                     <td data-attr="姓名">@user.Name</td>
                                     <td data-attr="性别">@(user.Gender ? "男" : "女")</td>
                                     <td data-attr="联系方式">@user.Mobile</td>
@@ -70,6 +86,7 @@
                             }
                         </tbody>
                     </table>
+                    <div id="pager">@Html.Raw(Model.Page)</div>
                 </form>                
             </div>
             <div class="panel-footer">
@@ -100,52 +117,92 @@
 @section FooterScript
 {
 <script type="text/javascript">
-        	$(function(){
-        		//日期选择器
-        	    jQuery('.datepicker').datepicker({
-        	        autoclose: true,
-        	        todayHighlight: true,
-        	        format: 'yyyy-mm-dd'
-        	    });
+    function getPage(pageIndex) {
+        var id = $("#actId").val();
+        var startTime = $("#txtStar").val();
+        var endTime = $("#txtEnd").val();
+        var keyWord = $("#keyWord").val();
+        $.ajax({
+            url: "/activity/prizesearch?pageindex=" + pageIndex, type: "post", data: { id: id, startTime: startTime, endTime: endTime, keyWord: keyWord },
+            success: function (result) {
+                $("#pager").empty();
+                $("#pager").append(result.data.page);
+                $("#paperList").empty();
+                $("#paperList").append('<input type="hidden" id="index" value="' + pageIndex + '" />');
+                if (result.data.users.length <= 0)
+                {
+                    if ((pageIndex - 1)>=1)
+                    {
+                        return getPage(pageIndex-1);
+                    }                  
+                }
+                for (var i = 0; i < result.data.users.length; i++) {
+                    var gerdern = result.data.users[i].gender ? "男" : "女";
+                    $("#paperList").append('<tr class="check"><td data-attr="选择"><input type="checkbox" name="isWonIds" id="" value="' + result.data.users[i].id + '" class="checkTm" /></td><td data-attr="昵称">' + result.data.users[i].id + '</td><td data-attr="姓名">' + result.data.users[i].name + '</td><td data-attr="性别">' + gerdern + '</td><td data-attr="联系方式">' + result.data.users[i].mobile + '</td><td data-attr="详细地址">' + result.data.users[i].address + '</td><td data-attr="曾通关次数">' + result.data.users[i].passCount + '</td><td data-attr="曾获奖次数">' + result.data.users[i].winCount + '</td></tr>');
+                }
+            },
+            error: function () { alert("网络错误"); }
+        });
+    }
 
-        	    //搜索
-        	    $("#search").click(function () {
-        	        var id = $("#actId").val();
-        	        var startTime = $("#txtStar").val();
-        	        var endTime = $("#txtEnd").val();
-        	        var keyWord = $("#keyWord").val();
-        	        $.ajax({
-        	            url: "/activity/prizesearch", type: "post", data: { id: id, startTime: startTime, endTime: endTime, keyWord: keyWord },
-        	            success: function (result) {
-        	                if (result.status == "error") {
-        	                    alert(result.errorMsg);
-        	                }
-        	                else if (result.status == "success") {
-        	                    $("#paperList").empty();
-        	                    for (var i = 0; i < result.data.length; i++) {
-        	                        var gerdern = result.data[i].gender ? "男" : "女";
-        	                        $("#paperList").append('<tr class="check"><td data-attr="选择"><input type="checkbox" name="isWon" id="" value="' + result.data[i].Id + '" class="checkTm" /></td><td data-attr="昵称">' + result.data[i].nickName + '</td><td data-attr="姓名">' + result.data[i].name + '</td><td data-attr="性别">' + gerdern + '</td><td data-attr="联系方式">' + result.data[i].mobile + '</td><td data-attr="详细地址">' + result.data[i].address + '</td><td data-attr="曾通关次数">' + result.data[i].passCount + '</td><td data-attr="曾获奖次数">' + result.data[i].winCount + '</td></tr>');
-        	                    }
-        	                }
-        	                else {
-        	                    alert("未知错误");
-        	                }
-        	            },
-        	            error: function () { alert("网络错误"); }
-        	        });
-        	    });
+    $(function () {
+        //日期选择器
+        jQuery('.datepicker').datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: 'yyyy-mm-dd',
+        });
 
-        	    $("#btnSaveWon").click(function () {
-        	        var formData = $("#formCheck").serializeArray();
-        	        $.ajax({
-        	            url: "/activity/prizewon", type: "post", data: formData,
-        	            success: function (result) {
-        	                alert("设置成功");
-        	                window.location.reload();
-        	            },
-        	            error: function () { alert("网络错误");}
-        	        });
-        	    });
-        	})
+        //搜索
+        $("#search").click(function () {
+            var id = $("#actId").val();
+            var startTime = $("#txtStar").val();
+            var endTime = $("#txtEnd").val();
+            var keyWord = $("#keyWord").val();
+            $.ajax({
+                url: "/activity/prizesearch?pageindex=1", type: "post", data: { id: id, startTime: startTime, endTime: endTime, keyWord: keyWord },
+                success: function (result) {
+                    if (result.status == "error") {
+                        alert(result.errorMsg);
+                    }
+                    else if (result.status == "success") {
+                        $("#pager").empty();
+                        $("#pager").append(result.data.page);
+                        $("#paperList").empty();
+                        $("#paperList").append('<input type="hidden" id="index" value="1" />');
+                        for (var i = 0; i < result.data.users.length; i++) {
+                            var gerdern = result.data.users[i].gender ? "男" : "女";
+                            $("#paperList").append('<tr class="check"><td data-attr="选择"><input type="checkbox" name="isWonIds" id="" value="' + result.data.users[i].id + '" class="checkTm" /></td><td data-attr="昵称">' + result.data.users[i].id + '</td><td data-attr="姓名">' + result.data.users[i].name + '</td><td data-attr="性别">' + gerdern + '</td><td data-attr="联系方式">' + result.data.users[i].mobile + '</td><td data-attr="详细地址">' + result.data.users[i].address + '</td><td data-attr="曾通关次数">' + result.data.users[i].passCount + '</td><td data-attr="曾获奖次数">' + result.data.users[i].winCount + '</td></tr>');
+                        }
+                    }
+                    else {
+                        alert("未知错误");
+                    }
+                },
+                error: function () { alert("网络错误"); }
+            });
+        });
+
+        $("#btnSaveWon").click(function () {
+            var formData = $("#formCheck").serializeArray();
+            var index = $("#index").val();
+
+            $.ajax({
+                url: "/activity/prizewon", type: "post", data: formData,
+                success: function (result) {
+                    alert("设置为获奖成功");
+                    if ((index - 1) >= 1)
+                    {
+                        getPage(index);
+                    }
+                    else
+                    {
+                        getPage(1);
+                    }
+                },
+                error: function () { alert("网络错误"); }
+            });
+        });
+    })
 </script>   
 }

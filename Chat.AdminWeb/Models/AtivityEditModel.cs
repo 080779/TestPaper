@@ -10,7 +10,6 @@ namespace Chat.AdminWeb.Models
         public long activityId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public long StatusId { get; set; }
         public HttpPostedFileBase imgUrl { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime ExamEndTime { get; set; }
