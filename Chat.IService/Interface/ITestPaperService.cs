@@ -16,5 +16,6 @@ namespace Chat.IService.Interface
         bool Delete(long id);
         TestPaperDTO[] Search(DateTime? startTime,DateTime? endTime,string keyWord);
         TestPaperDTO GetByActivityId(long id);
+        TestPaperDTO[] GetAllExcludeBelongActId(long id);
     }
 }

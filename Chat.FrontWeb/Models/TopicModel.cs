@@ -9,5 +9,6 @@ namespace Chat.FrontWeb.Models
     {
         public List<string> ExesTip { get; set; }
         public string ActivityName { get; set; }
+        public string Topic { get; set; }
     }
 }

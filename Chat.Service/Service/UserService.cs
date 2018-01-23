@@ -65,8 +65,8 @@ namespace Chat.Service.Service
         {
             using (MyDbContext dbc = new MyDbContext())
             {
-                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);               
-                return cs.GetAll().Take(10).ToList().Select(u=>ToDTO(u)).ToArray();
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                return cs.GetAll().OrderByDescending(u=>u.CreateDateTime).Take(20).ToList().Select(u=>ToDTO(u)).ToArray();
             }
         }
 
@@ -85,7 +85,7 @@ namespace Chat.Service.Service
                 return dbc.Database.SqlQuery<UserDTO>("select top(20) u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
             }
         }
-                
+
         /// <summary>
         /// 根据活动id查找参与活动的用户
         /// </summary>
@@ -132,7 +132,7 @@ namespace Chat.Service.Service
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public UserSearchResult GetByActivityIdHavePrize(long id, int currentIndex, int pageSize)
+        public UserSearchResult GetByActivityIdHavePrize(long id, DateTime? startTime, DateTime? endTime, string keyWord, int currentIndex, int pageSize)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -147,6 +147,18 @@ namespace Chat.Service.Service
                             from a in u.Activities
                             where a.Id == id && u.IsDeleted == false && u.LoginErrorTimes==1
                             select u;
+                if(startTime!=null)
+                {
+                    users = users.Where(u => u.CreateDateTime >= startTime);
+                }
+                if(endTime!=null)
+                {
+                    users = users.Where(u => u.CreateDateTime >= endTime);
+                }
+                if(!string.IsNullOrEmpty(keyWord))
+                {
+                    users = users.Where(u => u.Name.Contains(keyWord) || u.Mobile.Contains(keyWord));
+                }
                 UserSearchResult result = new UserSearchResult();
                 result.TotalCount = users.Count();
                 result.Users = users.OrderByDescending(u=>u.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
@@ -192,6 +204,31 @@ namespace Chat.Service.Service
                 UserSearchResult result = new UserSearchResult();
                 result.TotalCount = users.Count();
                 result.Users = users.OrderByDescending(u=>u.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
+                return result;
+            }
+        }
+
+        public UserSearchResult SearchIsWon(long activityId, string lastM, int currentIndex, int pageSize)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var activity = cs.GetAll().SingleOrDefault(a => a.Id == activityId);
+                if (activity == null)
+                {
+                    return null;
+                }
+                var users = from u in dbc.Users
+                            from a in u.Activities
+                            where a.Id == activityId && u.IsDeleted == false && u.IsWon == true
+                            select u;
+                UserSearchResult result = new UserSearchResult();
+                if (!string.IsNullOrEmpty(lastM))
+                {
+                    users = users.Where(u=>u.Mobile.Substring(7).Contains(lastM));
+                }
+                result.TotalCount = users.Count();
+                result.Users = users.OrderByDescending(u => u.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
                 return result;
             }
         }
@@ -277,12 +314,12 @@ namespace Chat.Service.Service
                 }
                 if (startTime != null)
                 {
-                    startTime = DateTimeHelper.GetBeginDate((DateTime)startTime);
+                    startTime = (DateTime)startTime;
                     items = items.Where(u => u.CreateDateTime >= startTime);
                 }
                 if (endTime != null)
                 {
-                    endTime = DateTimeHelper.GetEndDate((DateTime)endTime);
+                    endTime = (DateTime)endTime;
                     items = items.Where(u => u.CreateDateTime <= endTime);
                 }
                 if (keyWord != null)
@@ -291,12 +328,12 @@ namespace Chat.Service.Service
                 }
                 UserSearchResult result = new UserSearchResult();
                 result.TotalCount = items.Count();
-                result.Users= items.Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
+                result.Users= items.OrderByDescending(u=>u.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(u => ToDTO(u)).ToArray();
                 return result;
             }
         }
 
-        public bool SetWon(long id)
+        public bool SetWon(long id,long activityId)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -308,6 +345,36 @@ namespace Chat.Service.Service
                 }
                 user.IsWon = true;
                 user.WinCount++;
+
+                var acts = from a in dbc.Activities
+                           from u in a.Users
+                           where u.Id == id
+                           select a;
+                var act= acts.SingleOrDefault(a => a.Id == activityId);
+                if(act==null)
+                {
+                    return false;
+                }
+                act.PrizeCount++;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool RandSetWon(int count,long actId)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                var users = from u in dbc.Users
+                            from a in u.Activities
+                            where a.Id == actId && u.IsDeleted ==false && u.LoginErrorTimes==1
+                            select u;
+                users=users.OrderBy(u => Guid.NewGuid()).Take(count);
+                foreach(var user in users)
+                {
+                    user.IsWon = true;
+                }
                 dbc.SaveChanges();
                 return true;
             }

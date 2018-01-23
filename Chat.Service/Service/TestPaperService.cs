@@ -49,7 +49,7 @@ namespace Chat.Service.Service
             {
                 CommonService<TestPaperEntity> cs = new CommonService<TestPaperEntity>(dbc);
                 
-                return cs.GetAll().OrderByDescending(t=>t.CreateDateTime).Take(10).Select(r => new TestPaperDTO { Id = r.Id, TestTitle = r.TestTitle, ExercisesCount = r.ExercisesCount, CreateDateTime = r.CreateDateTime, Num = r.Num }).ToArray();
+                return cs.GetAll().OrderByDescending(t=>t.CreateDateTime).Take(20).Select(r => new TestPaperDTO { Id = r.Id, TestTitle = r.TestTitle, ExercisesCount = r.ExercisesCount, CreateDateTime = r.CreateDateTime, Num = r.Num }).ToArray();
             }
         }
 
@@ -70,6 +70,26 @@ namespace Chat.Service.Service
                     return null;
                 }                
                 return new TestPaperDTO { Id = paper.Id, TestTitle = paper.TestTitle, ExercisesCount = paper.ExercisesCount, CreateDateTime = paper.CreateDateTime, Num = paper.Num };
+            }
+        }
+
+        public TestPaperDTO[] GetAllExcludeBelongActId(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<TestPaperEntity> cs = new CommonService<TestPaperEntity>(dbc);
+                CommonService<ActivityEntity> acs = new CommonService<ActivityEntity>(dbc);
+                var activity = acs.GetAll().SingleOrDefault(a => a.Id == id);
+                if (activity == null)
+                {
+                    return null;
+                }
+                var paper = cs.GetAll().Where(p => p.Id != activity.PaperId);
+                if (paper == null)
+                {
+                    return null;
+                }
+                return paper.OrderByDescending(u=>u.CreateDateTime).Take(19).ToList().Select(u => new TestPaperDTO { Id = u.Id, TestTitle = u.TestTitle, ExercisesCount = u.ExercisesCount, CreateDateTime = u.CreateDateTime, Num = u.Num }).ToArray();
             }
         }
 
@@ -95,19 +115,19 @@ namespace Chat.Service.Service
                 var items = cs.GetAll();
                 if(startTime!= null)
                 {
-                    startTime = DateTimeHelper.GetBeginDate((DateTime)startTime);
+                    startTime = (DateTime)startTime;
                     items = items.Where(p => p.CreateDateTime >= startTime);
                 }
                 if(endTime!= null)
                 {
-                    endTime = DateTimeHelper.GetEndDate((DateTime)endTime);
+                    endTime = (DateTime)endTime;
                     items = items.Where(p => p.CreateDateTime <= endTime);
                 }
                 if(!string.IsNullOrEmpty(keyWord))
                 {
                     items = items.Where(p => p.TestTitle.Contains(keyWord));
                 }
-                items = items.OrderByDescending(p => p.CreateDateTime).Take(10);
+                items = items.OrderByDescending(p => p.CreateDateTime).Take(20);
                 return items.ToList().Select(p => new TestPaperDTO { Id = p.Id, TestTitle = p.TestTitle, ExercisesCount = p.ExercisesCount, CreateDateTime = p.CreateDateTime ,Num=p.Num}).ToArray();
             }
         }

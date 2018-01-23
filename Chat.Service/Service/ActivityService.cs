@@ -14,7 +14,7 @@ namespace Chat.Service.Service
 {
     public class ActivityService : IActivityService
     {
-        public long AddNew(string name, string description,long statusId, string imgUrl, DateTime startTime, DateTime examEndTime, DateTime rewardTime, long paperId, string prizeName, string prizeImgUrl)
+        public long AddNew(string name, string description, string imgUrl, DateTime? startTime, DateTime? examEndTime, DateTime? rewardTime, long paperId, string prizeName, string prizeImgUrl)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -57,18 +57,33 @@ namespace Chat.Service.Service
                 activity.Name = name;
                 activity.Description = description;
                 activity.ImgUrl = imgUrl;
-                activity.StartTime = startTime;
-                activity.ExamEndTime = examEndTime;
-                activity.RewardTime = rewardTime;
+                activity.StartTime = (DateTime)startTime;
+                activity.ExamEndTime = (DateTime)examEndTime;
+                activity.RewardTime = (DateTime)rewardTime;
                 activity.PaperId = paperId;
                 activity.PrizeName = prizeName;
                 activity.PrizeImgUrl = prizeImgUrl;
                 activity.AnswerCount = 0;
                 activity.ForwardCount = 0;
                 activity.HavePrizeCount = 0;
-                activity.PrizeCount = 0;
-                activity.StatusId = statusId;
+                activity.PrizeCount = 0;                
                 activity.VisitCount = 0;
+                if (DateTime.Now < activity.StartTime)
+                {
+                    activity.StatusId = 5;
+                }
+                else if(DateTime.Now>=activity.StartTime && DateTime.Now<activity.ExamEndTime)
+                {
+                    activity.StatusId = 6;
+                }
+                else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                {
+                    activity.StatusId = 7;
+                }
+                else
+                {
+                    activity.StatusId = 8;
+                }
                 dbc.Activities.Add(activity);
                 dbc.SaveChanges();
                 dbc.Database.ExecuteSqlCommand("update T_Activities set Num=(select CONVERT(varchar(12) , (select createdatetime from t_activities where id=@id), 112)) where id=@id",new SqlParameter("@id",activity.Id));
@@ -100,6 +115,7 @@ namespace Chat.Service.Service
             dto.VisitCount = entity.VisitCount;
             dto.WeChatUrl = entity.WeChatUrl;
             dto.Num = entity.Num;
+            dto.IsCurrent = entity.IsCurrent;
             return dto;
         }
 
@@ -108,6 +124,26 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                foreach(var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 return cs.GetAll().Include(a => a.Status).Include(a=>a.Papers).OrderByDescending(a => a.CreateDateTime).Take(10).ToList().Select(a => ToDTO(a)).ToArray();
             }
         }
@@ -117,6 +153,26 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 var entity = cs.GetAll().Where(a => a.Status.Name != "已结束").OrderByDescending(a => a.CreateDateTime);
                 long count = entity.Count();
                 if (count<=0)
@@ -132,8 +188,62 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 ActivityEntity entity = cs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a => a.Id == id);
                 if(entity==null)
+                {
+                    return null;
+                }
+                return ToDTO(entity);
+            }
+        }
+
+        public ActivityDTO GetIsCurrent()
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
+                ActivityEntity entity = cs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a => a.IsCurrent == true);
+                if (entity == null)
                 {
                     return null;
                 }
@@ -160,6 +270,26 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 ActivityEntity entity = cs.GetAll().Include(a => a.Status).Include(a => a.Papers).SingleOrDefault(a => a.Status.Name == statusName);
                 if (entity == null)
                 {
@@ -169,7 +299,43 @@ namespace Chat.Service.Service
             }
         }
 
-        public bool Update(long id, string name, string description, long statusId, string imgUrl, DateTime startTime, DateTime examEndTime, DateTime rewardTime, long paperId, string prizeName, string prizeImgUrl)
+        public bool SetCurrent(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var act= cs.GetAll().SingleOrDefault(a => a.Id == id);
+                if(act==null)
+                {
+                    return false;
+                }
+                foreach(var entity in cs.GetAll())
+                {
+                    entity.IsCurrent = false;
+                }
+                act.IsCurrent = true;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool ResetCurrent(long id)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                var act = cs.GetAll().SingleOrDefault(a => a.Id == id);
+                if (act == null)
+                {
+                    return false;
+                }
+                act.IsCurrent = false;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
+
+        public bool Update(long id, string name, string description, string imgUrl, DateTime? startTime, DateTime? examEndTime, DateTime? rewardTime, long paperId, string prizeName, string prizeImgUrl)
         {
             using (MyDbContext dbc = new MyDbContext())
             {
@@ -183,14 +349,29 @@ namespace Chat.Service.Service
                 activity.Description = description;
                 if(!string.IsNullOrWhiteSpace(imgUrl))
                     activity.ImgUrl = imgUrl;
-                activity.StartTime = startTime;
-                activity.ExamEndTime = examEndTime;
-                activity.RewardTime = rewardTime;
+                activity.StartTime = (DateTime)startTime;
+                activity.ExamEndTime = (DateTime)examEndTime;
+                activity.RewardTime = (DateTime)rewardTime;
                 activity.PaperId = paperId;
                 activity.PrizeName = prizeName;
                 if (!string.IsNullOrWhiteSpace(prizeImgUrl))
                     activity.PrizeImgUrl = prizeImgUrl;
-                activity.StatusId = statusId;
+                if (DateTime.Now < activity.StartTime)
+                {
+                    activity.StatusId = 5;
+                }
+                else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                {
+                    activity.StatusId = 6;
+                }
+                else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                {
+                    activity.StatusId = 7;
+                }
+                else
+                {
+                    activity.StatusId = 8;
+                }
                 dbc.SaveChanges();
                 return true; 
             }
@@ -201,20 +382,39 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<Entities.ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 var items = cs.GetAll();
                 if(statusId!=null)
-                {
-                    
+                {                    
                     items = items.Where(p => p.StatusId == statusId);
                 }
                 if (startTime != null)
                 {
-                    startTime = DateTimeHelper.GetBeginDate((DateTime)startTime);
+                    startTime = (DateTime)startTime;
                     items = items.Where(p => p.CreateDateTime >= startTime);
                 }
                 if (endTime != null)
                 {
-                    endTime = DateTimeHelper.GetEndDate((DateTime)endTime);
+                    endTime = (DateTime)endTime;
                     items = items.Where(p => p.CreateDateTime <= endTime);
                 }
                 if (!string.IsNullOrEmpty(keyWord))
@@ -241,20 +441,39 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<Entities.ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 var items = cs.GetAll();
                 if (statusId != null)
                 {
-
                     items = items.Where(p => p.StatusId == statusId);
                 }
                 if (startTime != null)
                 {
-                    startTime = DateTimeHelper.GetBeginDate((DateTime)startTime);
+                    startTime = (DateTime)startTime;
                     items = items.Where(p => p.CreateDateTime >= startTime);
                 }
                 if (endTime != null)
                 {
-                    endTime = DateTimeHelper.GetEndDate((DateTime)endTime);
+                    endTime =(DateTime)endTime;
                     items = items.Where(p => p.CreateDateTime <= endTime);
                 }
                 if (!string.IsNullOrEmpty(keyWord))
@@ -324,13 +543,39 @@ namespace Chat.Service.Service
         {
             using (MyDbContext dbc = new MyDbContext())
             {
+                CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 CommonService<UserEntity> ucs = new CommonService<UserEntity>(dbc);
                 var user = ucs.GetAll().SingleOrDefault(u=>u.Id==id);
                 if(user==null)
                 {
                     return null;
                 }
-                return dbc.Database.SqlQuery<ActivityDTO>("select top(10) a.ID,a.Num,a.Name,a.Description,a.ImgUrl,a.StatusId,i.Name as StatusName,a.PaperId,t.TestTitle as PaperTitle,a.PrizeName,a.PrizeImgUrl,a.WeChatUrl,a.VisitCount,a.ForwardCount,a.AnswerCount,a.HavePrizeCount,a.PrizeCount,a.StartTime,a.ExamEndTime,a.RewardTime from T_Activities as a left join t_idnames i on i.id=a.statusid left join T_TestPapers t on t.Id=a.PaperId, (select ActivityId from T_UserActivities where UserId=@id) as u where a.Id=u.ActivityId and a.IsDeleted=0", new SqlParameter("@id",id)).ToArray();
+                //return dbc.Database.SqlQuery<ActivityDTO>("select top(10) a.ID,a.Num,a.Name,a.Description,a.ImgUrl,a.StatusId,i.Name as StatusName,a.PaperId,t.TestTitle as PaperTitle,a.PrizeName,a.PrizeImgUrl,a.WeChatUrl,a.VisitCount,a.ForwardCount,a.AnswerCount,a.HavePrizeCount,a.PrizeCount,a.StartTime,a.ExamEndTime,a.RewardTime from T_Activities as a left join t_idnames i on i.id=a.statusid left join T_TestPapers t on t.Id=a.PaperId, (select ActivityId from T_UserActivities where UserId=@id) as u where a.Id=u.ActivityId and a.IsDeleted=0", new SqlParameter("@id",id)).ToArray();
+                var acts = from a in dbc.Activities
+                           from u in a.Users
+                           where u.Id == id
+                           select a;
+                return acts.OrderByDescending(a => a.CreateDateTime).Take(20).ToList().Select(a => ToDTO(a)).ToArray();
             }
         }
 
@@ -339,6 +584,26 @@ namespace Chat.Service.Service
             using (MyDbContext dbc = new MyDbContext())
             {
                 CommonService<ActivityEntity> cs = new CommonService<ActivityEntity>(dbc);
+                foreach (var activity in cs.GetAll())
+                {
+                    if (DateTime.Now < activity.StartTime)
+                    {
+                        activity.StatusId = 5;
+                    }
+                    else if (DateTime.Now >= activity.StartTime && DateTime.Now < activity.ExamEndTime)
+                    {
+                        activity.StatusId = 6;
+                    }
+                    else if (DateTime.Now >= activity.ExamEndTime && DateTime.Now < activity.RewardTime)
+                    {
+                        activity.StatusId = 7;
+                    }
+                    else
+                    {
+                        activity.StatusId = 8;
+                    }
+                }
+                dbc.SaveChanges();
                 return cs.GetAll().Include(a => a.Status).Include(a => a.Papers).OrderByDescending(a => a.CreateDateTime).Skip(currentIndex).Take(pageSize).ToList().Select(a => ToDTO(a)).ToArray();
             }
         }

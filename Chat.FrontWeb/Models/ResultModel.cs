@@ -12,5 +12,6 @@ namespace Chat.FrontWeb.Models
         public List<string> Result { get; set; }
         public bool IsAllRight { get; set; }
         public string PrizeTime { get; set; }
+        public bool IsFirst { get; set; }
     }
 }

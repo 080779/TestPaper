@@ -9,18 +9,21 @@ namespace Chat.IService.Interface
 {
     public interface IActivityService:IServiceSupport
     {
-        long AddNew(string name,string description, long statusId, string imgUrl,DateTime startTime,DateTime examEndTime,DateTime rewardTime,long paperId,string prizeName,string prizeImgUrl);
+        long AddNew(string name,string description, string imgUrl,DateTime? startTime,DateTime? examEndTime,DateTime? rewardTime,long paperId,string prizeName,string prizeImgUrl);
         ActivityDTO[] GetAll();
         ActivityDTO[] GetPageData(int pageSize, int currentIndex);
         ActivityDTO GetNew();
         ActivityDTO GetById(long id);
         bool ExistActivity(long id);
         ActivityDTO GetByStatus(string statusName);
-        bool Update(long id, string name, string description, long statusId, string imgUrl, DateTime startTime, DateTime examEndTime, DateTime rewardTime, long paperId, string prizeName, string prizeImgUrl);
+        bool Update(long id, string name, string description, string imgUrl, DateTime? startTime, DateTime? examEndTime, DateTime? rewardTime, long paperId, string prizeName, string prizeImgUrl);
         ActivityDTO[] Search(long? statusId, DateTime? startTime, DateTime? endTime, string keyWord);
         bool Delete(long id);
         bool AddUserId(long activityId, long userId);
         ActivityDTO[] GetByUserId(long id);
+        bool SetCurrent(long id);
+        bool ResetCurrent(long id);
+        ActivityDTO GetIsCurrent();
         long GetTotalCount();
         long CheckByStatusId(long id, long statusId);
         long CheckByStatusId(long statusId);

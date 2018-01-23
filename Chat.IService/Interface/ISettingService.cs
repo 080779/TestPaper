@@ -17,5 +17,6 @@ namespace Chat.IService.Interface
         void SetBoolValue(string name, bool value);
         bool? GetBoolValue(string name);
         SettingDTO[] GetAll();
+        bool UpdateValue(string name, string value);
     }
 }

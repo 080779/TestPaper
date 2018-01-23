@@ -76,6 +76,7 @@
     <Compile Include="JsonNetResult.cs" />
     <Compile Include="MVCHelper.cs" />
     <Compile Include="NPOI.cs" />
+    <Compile Include="Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrimToDBCModelBinder.cs" />
   </ItemGroup>

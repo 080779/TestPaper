@@ -11,5 +11,6 @@ namespace Chat.AdminWeb.Models
         public IdNameDTO[] Status { get; set; }
         public ActivityDTO Activity { get; set; }
         public TestPaperDTO Paper { get; set; }
+        public TestPaperDTO[] Papers { get; set; }
     }
 }

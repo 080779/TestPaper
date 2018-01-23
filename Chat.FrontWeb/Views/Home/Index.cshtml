@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>广西环保</title>
+    <title>广西环保 @Model.Name</title>
     <link rel="stylesheet" type="text/css" href="~/css/common.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style-default.css" />
+    <link href="~/img/zhb.png" rel="shortcut icon" />
 </head>
 <body>
+    <div  style="visibility:hidden;height:0px;width:0px;" ><img src="~/img/zhb.jpg" /></div>    
     <div class="index-bg">
         <div class="index-wrap">
             <div class="index-title">@Model.Name</div>
@@ -123,7 +125,10 @@
                         {
                             $("#mask-star").css("display", "block");
                         }
-                        else if (result.status == "tip" && result.errorMsg == "开奖中") {
+                        else if (result.status == "tip" && result.errorMsg == "待开奖") {
+                            $("#mask-over").css("display", "block");
+                        }
+                        else if (result.status == "tip" && result.errorMsg == "活动结束正开奖") {
                             $("#mask-over").css("display", "block");
                         }
                     },

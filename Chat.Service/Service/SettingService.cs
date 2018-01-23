@@ -57,5 +57,21 @@ namespace Chat.Service.Service
         {
             throw new NotImplementedException();
         }
+
+        public bool UpdateValue(string name, string value)
+        {
+            using (MyDbContext dbc = new MyDbContext())
+            {
+                CommonService<SettingEntity> cs = new CommonService<SettingEntity>(dbc);
+                var setting = cs.GetAll().SingleOrDefault(s => s.Name == name);
+                if (setting == null)
+                {
+                    return false;
+                }
+                setting.Value = value;
+                dbc.SaveChanges();
+                return true;
+            }
+        }
     }
 }

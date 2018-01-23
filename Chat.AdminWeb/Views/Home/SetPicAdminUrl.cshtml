@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SetPicAdminUrl</title>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <div> 
+        <input type="text" id="value" /><button id="btnSave">保存</button>
+    </div>
+    <script type="text/javascript">
+        $("#btnSave").click(function () {
+
+            $.ajax({
+                url: "/home/setpicadminurl", type: "post",data:{value:$("#value").val()},
+                success: function (result) {
+                    if(result.status=="success")
+                    {
+                        alert("保存成功");
+                    }
+                },
+                error: function () { alert("网络错误");}
+            });
+        });
+    </script>
+</body>
+</html>

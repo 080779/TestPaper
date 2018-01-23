@@ -10,11 +10,10 @@ namespace Chat.AdminWeb.Models
         public long activityId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public long StatusId { get; set; }
         public string imgUrl { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime ExamEndTime { get; set; }
-        public DateTime RewardTime { get; set; }
+        public DateTime? StartTime { get; set; }
+        public DateTime? ExamEndTime { get; set; }
+        public DateTime? RewardTime { get; set; }
         public long PaperId { get; set; }
         public string PrizeName { get; set; }
         public string PrizeImgUrl { get; set; }

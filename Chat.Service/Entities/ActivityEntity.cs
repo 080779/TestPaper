@@ -55,5 +55,9 @@ namespace Chat.Service.Entities
         /// 开奖时间
         /// </summary>
         public DateTime RewardTime { get; set; }
+        /// <summary>
+        /// 是否当前活动
+        /// </summary>
+        public bool IsCurrent { get; set; } = false;
     }
 }
