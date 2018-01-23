@@ -65,7 +65,7 @@ namespace Chat.Service.Service
         {
             using (MyDbContext dbc = new MyDbContext())
             {
-                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);
+                CommonService<UserEntity> cs = new CommonService<UserEntity>(dbc);               
                 return cs.GetAll().Take(10).ToList().Select(u=>ToDTO(u)).ToArray();
             }
         }
@@ -85,7 +85,7 @@ namespace Chat.Service.Service
                 return dbc.Database.SqlQuery<UserDTO>("select top(20) u.Id,u.Name,u.NickName,u.PhotoUrl,u.Mobile,u.Gender,u.Address,u.PasswordHash,u.PasswordSalt,u.LoginErrorTimes,u.LastLoginErrorDateTime,u.PassCount,u.WinCount,u.IsWon,u.IsDeleted,u.ChangeTime,u.CreateDateTime from T_Users as u, (select UserId from T_UserActivities where ActivityId=@id) as a where a.UserId=u.Id and u.IsDeleted=0", new SqlParameter("@id", id)).ToArray();
             }
         }
-
+                
         /// <summary>
         /// 根据活动id查找参与活动的用户
         /// </summary>
